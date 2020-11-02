@@ -5,10 +5,10 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public int maxHealth = 5;
-    public float speed = 3.0f;
-
+    public float speed = 50f;
+    public Vector2 jumpHeight;
+    public Vector2 dashDistance;
     public float timeInvincible = 2.0f;
-
     int currentHealth;
 
     public int health
@@ -17,14 +17,18 @@ public class PlayerController : MonoBehaviour
         set { currentHealth = value; }
     }
 
+    bool beginDash = false;
+    bool isDash = false;
+    bool isGround;
     bool facingRight = true;
-    
+    bool isDead;
     bool isInvincible;
     float invincibleTimer;
-
+    float dashTimer;
+    public float timeDash = 1f;
+    bool isJumped = false;
     Rigidbody2D rigidbody2d;
     float horizontal;
-    float vertical;
     private SpriteRenderer mySpriteRenderer;
     //Vector2 lookDirection = new Vector2(1, 0);
 
@@ -39,7 +43,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        isDead = false;
         rigidbody2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         mySpriteRenderer = GetComponent<SpriteRenderer>();
@@ -53,6 +57,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        isGround = IsGround();
         horizontal = Input.GetAxis("Horizontal");
         //vertical = Input.GetAxis("Vertical");
         //Debug.Log("horizontal " + horizontal);
@@ -67,22 +72,63 @@ public class PlayerController : MonoBehaviour
                 Flip();
         }
 
-        if (horizontal != 0)
+        if (horizontal != 0 && isGround)
             animator.SetBool("Run", true);
         else
             animator.SetBool("Run", false);
 
-        Vector2 move = new Vector2(horizontal, vertical);
+
+        if (isGround)
+            animator.SetBool("Jumped", false);
+        if (isGround==false)
+        {
+            animator.SetBool("Run", false);
+        }
+
 
         //animator.SetFloat("Look X", lookDirection.x);
         //animator.SetFloat("Look Y", lookDirection.y);
-       
+        if (isDead == false)
+        {
+            if (Input.GetButtonDown("Jump")) //makes player jump
+            {
+                isJumped = true;
+                
+            }
+            if (Input.GetButtonDown("Dash"))
+            {   if (!isDash)
+                {
+                    beginDash = true;
+                    isDash = true;
+                    dashTimer = timeDash;
+                 
+                    
+                    animator.SetBool("Run", false);
+                }
+               
+            }
+        }
+
         if (isInvincible)
         {
             invincibleTimer -= Time.deltaTime;
             if (invincibleTimer < 0)
             {
                 isInvincible = false;
+            }
+        }
+        
+        if (isDash)
+        {
+            animator.SetBool("Dash", true);
+            animator.SetBool("Jumped", false);
+            animator.SetBool("Run", false);
+            dashTimer -= Time.deltaTime;
+            if (dashTimer<0)
+            {
+                isDash = false;
+                animator.SetBool("Dash", false);
+          
             }
         }
 
@@ -106,12 +152,37 @@ public class PlayerController : MonoBehaviour
         }
         */
     }
+
     private void FixedUpdate()
     {
-        Vector2 position = rigidbody2d.position;
-        position.x = position.x + speed * horizontal * Time.deltaTime;
-        //position.y = position.y + speed * vertical * Time.deltaTime;
-        rigidbody2d.MovePosition(position);
+
+        if (beginDash)
+        {
+            beginDash = false;
+            Dash();
+        }
+
+        if (horizontal != 0 && isDash == false)
+        {
+
+         
+            //Vector2 position = rigidbody2d.position;
+            //position.x = position.x + speed * horizontal * Time.deltaTime;
+            //position.y = position.y + speed * vertical * Time.deltaTime;
+            //rigidbody2d.MovePosition(position);
+         
+            float moveBy = horizontal * speed*Time.deltaTime;
+            rigidbody2d.velocity = new Vector2(moveBy, rigidbody2d.velocity.y);
+
+        }
+      
+        if (isJumped)
+        {
+            isJumped = false;
+            Jump();
+        }
+        
+        
     }
 
     public void ChangeHealth(int amount)
@@ -130,6 +201,34 @@ public class PlayerController : MonoBehaviour
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
         //UiHealthBar.instance.SetValue(currentHealth / (float)maxHealth);
 
+    }
+
+    private bool IsGround()
+    {
+        return transform.Find("GroundCheck").GetComponent<GroundCheck>().isGround;
+    }
+
+    void Jump()
+    {
+        Debug.Log("Jumped Ground " + isGround);
+        if (isGround)
+        {
+            animator.SetBool("Jumped", true);
+            animator.SetBool("Run", false);
+            rigidbody2d.AddForce(jumpHeight, ForceMode2D.Impulse);
+        }
+    }
+
+    void Dash()
+    {
+        Debug.Log("Dash");
+        if ((facingRight && dashDistance.x<0) || (facingRight == false && dashDistance.x>0))
+        {
+            dashDistance.x *= -1;
+        }
+   
+        rigidbody2d.velocity = new Vector2(dashDistance.x * Time.deltaTime, rigidbody2d.velocity.y);
+        //rigidbody2d.AddForce(dashDistance, ForceMode2D.Impulse);
     }
 
     void Flip()
