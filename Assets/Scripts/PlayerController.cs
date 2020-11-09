@@ -16,20 +16,32 @@ public class PlayerController : MonoBehaviour
         get { return currentHealth; }
         set { currentHealth = value; }
     }
-
+    // Dash Var
     bool beginDash = false;
     bool isDash = false;
+    float dashTimer;
+    public float timeDash = 1f;
+
+
     bool isGround;
     bool facingRight = true;
     bool isDead;
     bool isInvincible;
     float invincibleTimer;
-    float dashTimer;
-    public float timeDash = 1f;
+
     bool isJumped = false;
     Rigidbody2D rigidbody2d;
     float horizontal;
     private SpriteRenderer mySpriteRenderer;
+
+    //Hit var
+    bool beginHit = false;
+    bool isHit = false;
+    float hitTimer;
+    public float timeHit = 1f;
+    public GameObject hitTriggerLeft;  // 
+    public GameObject hitTriggerRight;
+
     //Vector2 lookDirection = new Vector2(1, 0);
 
     Animator animator;
@@ -49,7 +61,8 @@ public class PlayerController : MonoBehaviour
         mySpriteRenderer = GetComponent<SpriteRenderer>();
         // audioSource = GetComponent<AudioSource>();
         currentHealth = maxHealth;
-
+        hitTriggerLeft.SetActive(false);
+        hitTriggerRight.SetActive(false);
         //QualitySettings.vSyncCount = 0;
         //Application.targetFrameRate = 10;
     }
@@ -79,10 +92,15 @@ public class PlayerController : MonoBehaviour
 
 
         if (isGround)
+        {
             animator.SetBool("Jumped", false);
+            animator.SetBool("Fall", false);
+        }
+
         if (isGround==false)
         {
             animator.SetBool("Run", false);
+            animator.SetBool("Fall", true);
         }
 
 
@@ -92,11 +110,12 @@ public class PlayerController : MonoBehaviour
         {
             if (Input.GetButtonDown("Jump")) //makes player jump
             {
-                isJumped = true;
+                if (isHit == false)
+                    isJumped = true;
                 
             }
             if (Input.GetButtonDown("Dash"))
-            {   if (!isDash)
+            {   if (!isDash && !isHit)
                 {
                     beginDash = true;
                     isDash = true;
@@ -106,6 +125,14 @@ public class PlayerController : MonoBehaviour
                     animator.SetBool("Run", false);
                 }
                
+            }
+
+            // Sword Hit action
+            if (Input.GetButtonDown("Fire1"))
+            {
+                beginHit = true;
+                //isHit = true;
+                hitTimer = timeHit;
             }
         }
 
@@ -120,8 +147,6 @@ public class PlayerController : MonoBehaviour
         
         if (isDash)
         {
-            animator.SetBool("Dash", true);
-            animator.SetBool("Jumped", false);
             animator.SetBool("Run", false);
             dashTimer -= Time.deltaTime;
             if (dashTimer<0)
@@ -130,6 +155,32 @@ public class PlayerController : MonoBehaviour
                 animator.SetBool("Dash", false);
           
             }
+        }
+
+        if (beginHit)
+        {
+            beginHit = false;
+            SwordHit();
+        }
+
+        if (isHit)
+        {
+
+            if (facingRight)
+                hitTriggerRight.SetActive(true);
+            else
+                hitTriggerLeft.SetActive(true);
+
+            hitTimer -= Time.deltaTime;
+            if (hitTimer<0)
+            {
+                isHit = false;
+                animator.SetBool("SwordHit", false);
+               
+                hitTriggerRight.SetActive(false);
+                hitTriggerLeft.SetActive(false);
+            }
+
         }
 
         /*if (Input.GetButtonDown("Fire1"))
@@ -158,11 +209,14 @@ public class PlayerController : MonoBehaviour
 
         if (beginDash)
         {
+            animator.SetBool("Dash", true);
+            animator.SetBool("Jumped", false);
+            
             beginDash = false;
             Dash();
         }
 
-        if (horizontal != 0 && isDash == false)
+        if (horizontal != 0 && isDash == false && (isHit ==false || isGround==false))
         {
 
          
@@ -229,6 +283,18 @@ public class PlayerController : MonoBehaviour
    
         rigidbody2d.velocity = new Vector2(dashDistance.x * Time.deltaTime, rigidbody2d.velocity.y);
         //rigidbody2d.AddForce(dashDistance, ForceMode2D.Impulse);
+    }
+
+    void SwordHit()
+    {
+        hitTimer = timeHit;
+        isHit = true;
+        animator.SetBool("SwordHit", true);
+        animator.SetBool("Dash", false);
+        animator.SetBool("Jumped", false);
+        animator.SetBool("Run", false);
+        
+
     }
 
     void Flip()
