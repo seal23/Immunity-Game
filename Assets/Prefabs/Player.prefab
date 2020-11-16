@@ -284,10 +284,10 @@ MonoBehaviour:
   maxHealth: 100
   speed: 200
   jumpHeight: {x: 0, y: 4}
-  dashDistance: {x: 300, y: 0}
+  dashDistance: {x: 350, y: 0}
   timeInvincible: 2
   timeDash: 0.7
-  timeHit: 0.55
+  timeHit: 0.4
   hitTriggerLeft: {fileID: 569633986}
   hitTriggerRight: {fileID: 854950140}
 --- !u!1 &4343304150211967194

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - HitTrigger
+  - BossTrigger
   layers:
   - Default
   - TransparentFX
@@ -15,11 +16,11 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Enemy
+  - Confiner
+  - GroundCheck
+  - Trigger
   - 
   - 
   - 
@@ -42,4 +43,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Enemy
+    uniqueID: 940202091
+    locked: 0
+  - name: Player
+    uniqueID: 107597339
     locked: 0
