@@ -74,17 +74,19 @@ public class PlayerController : MonoBehaviour
         horizontal = Input.GetAxis("Horizontal");
         //vertical = Input.GetAxis("Vertical");
         //Debug.Log("horizontal " + horizontal);
-        if (horizontal > 0)
+        if (!isDash && !isHit)
         {
-            if (facingRight == false)
-                Flip();
+            if (horizontal > 0)
+            {
+                if (!facingRight)
+                    Flip();
+            }
+            else if (horizontal < 0)
+            {
+                if (facingRight)
+                    Flip();
+            }
         }
-        else if (horizontal < 0)
-        {
-            if (facingRight)
-                Flip();
-        }
-
         if (horizontal != 0 && isGround)
             animator.SetBool("Run", true);
         else

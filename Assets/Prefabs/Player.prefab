@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 569633987}
   - component: {fileID: 569633988}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: HitTriggerLeft
   m_TagString: HitTrigger
   m_Icon: {fileID: 0}
@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 569633986}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.008, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4343304148750238174}
@@ -67,7 +67,7 @@ GameObject:
   m_Component:
   - component: {fileID: 854950141}
   - component: {fileID: 854950142}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: HitTriggerRight
   m_TagString: HitTrigger
   m_Icon: {fileID: 0}
@@ -82,7 +82,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 854950140}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.067, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4343304148750238174}
@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 4343304148750238171}
   - component: {fileID: 4343304148750238170}
   - component: {fileID: 4343304148750238169}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -189,8 +189,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 107597339
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -1884422750984940256, guid: cf0f7331146633d46b53225008783bec, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -235,7 +235,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.030541658, y: 0}
+  m_Offset: {x: -0.031578064, y: -0.026183248}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -246,7 +246,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.44289732, y: 1}
+  m_Size: {x: 0.33838654, y: 0.9476335}
   m_EdgeRadius: 0
 --- !u!50 &4343304148750238170
 Rigidbody2D:
@@ -261,7 +261,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 0.5
-  m_LinearDrag: 3
+  m_LinearDrag: 3.5
   m_AngularDrag: 0.04
   m_GravityScale: 1
   m_Material: {fileID: 0}
@@ -282,11 +282,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  speed: 200
+  speed: 180
   jumpHeight: {x: 0, y: 4}
-  dashDistance: {x: 350, y: 0}
+  dashDistance: {x: 450, y: 0}
   timeInvincible: 2
-  timeDash: 0.7
+  timeDash: 0.55
   timeHit: 0.4
   hitTriggerLeft: {fileID: 569633986}
   hitTriggerRight: {fileID: 854950140}
@@ -301,7 +301,7 @@ GameObject:
   - component: {fileID: 4343304150211967195}
   - component: {fileID: 4343304150211967197}
   - component: {fileID: 4343304150211967196}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -335,7 +335,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.017316818, y: -0.5125162}
+  m_Offset: {x: -0.031168938, y: -0.5125162}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -346,7 +346,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.37913132, y: 0.013239741}
+  m_Size: {x: 0.31103706, y: 0.013239741}
   m_EdgeRadius: 0
 --- !u!114 &4343304150211967196
 MonoBehaviour:
