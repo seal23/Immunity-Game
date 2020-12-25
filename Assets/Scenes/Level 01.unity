@@ -610,7 +610,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1737716492988256, guid: 5f00a24494233a242bb7397e971a1e7f, type: 3}
       propertyPath: m_Name
-      value: Medieval_props_free_4
+      value: lv 01 to villagte
       objectReference: {fileID: 0}
     - target: {fileID: 4375669472303976, guid: 5f00a24494233a242bb7397e971a1e7f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4859,7 +4859,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PositionName: Level 01
   DestinationSceneName: Village v0.1
-  DestinationTeleportName: 
+  TeleportGameObjName: Villagte
 --- !u!61 &1837381988
 BoxCollider2D:
   m_ObjectHideFlags: 0

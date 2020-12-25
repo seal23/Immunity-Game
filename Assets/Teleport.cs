@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,10 +8,10 @@ public class Teleport : MonoBehaviour
 {
     // Start is called before the first frame update
     public string PositionName = "";
-    public string DestinationSceneName= "";
-    public string DestinationTeleportName = "";
+    public string DestinationSceneName = "";
+    public string TeleportGameObjName = "";
 
-    public static Dictionary<string, Teleport> listTeleports = new Dictionary<string, Teleport>();
+
     void Start()
     {
         //if (!listTeleports.ContainsKey(PositionName))
@@ -24,32 +25,67 @@ public class Teleport : MonoBehaviour
 
     private void Awake()
     {
-        if (!listTeleports.ContainsKey(PositionName))
-        {
-            listTeleports.Add(PositionName, this);
-            Debug.Log("awake");
 
-            Debug.Log(PositionName);
-        }
     }
+
     // Update is called once per frame
     void Update()
     {
         
+
+    }
+    private bool isEnter = false;
+
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            isEnter = true;
+        }
+        else
+        {
+            isEnter = false;
+
+        }
+        if (isEnter && collision.GetComponent<PlayerController>() != null)
+        {
+            playerGameObj = collision.gameObject;
+            var parameters = new LoadSceneParameters(LoadSceneMode.Single);
+            SceneManager.sceneLoaded += OnSceneLoaded;
+            SceneManager.LoadScene(DestinationSceneName);
+        }
+
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private GameObject playerGameObj;
+    private void OnSceneLoaded(Scene arg0, LoadSceneMode arg1)
     {
-        var player = collision.GetComponent<PlayerController>();
-        var destinationScene = SceneManager.GetSceneByName(DestinationSceneName);
-        if(player!= null && destinationScene != null)
+        var listObj = arg0.GetRootGameObjects();
+        Debug.Log(listObj.Length);
+
+        foreach (var gameObj in listObj)
         {
-            SceneManager.LoadScene(DestinationSceneName);
-            //var gameObj = destinationScene.GetRootGameObjects();
-            if (listTeleports.ContainsKey(DestinationTeleportName))
+
+            //if (gameObj.name.Equals(TeleportGameObjName))
+            //{
+            //    player.transform.position = gameObj.transform.position;
+            //}
+            var tele = gameObj.GetComponent<Teleport>();
+            if (tele != null)
             {
-                player.transform.position = listTeleports[DestinationTeleportName].transform.position;
+                Debug.Log(tele.PositionName);
+
+                //tele.PositionName.Equals(TeleportGameObjName)
+                var rigidbody2d = playerGameObj.GetComponent<Rigidbody2D>();
+                rigidbody2d.MovePosition(gameObj.transform.position);
+                Debug.Log("tele: " + gameObj.transform.position);
+                Debug.Log("player: " + rigidbody2d.transform.position);
+
+                break;
             }
         }
     }
+
+
 }
