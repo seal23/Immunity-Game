@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    
     public int maxHealth = 5;
     public float speed = 50f;
     public Vector2 jumpHeight;
