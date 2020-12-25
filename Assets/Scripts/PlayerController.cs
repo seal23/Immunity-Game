@@ -130,7 +130,7 @@ public class PlayerController : MonoBehaviour
             }
 
             // Sword Hit action
-            if (Input.GetButtonDown("Fire1"))
+            if (Input.GetButtonDown("Fire1") && !isInvincible)
             {
                 beginHit = true;
                 //isHit = true;
@@ -144,6 +144,7 @@ public class PlayerController : MonoBehaviour
             if (invincibleTimer < 0)
             {
                 isInvincible = false;
+                gameObject.layer = 8;
             }
         }
         
@@ -182,6 +183,8 @@ public class PlayerController : MonoBehaviour
                 hitTriggerRight.SetActive(false);
                 hitTriggerLeft.SetActive(false);
             }
+
+            
 
         }
 
@@ -250,11 +253,13 @@ public class PlayerController : MonoBehaviour
                 return;
 
             isInvincible = true;
+            gameObject.layer = 13;
             invincibleTimer = timeInvincible;
             //PlaySound(playerHitClip);
         }
 
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
+        Debug.Log("Player Health: " + currentHealth);
         //UiHealthBar.instance.SetValue(currentHealth / (float)maxHealth);
 
     }
@@ -306,22 +311,33 @@ public class PlayerController : MonoBehaviour
         mySpriteRenderer.flipX = !mySpriteRenderer.flipX;
         Debug.Log("Flip " + mySpriteRenderer.flipX);
     }
-   /* void Launch()
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        //Tao projectile
-        GameObject projectileObject = Instantiate(projectilePrefab, rigidbody2d.position + Vector2.up * 0.5f, Quaternion.identity);
-
-        Projectile projectile = projectileObject.GetComponent<Projectile>();
-        projectile.Launch(lookDirection, projectileForce);
-
-        animator.SetTrigger("Launch");
-        PlaySound(cogShotClip);
+        Boss01Controller boss = collision.gameObject.GetComponent<Boss01Controller>();
+        if (boss != null)
+        {
+            boss.ChangeHealth(-1);
+        }
     }
-    */
 
-   /* public void PlaySound(AudioClip clip)
-    {
-        audioSource.PlayOneShot(clip);
-    }
-    */
+    /* void Launch()
+     {
+         //Tao projectile
+         GameObject projectileObject = Instantiate(projectilePrefab, rigidbody2d.position + Vector2.up * 0.5f, Quaternion.identity);
+
+         Projectile projectile = projectileObject.GetComponent<Projectile>();
+         projectile.Launch(lookDirection, projectileForce);
+
+         animator.SetTrigger("Launch");
+         PlaySound(cogShotClip);
+     }
+     */
+
+    /* public void PlaySound(AudioClip clip)
+     {
+         audioSource.PlayOneShot(clip);
+     }
+     */
 }
