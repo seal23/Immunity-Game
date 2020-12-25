@@ -281,7 +281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cdb9bd412e603a448277b9ac52ffcae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 200
   speed: 180
   jumpHeight: {x: 0, y: 4.2}
   dashDistance: {x: 450, y: 0}

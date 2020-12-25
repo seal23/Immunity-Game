@@ -5,7 +5,7 @@ using UnityEngine;
 public class Boss01Controller : MonoBehaviour
 {
     float horizontal;
-    public Transform target;
+    GameObject target;
     public float baseSpeed = 80.0f;
     float speed;
     Rigidbody2D rigidbody2d;
@@ -32,15 +32,19 @@ public class Boss01Controller : MonoBehaviour
     public float skill01Speed = 150.0f;
 
     bool usedSkill02 = false;
+    public float timeUsedSkill02 = 20.0f;
+    float usedSkill02Timer;
     public float mulSkill02Speed = 1.8f;
+    public GameObject projectilePrefab;
 
-   
     int currentHealth;
     public int health
     {
         get { return currentHealth; }
         set { currentHealth = value; }
     }
+
+
     public float timeInvincible = 0.4f;
     bool isInvincible;
     float invincibleTimer;
@@ -49,7 +53,7 @@ public class Boss01Controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        target = GameObject.Find("Player");
         gameObject.layer = 14; // layer "EnemyGhost"
         speed = baseSpeed;
         usedSkillTimer01 = Random.Range(timeUsedSkill01Min, timeUsedSkill01Max); 
@@ -99,19 +103,33 @@ public class Boss01Controller : MonoBehaviour
 
         if (!usedSkill01)
         {
-            if (target.position.x > position.x)
+            if (target.transform.position.x > position.x)
                 horizontal = 1;
-            else if (target.position.x < position.x)
+            else if (target.transform.position.x < position.x)
                 horizontal = -1;
             else horizontal = 0;
         }
 
-        if (!usedSkill02 && currentHealth <= maxHealth*0.5)
+        if (!usedSkill02 && currentHealth <= maxHealth*0.5 && status == 2)
         {
             usedSkill02 = true;
             baseSpeed *= mulSkill02Speed;
             speed = baseSpeed;
+            usedSkill02Timer = timeUsedSkill02;
+            Launch();
         }
+
+        if (usedSkill02)
+        {
+            usedSkill02Timer -= Time.deltaTime;
+            if (usedSkill02Timer < 0)
+            {
+                usedSkill02 = false;
+                baseSpeed /= mulSkill02Speed;
+            }
+        }
+
+
 
         //Born Time
         if (status == 1)
@@ -146,8 +164,6 @@ public class Boss01Controller : MonoBehaviour
 
         if (status == 2)
         {
-
-
 
             float moveBy = horizontal * speed * Time.deltaTime;
             if (!isKnockBack)
@@ -202,10 +218,43 @@ public class Boss01Controller : MonoBehaviour
             }
             player.ChangeHealth(-atk);
         }
+
+        SlimeController slime = collision.gameObject.GetComponent<SlimeController>();
+        if (slime != null)
+        {
+            ChangeHealth((int)(maxHealth * 0.1));
+            Destroy(collision.gameObject);
+        }
     }
 
     public void UpdateStatus(int s)
     {
         status = s;
+    }
+
+    public void Launch(Vector2 direction, float force)
+    {
+        rigidbody2d.AddForce(direction * force);
+    }
+
+    void Launch()
+    {
+        //Tao projectile
+        GameObject projectileObject1 = Instantiate(projectilePrefab, rigidbody2d.position + Vector2.left * 1.5f + Vector2.up * 2.5f, Quaternion.identity);
+        GameObject projectileObject2 = Instantiate(projectilePrefab, rigidbody2d.position + Vector2.left * 2f + Vector2.up * 2.5f, Quaternion.identity);
+        GameObject projectileObject3 = Instantiate(projectilePrefab, rigidbody2d.position + Vector2.right * 1.5f+ Vector2.up * 2.5f, Quaternion.identity);
+
+        SlimeController projectile1 = projectileObject1.GetComponent<SlimeController>();
+        SlimeController projectile2 = projectileObject2.GetComponent<SlimeController>();
+        SlimeController projectile3 = projectileObject3.GetComponent<SlimeController>();
+        Vector2 direction1 = new Vector2(-1f, 0.5f);
+        Vector2 direction2 = new Vector2(-0.6f, 0.5f);
+        Vector2 direction3 = new Vector2(1f, 0.5f);
+        projectile1.Launch(direction1);
+        projectile2.Launch(direction2);
+        projectile3.Launch(direction3);
+
+        //animator.SetTrigger("Launch");
+        
     }
 }

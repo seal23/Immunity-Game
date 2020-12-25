@@ -79,6 +79,25 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (isDead)
+        {
+            animator.SetTrigger("Dead");
+            animator.SetBool("Run", false);
+            animator.SetBool("Jumped", false);
+            animator.SetBool("Dash", false);
+            animator.SetBool("SwordHit", false);
+            animator.SetBool("Fall", false);
+            hitTriggerLeft.SetActive(false);
+            hitTriggerRight.SetActive(false);
+            mySpriteRenderer.color = baseColor;
+            return;
+        }
+        if (currentHealth <= 0)
+        {
+            isDead = true;
+        }
+        
         isGround = IsGround();
         horizontal = Input.GetAxis("Horizontal");
         //vertical = Input.GetAxis("Vertical");
@@ -230,6 +249,8 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (isDead)
+            return;
 
         if (beginDash)
         {
@@ -344,10 +365,16 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Boss01Controller boss = collision.gameObject.GetComponent<Boss01Controller>();
-        if (boss != null)
+        Boss01Controller boss01 = collision.gameObject.GetComponent<Boss01Controller>();
+        if (boss01 != null)
         {
-            boss.ChangeHealth(-1);
+            boss01.ChangeHealth(-1);
+        }
+
+        SlimeController slime = collision.gameObject.GetComponent<SlimeController>();
+        if (slime != null)
+        {
+            slime.ChangeHealth(-1);
         }
     }
 
