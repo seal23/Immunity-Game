@@ -17,6 +17,11 @@ public class Boss01Controller : MonoBehaviour
     float bornTimer;
 
 
+    public Vector2 knockBack;
+    bool isKnockBack;
+
+
+
     //Skill01 config
     float skill01Timer;
     bool usedSkill01 = false;
@@ -29,8 +34,7 @@ public class Boss01Controller : MonoBehaviour
     bool usedSkill02 = false;
     public float mulSkill02Speed = 1.8f;
 
-    public Vector2 knockBack;
-    bool isKnockBack;
+   
     int currentHealth;
     public int health
     {
@@ -45,6 +49,8 @@ public class Boss01Controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        gameObject.layer = 14; // layer "EnemyGhost"
         speed = baseSpeed;
         usedSkillTimer01 = Random.Range(timeUsedSkill01Min, timeUsedSkill01Max); 
         rigidbody2d = GetComponent<Rigidbody2D>();
@@ -114,6 +120,7 @@ public class Boss01Controller : MonoBehaviour
             bornTimer -= Time.deltaTime;
             if (bornTimer < 0)
             {
+                gameObject.layer = 9; // layer "Enemy"
                 UpdateStatus(2);
                 animator.SetTrigger("Idle");
             }
@@ -128,6 +135,7 @@ public class Boss01Controller : MonoBehaviour
         if (status == 3)
         {
             animator.SetTrigger("Dead");
+            gameObject.layer = 14; // layer "EnemyGhost"
             Debug.Log("Slime King Dead");
         }
       
@@ -188,6 +196,10 @@ public class Boss01Controller : MonoBehaviour
         PlayerController player = collision.gameObject.GetComponent<PlayerController>();
         if (player != null)
         {
+            if ((player.knockBack.x > 0 && horizontal <= 0) || (player.knockBack.x < 0 && horizontal > 0))
+            {
+                player.knockBack.x = -player.knockBack.x;
+            }
             player.ChangeHealth(-atk);
         }
     }

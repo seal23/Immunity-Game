@@ -8,6 +8,12 @@ public class PlayerController : MonoBehaviour
     public float speed = 50f;
     public Vector2 jumpHeight;
     public Vector2 dashDistance;
+
+    public Vector2 knockBack;
+    bool isKnockBack = false;
+    public float timeKnockBack = 0.4f;
+    float knockBackTimer;
+
     public float timeInvincible = 2.0f;
     int currentHealth;
 
@@ -33,7 +39,9 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rigidbody2d;
     float horizontal;
     private SpriteRenderer mySpriteRenderer;
-
+    public Color baseColor;
+    public Color changeColor;
+    
     //Hit var
     bool beginHit = false;
     bool isHit = false;
@@ -63,6 +71,7 @@ public class PlayerController : MonoBehaviour
         currentHealth = maxHealth;
         hitTriggerLeft.SetActive(false);
         hitTriggerRight.SetActive(false);
+        knockBackTimer = -1;
         //QualitySettings.vSyncCount = 0;
         //Application.targetFrameRate = 10;
     }
@@ -144,7 +153,8 @@ public class PlayerController : MonoBehaviour
             if (invincibleTimer < 0)
             {
                 isInvincible = false;
-                gameObject.layer = 8;
+                gameObject.layer = 8; // Dua ve layer "Player"
+                mySpriteRenderer.color = baseColor;
             }
         }
         
@@ -188,6 +198,15 @@ public class PlayerController : MonoBehaviour
 
         }
 
+        if (knockBackTimer >= 0)
+        {
+            knockBackTimer -= Time.deltaTime;
+            if (knockBackTimer < 0)
+            {
+                isKnockBack = false;
+            }
+        }
+
         /*if (Input.GetButtonDown("Fire1"))
         {
             Debug.Log("fire1");
@@ -221,7 +240,13 @@ public class PlayerController : MonoBehaviour
             Dash();
         }
 
-        if (horizontal != 0 && isDash == false && (isHit ==false || isGround==false))
+        if (isKnockBack)
+        {
+            rigidbody2d.AddForce(knockBack, ForceMode2D.Impulse);
+            isKnockBack = false;
+        }
+        else
+        if (knockBackTimer <0 && horizontal != 0 && isDash == false && (isHit ==false || isGround==false))
         {
 
          
@@ -252,9 +277,13 @@ public class PlayerController : MonoBehaviour
             if (isInvincible)
                 return;
 
+            mySpriteRenderer.color = changeColor;
             isInvincible = true;
             gameObject.layer = 13;
             invincibleTimer = timeInvincible;
+           
+            isKnockBack = true;
+            knockBackTimer = timeKnockBack;
             //PlaySound(playerHitClip);
         }
 
