@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 4343304148750238169}
   m_Layer: 8
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -283,10 +283,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   speed: 180
-  jumpHeight: {x: 0, y: 4}
+  jumpHeight: {x: 0, y: 4.2}
   dashDistance: {x: 450, y: 0}
-  timeInvincible: 2
+  knockBack: {x: 2, y: 1}
+  timeKnockBack: 0.4
+  timeInvincible: 1
   timeDash: 0.55
+  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  changeColor: {r: 0.9056604, g: 0.43147027, b: 0.43147027, a: 1}
   timeHit: 0.4
   hitTriggerLeft: {fileID: 569633986}
   hitTriggerRight: {fileID: 854950140}
