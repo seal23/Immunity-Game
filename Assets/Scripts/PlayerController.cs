@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    
+    public UIController UIController;
     public int maxHealth = 5;
     public float speed = 50f;
     public Vector2 jumpHeight;
@@ -70,6 +70,7 @@ public class PlayerController : MonoBehaviour
         mySpriteRenderer = GetComponent<SpriteRenderer>();
         // audioSource = GetComponent<AudioSource>();
         currentHealth = maxHealth;
+        UIController.setMaxHealth(maxHealth);
         hitTriggerLeft.SetActive(false);
         hitTriggerRight.SetActive(false);
         knockBackTimer = -1;
@@ -310,6 +311,7 @@ public class PlayerController : MonoBehaviour
         }
 
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
+        UIController.setHealth(currentHealth);
         Debug.Log("Player Health: " + currentHealth);
         //UiHealthBar.instance.SetValue(currentHealth / (float)maxHealth);
 
