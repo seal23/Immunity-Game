@@ -12,7 +12,7 @@ public class GroundCheck : MonoBehaviour
         isGround = collision != null; // && (((1 << collision.gameObject.layer) & platformLayerMask) != 0);
         if (collision != null)
         {
-            Debug.Log("GroundCheck Collision with " + collision.gameObject);
+            //Debug.Log("GroundCheck Collision with " + collision.gameObject);
 
         }
     }

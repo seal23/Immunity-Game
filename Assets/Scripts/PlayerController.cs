@@ -4,10 +4,17 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    
     public int maxHealth = 5;
     public float speed = 50f;
     public Vector2 jumpHeight;
     public Vector2 dashDistance;
+
+    public Vector2 knockBack;
+    bool isKnockBack = false;
+    public float timeKnockBack = 0.4f;
+    float knockBackTimer;
+
     public float timeInvincible = 2.0f;
     int currentHealth;
 
@@ -33,7 +40,9 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rigidbody2d;
     float horizontal;
     private SpriteRenderer mySpriteRenderer;
-
+    public Color baseColor;
+    public Color changeColor;
+    
     //Hit var
     bool beginHit = false;
     bool isHit = false;
@@ -63,6 +72,7 @@ public class PlayerController : MonoBehaviour
         currentHealth = maxHealth;
         hitTriggerLeft.SetActive(false);
         hitTriggerRight.SetActive(false);
+        knockBackTimer = -1;
         //QualitySettings.vSyncCount = 0;
         //Application.targetFrameRate = 10;
     }
@@ -70,6 +80,25 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (isDead)
+        {
+            animator.SetTrigger("Dead");
+            animator.SetBool("Run", false);
+            animator.SetBool("Jumped", false);
+            animator.SetBool("Dash", false);
+            animator.SetBool("SwordHit", false);
+            animator.SetBool("Fall", false);
+            hitTriggerLeft.SetActive(false);
+            hitTriggerRight.SetActive(false);
+            mySpriteRenderer.color = baseColor;
+            return;
+        }
+        if (currentHealth <= 0)
+        {
+            isDead = true;
+        }
+        
         isGround = IsGround();
         horizontal = Input.GetAxis("Horizontal");
         //vertical = Input.GetAxis("Vertical");
@@ -130,7 +159,7 @@ public class PlayerController : MonoBehaviour
             }
 
             // Sword Hit action
-            if (Input.GetButtonDown("Fire1"))
+            if (Input.GetButtonDown("Fire1") && !isInvincible)
             {
                 beginHit = true;
                 //isHit = true;
@@ -144,6 +173,8 @@ public class PlayerController : MonoBehaviour
             if (invincibleTimer < 0)
             {
                 isInvincible = false;
+                gameObject.layer = 8; // Dua ve layer "Player"
+                mySpriteRenderer.color = baseColor;
             }
         }
         
@@ -183,6 +214,17 @@ public class PlayerController : MonoBehaviour
                 hitTriggerLeft.SetActive(false);
             }
 
+            
+
+        }
+
+        if (knockBackTimer >= 0)
+        {
+            knockBackTimer -= Time.deltaTime;
+            if (knockBackTimer < 0)
+            {
+                isKnockBack = false;
+            }
         }
 
         /*if (Input.GetButtonDown("Fire1"))
@@ -208,6 +250,8 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (isDead)
+            return;
 
         if (beginDash)
         {
@@ -218,7 +262,13 @@ public class PlayerController : MonoBehaviour
             Dash();
         }
 
-        if (horizontal != 0 && isDash == false && (isHit ==false || isGround==false))
+        if (isKnockBack)
+        {
+            rigidbody2d.AddForce(knockBack, ForceMode2D.Impulse);
+            isKnockBack = false;
+        }
+        else
+        if (knockBackTimer <0 && horizontal != 0 && isDash == false && (isHit ==false || isGround==false))
         {
 
          
@@ -249,12 +299,18 @@ public class PlayerController : MonoBehaviour
             if (isInvincible)
                 return;
 
+            mySpriteRenderer.color = changeColor;
             isInvincible = true;
+            gameObject.layer = 13;
             invincibleTimer = timeInvincible;
+           
+            isKnockBack = true;
+            knockBackTimer = timeKnockBack;
             //PlaySound(playerHitClip);
         }
 
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
+        Debug.Log("Player Health: " + currentHealth);
         //UiHealthBar.instance.SetValue(currentHealth / (float)maxHealth);
 
     }
@@ -306,22 +362,39 @@ public class PlayerController : MonoBehaviour
         mySpriteRenderer.flipX = !mySpriteRenderer.flipX;
         Debug.Log("Flip " + mySpriteRenderer.flipX);
     }
-   /* void Launch()
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        //Tao projectile
-        GameObject projectileObject = Instantiate(projectilePrefab, rigidbody2d.position + Vector2.up * 0.5f, Quaternion.identity);
+        Boss01Controller boss01 = collision.gameObject.GetComponent<Boss01Controller>();
+        if (boss01 != null)
+        {
+            boss01.ChangeHealth(-1);
+        }
 
-        Projectile projectile = projectileObject.GetComponent<Projectile>();
-        projectile.Launch(lookDirection, projectileForce);
-
-        animator.SetTrigger("Launch");
-        PlaySound(cogShotClip);
+        SlimeController slime = collision.gameObject.GetComponent<SlimeController>();
+        if (slime != null)
+        {
+            slime.ChangeHealth(-1);
+        }
     }
-    */
 
-   /* public void PlaySound(AudioClip clip)
-    {
-        audioSource.PlayOneShot(clip);
-    }
-    */
+    /* void Launch()
+     {
+         //Tao projectile
+         GameObject projectileObject = Instantiate(projectilePrefab, rigidbody2d.position + Vector2.up * 0.5f, Quaternion.identity);
+
+         Projectile projectile = projectileObject.GetComponent<Projectile>();
+         projectile.Launch(lookDirection, projectileForce);
+
+         animator.SetTrigger("Launch");
+         PlaySound(cogShotClip);
+     }
+     */
+
+    /* public void PlaySound(AudioClip clip)
+     {
+         audioSource.PlayOneShot(clip);
+     }
+     */
 }
