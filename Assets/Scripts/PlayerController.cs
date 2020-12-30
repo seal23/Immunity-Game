@@ -5,6 +5,9 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public UIController UIController;
+
+    private static PlayerController instance = null;
+
     public int maxHealth = 5;
     public float speed = 50f;
     public Vector2 jumpHeight;
@@ -76,6 +79,29 @@ public class PlayerController : MonoBehaviour
         knockBackTimer = -1;
         //QualitySettings.vSyncCount = 0;
         //Application.targetFrameRate = 10;
+        
+
+    }
+
+    private void Awake()
+    {
+        GetInstance();
+    }
+
+    public PlayerController GetInstance()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
+        return instance;
     }
 
     // Update is called once per frame

@@ -241,17 +241,17 @@ public class Boss01Controller : MonoBehaviour
     {
         //Tao projectile
         GameObject projectileObject1 = Instantiate(projectilePrefab, rigidbody2d.position + Vector2.left * 1.5f + Vector2.up * 2.5f, Quaternion.identity);
-        GameObject projectileObject2 = Instantiate(projectilePrefab, rigidbody2d.position + Vector2.left * 2f + Vector2.up * 2.5f, Quaternion.identity);
+        //GameObject projectileObject2 = Instantiate(projectilePrefab, rigidbody2d.position + Vector2.left * 2f + Vector2.up * 2.5f, Quaternion.identity);
         GameObject projectileObject3 = Instantiate(projectilePrefab, rigidbody2d.position + Vector2.right * 1.5f+ Vector2.up * 2.5f, Quaternion.identity);
 
         SlimeController projectile1 = projectileObject1.GetComponent<SlimeController>();
-        SlimeController projectile2 = projectileObject2.GetComponent<SlimeController>();
+        //SlimeController projectile2 = projectileObject2.GetComponent<SlimeController>();
         SlimeController projectile3 = projectileObject3.GetComponent<SlimeController>();
         Vector2 direction1 = new Vector2(-1f, 0.5f);
-        Vector2 direction2 = new Vector2(-0.6f, 0.5f);
+        //Vector2 direction2 = new Vector2(-0.6f, 0.5f);
         Vector2 direction3 = new Vector2(1f, 0.5f);
         projectile1.Launch(direction1);
-        projectile2.Launch(direction2);
+        //projectile2.Launch(direction2);
         projectile3.Launch(direction3);
 
         //animator.SetTrigger("Launch");
