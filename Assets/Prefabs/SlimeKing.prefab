@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 940202091
   m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 2b44d93c92f52484698f7d585e8cb276, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -165,17 +165,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55590944b3f4ce44ca946a888eeb0157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
   baseSpeed: 70
   atk: 20
   maxHealth: 8
   timeBorn: 4
+  knockBack: {x: 15, y: 1}
   timeSkill01: 2
   timeUsedSkill01Min: 3
   timeUsedSkill01Max: 6
   skill01Speed: 200
+  timeUsedSkill02: 6
   mulSkill02Speed: 1.7
-  knockBack: {x: 15, y: 1}
+  projectilePrefab: {fileID: 0}
   timeInvincible: 0.4
 --- !u!70 &1756759672
 CapsuleCollider2D:
