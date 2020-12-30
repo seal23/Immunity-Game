@@ -31,23 +31,42 @@ public class Teleport : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
 
-    }
-    private bool isEnter = false;
-
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (Input.GetKeyDown(KeyCode.X))
+        if (triggerStay)
         {
-            isEnter = true;
+            if (Input.GetKeyDown(KeyCode.X))
+                isEnter = true;
         }
         else
         {
-            isEnter = false;
-
+            
         }
+    }
+    private bool isEnter = false;
+    private bool triggerStay = false;
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("Entered");
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            triggerStay = true;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        Debug.Log("Exited");
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            triggerStay = false;
+            isEnter = false;
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+       
         if (isEnter && collision.GetComponent<PlayerController>() != null)
         {
             playerGameObj = collision.gameObject;
