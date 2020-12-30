@@ -15594,12 +15594,40 @@ PrefabInstance:
       propertyPath: m_BoundingShape2D
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6300559080209842668, guid: a2bc19d9f514f404f8b54046bdde0c13, type: 3}
+      propertyPath: m_Lens.OrthographicSize
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6300559080209842669, guid: a2bc19d9f514f404f8b54046bdde0c13, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -10.6215
+      objectReference: {fileID: 0}
+    - target: {fileID: 6300559080209842669, guid: a2bc19d9f514f404f8b54046bdde0c13, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.8533866
+      objectReference: {fileID: 0}
+    - target: {fileID: 6300559080209842669, guid: a2bc19d9f514f404f8b54046bdde0c13, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 12.284948
+      objectReference: {fileID: 0}
+    - target: {fileID: 6300559080209842671, guid: a2bc19d9f514f404f8b54046bdde0c13, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6300559080780034977, guid: a2bc19d9f514f404f8b54046bdde0c13, type: 3}
       propertyPath: m_FollowOffset.y
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6300559080780034977, guid: a2bc19d9f514f404f8b54046bdde0c13, type: 3}
       propertyPath: m_FollowOffset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6300559080780034977, guid: a2bc19d9f514f404f8b54046bdde0c13, type: 3}
+      propertyPath: m_BindingMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6300559081386596355, guid: a2bc19d9f514f404f8b54046bdde0c13, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6300559081671881152, guid: a2bc19d9f514f404f8b54046bdde0c13, type: 3}
@@ -15617,6 +15645,10 @@ PrefabInstance:
     - target: {fileID: 6300559081671881155, guid: a2bc19d9f514f404f8b54046bdde0c13, type: 3}
       propertyPath: orthographic size
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6300559081671881181, guid: a2bc19d9f514f404f8b54046bdde0c13, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6635203569603220227, guid: a2bc19d9f514f404f8b54046bdde0c13, type: 3}
       propertyPath: m_Name
