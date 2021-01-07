@@ -42,6 +42,7 @@ public class Teleport : MonoBehaviour
             
         }
     }
+    
     private bool isEnter = false;
     private bool triggerStay = false;
 

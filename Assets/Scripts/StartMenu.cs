@@ -25,7 +25,7 @@ public class StartMenu : MonoBehaviour
 
     void newGame(){
         var parameters = new LoadSceneParameters(LoadSceneMode.Single);
-        SceneManager.LoadScene("Village v0.1");
+        SceneManager.LoadScene("bossdemo");
     }
 
     void continueGame(){
@@ -37,6 +37,7 @@ public class StartMenu : MonoBehaviour
     }
 
     void exitGame(){
-         Debug.Log("Button exit click");
+        Debug.Log("exit");
+         Application.Quit();
     }
 }
