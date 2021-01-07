@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Boss01Controller : MonoBehaviour
 {
+    public GameObject nextLevelDoor;
     float horizontal;
     GameObject target;
     public float baseSpeed = 80.0f;
@@ -147,6 +148,7 @@ public class Boss01Controller : MonoBehaviour
         //Update Death status
         if (currentHealth <= 0)
         {
+            nextLevelDoor.SetActive(false);
             UpdateStatus(3);
         }
 
