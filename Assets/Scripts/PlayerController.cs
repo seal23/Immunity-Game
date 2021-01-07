@@ -1,12 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Cinemachine;
+using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     public UIController UIController;
 
     private static PlayerController instance = null;
+    public GameObject cmVcam;
+    CinemachineConfiner confiner;
+    string currentScene;
+    string updateScene;
 
     public int maxHealth = 5;
     public float speed = 50f;
@@ -79,8 +84,9 @@ public class PlayerController : MonoBehaviour
         knockBackTimer = -1;
         //QualitySettings.vSyncCount = 0;
         //Application.targetFrameRate = 10;
-        
 
+        currentScene = SceneManager.GetActiveScene().name;
+        FindConfiner();
     }
 
     private void Awake()
@@ -107,6 +113,13 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        updateScene = SceneManager.GetActiveScene().name;
+        if (updateScene != currentScene)
+        {
+            currentScene = updateScene;
+            FindConfiner();
+        }
 
         if (isDead)
         {
@@ -399,12 +412,20 @@ public class PlayerController : MonoBehaviour
         {
             boss01.ChangeHealth(-1);
         }
-
+        
         SlimeController slime = collision.gameObject.GetComponent<SlimeController>();
         if (slime != null)
         {
             slime.ChangeHealth(-1);
         }
+    }
+        
+    void FindConfiner()
+    {
+            confiner = cmVcam.GetComponent<CinemachineConfiner>();
+            confiner.InvalidatePathCache();
+            confiner.m_BoundingShape2D = GameObject.FindGameObjectWithTag("Bound").GetComponent<Collider2D>();
+        
     }
 
     /* void Launch()
