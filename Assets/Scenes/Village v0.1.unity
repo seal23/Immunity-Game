@@ -7278,7 +7278,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8296848385351356709, guid: b543a72a009c1114b92beedea13f4a70, type: 3}
       propertyPath: jumpHeight.y
-      value: 6
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8296848385351356710, guid: b543a72a009c1114b92beedea13f4a70, type: 3}
+      propertyPath: m_GravityScale
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b543a72a009c1114b92beedea13f4a70, type: 3}
