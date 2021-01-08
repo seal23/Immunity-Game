@@ -6,9 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class NonPlayerCharacter : MonoBehaviour
 {
-    public float displayTime = 4.0f;
     public GameObject gameObject;
     public Button exitDia, upgradeBT;
+
     void Start()
     {
         gameObject.SetActive(false);
@@ -72,6 +72,7 @@ public class NonPlayerCharacter : MonoBehaviour
         if (isEnter && collision.GetComponent<PlayerController>() != null)
         {
             DisplayDialog();
+            isEnter = false;
         }
 
     }
