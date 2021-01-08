@@ -8362,9 +8362,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56c83e93fb7a10b4b86866ba6d204586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PositionName: TeleVillage
+  PositionName: Gate02
   DestinationSceneName: bossdemo
-  TeleportGameObjName: TeleBoss01
+  TeleportGameObjName: 
 --- !u!1001 &2009150123
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8770,7 +8770,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8296848385351356709, guid: b543a72a009c1114b92beedea13f4a70, type: 3}
       propertyPath: jumpHeight.y
-      value: 6
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8296848385351356709, guid: b543a72a009c1114b92beedea13f4a70, type: 3}
       propertyPath: cmVcam
@@ -8778,7 +8778,7 @@ PrefabInstance:
       objectReference: {fileID: 387366989}
     - target: {fileID: 8296848385351356710, guid: b543a72a009c1114b92beedea13f4a70, type: 3}
       propertyPath: m_GravityScale
-      value: 1.5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8296848385351356710, guid: b543a72a009c1114b92beedea13f4a70, type: 3}
       propertyPath: m_AngularDrag

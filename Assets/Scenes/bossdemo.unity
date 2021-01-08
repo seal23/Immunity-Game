@@ -142,7 +142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PositionName: TeleBoss01
   DestinationSceneName: Village v0.1
-  TeleportGameObjName: TeleVillage
+  TeleportGameObjName: Gate02
 --- !u!61 &105809062
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -43878,13 +43878,21 @@ PrefabInstance:
       propertyPath: cmVcam
       value: 
       objectReference: {fileID: 478169935}
+    - target: {fileID: 4343304148750238169, guid: 2ac603e7314983446b396013ceaf3322, type: 3}
+      propertyPath: jumpHeight.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343304148750238170, guid: 2ac603e7314983446b396013ceaf3322, type: 3}
+      propertyPath: m_GravityScale
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4343304148750238174, guid: 2ac603e7314983446b396013ceaf3322, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -38.33
+      value: -38.96
       objectReference: {fileID: 0}
     - target: {fileID: 4343304148750238174, guid: 2ac603e7314983446b396013ceaf3322, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.165263
+      value: -1.9
       objectReference: {fileID: 0}
     - target: {fileID: 4343304148750238174, guid: 2ac603e7314983446b396013ceaf3322, type: 3}
       propertyPath: m_LocalPosition.z
@@ -44408,7 +44416,7 @@ PrefabInstance:
       objectReference: {fileID: 1946263563030280287, guid: 802e9b05ba0cb394eb265a9a161df8c8, type: 3}
     - target: {fileID: 3985931762238886739, guid: 224bb08b5dd88b749b36db490df57088, type: 3}
       propertyPath: maxHealth
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3985931762238886739, guid: 224bb08b5dd88b749b36db490df57088, type: 3}
       propertyPath: timeUsedSkill02
