@@ -6,14 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class NonPlayerCharacter : MonoBehaviour
 {
-    public GameObject gameObject;
-    public Button exitDia, upgradeBT;
+    public GameObject ui;
+    public 
 
     void Start()
     {
-        gameObject.SetActive(false);
-        exitDia.onClick.AddListener(exitDialog);
-        upgradeBT.onClick.AddListener(upgradeItem);
+
     }
 
     void Update()
@@ -21,30 +19,14 @@ public class NonPlayerCharacter : MonoBehaviour
         if (triggerStay)
         {
             if (Input.GetKeyDown(KeyCode.X))
-                isEnter = true;
+                Instantiate(ui);
         }
         else
         {
             
         }
     }
-    
-    void upgradeItem()
-    {
-        
-    }
 
-    void exitDialog()
-    {
-        gameObject.SetActive(false);
-    }
-
-    public void DisplayDialog()
-    {
-        gameObject.SetActive(true);
-    }
-
-    private bool isEnter = false;
     private bool triggerStay = false;
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -62,18 +44,6 @@ public class NonPlayerCharacter : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             triggerStay = false;
-            isEnter = false;
         }
-    }
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-       
-        if (isEnter && collision.GetComponent<PlayerController>() != null)
-        {
-            DisplayDialog();
-            isEnter = false;
-        }
-
     }
 }

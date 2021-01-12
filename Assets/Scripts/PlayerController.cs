@@ -63,6 +63,9 @@ public class PlayerController : MonoBehaviour
 
     Animator animator;
 
+    //Item
+    ItemInfo item;
+    public ItemInfo getItem() {return item;}
     //public GameObject projectilePrefab;
     //public float projectileForce = 300f;
 
@@ -82,9 +85,9 @@ public class PlayerController : MonoBehaviour
         hitTriggerLeft.SetActive(false);
         hitTriggerRight.SetActive(false);
         knockBackTimer = -1;
+        item = new ItemInfo();
         //QualitySettings.vSyncCount = 0;
         //Application.targetFrameRate = 10;
-
         currentScene = SceneManager.GetActiveScene().name;
         FindConfiner();
     }
