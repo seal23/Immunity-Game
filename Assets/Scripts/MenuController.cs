@@ -2,17 +2,35 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
+using UnityEngine.SceneManagement;  
 
-public class StartMenu : MonoBehaviour
+public class MenuController : MonoBehaviour
 {
-    public Button newGameBT, continueBT, optionBT, exitBT;
+    private static MenuController instance = null;
 
+    private void Awake()
+    {
+        GetInstance();
+    }
+
+    public MenuController GetInstance()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+        return instance;
+    }
+
+    public Button menuBT, continueBT, optionBT, exitBT;
     // Start is called before the first frame update
     void Start()
     {
-        Destroy(GameObject.Find("Player"));
-        newGameBT.onClick.AddListener(newGame);
+        menuBT.onClick.AddListener(menuGame);
         continueBT.onClick.AddListener(continueGame);
         optionBT.onClick.AddListener(optionGame);
         exitBT.onClick.AddListener(exitGame);
@@ -21,16 +39,16 @@ public class StartMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
-    void newGame(){
+    void menuGame(){
         var parameters = new LoadSceneParameters(LoadSceneMode.Single);
-        SceneManager.LoadScene("Village v0.1");
+        SceneManager.LoadScene("StartMenu");
     }
 
     void continueGame(){
-         Debug.Log("Button continue click");
+         Destroy(this.gameObject);
     }
 
     void optionGame(){

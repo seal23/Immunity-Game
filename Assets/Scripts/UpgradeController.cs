@@ -60,6 +60,11 @@ public class UpgradeController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetButtonDown("Cancel"))
+        {
+            Destroy(this.gameObject);
+        }
+        
         int lev=0;
         string str=null;
         switch (temp)
@@ -86,7 +91,7 @@ public class UpgradeController : MonoBehaviour
                 break;
             case 5:
                 lev = player.getItem().getSword();
-                str = "Level:\t\t"+lev+"\t\t->\t\t"+(lev+1)+"\nATK:\t\t"+(5*lev)+"\t\t->\t\t"+(10*lev+10);
+                str = "Level:\t\t"+lev+"\t\t->\t\t"+(lev+1)+"\nATK:\t\t\t"+(5*lev)+"\t\t->\t\t"+(5*lev+5);
                 text.text = str;
                 break;
             default: text.text = null; break;

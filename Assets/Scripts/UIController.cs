@@ -7,6 +7,7 @@ public class UIController : MonoBehaviour
 {
     public Slider sliderHP;
     public Slider sliderMP;
+    public GameObject gameObject;
 
     public void setMaxHealth(int health) 
     {
@@ -28,5 +29,10 @@ public class UIController : MonoBehaviour
     public void setMana(int mana) 
     {
         sliderMP.value = mana;
+    }
+
+    public void IsActive(bool n)
+    {
+        gameObject.SetActive(n);
     }
 }

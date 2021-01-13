@@ -616,6 +616,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UIController: {fileID: 5108101338953265187}
+  cmVcam: {fileID: 0}
   maxHealth: 200
   speed: 180
   jumpHeight: {x: 0, y: 6}
@@ -629,6 +630,7 @@ MonoBehaviour:
   timeHit: 0.4
   hitTriggerLeft: {fileID: 569633986}
   hitTriggerRight: {fileID: 854950140}
+  menu: {fileID: 2401268936438886433, guid: 69c3a4952e2f89249bc2e76e984f0cb6, type: 3}
 --- !u!1 &4343304150211967194
 GameObject:
   m_ObjectHideFlags: 0

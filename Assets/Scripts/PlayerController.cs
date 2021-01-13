@@ -66,6 +66,9 @@ public class PlayerController : MonoBehaviour
     //Item
     ItemInfo item;
     public ItemInfo getItem() {return item;}
+    //menu
+    public GameObject menu;
+    GameObject menuObject;
     //public GameObject projectilePrefab;
     //public float projectileForce = 300f;
 
@@ -270,12 +273,26 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        /*if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Cancel"))
         {
-            Debug.Log("fire1");
-            Launch();
+            if (menuObject == null) 
+            {
+                menuObject = Instantiate(menu);
+                UIController.IsActive(false);
+            }
+            else 
+            {
+                Destroy(menuObject);
+                menuObject = null;
+            }
         }
 
+        if (menuObject == null) 
+        {
+            UIController.IsActive(true);
+        }
+
+        /*
         if (Input.GetKeyDown(KeyCode.X))
         {
             RaycastHit2D hit = Physics2D.Raycast(rigidbody2d.position + Vector2.up * 0.2f, lookDirection, 1.5f, LayerMask.GetMask("NPC"));

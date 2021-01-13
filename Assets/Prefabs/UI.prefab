@@ -1183,7 +1183,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sliderHP: {fileID: 2801247380017161896}
-  sliderMP: {fileID: 0}
+  sliderMP: {fileID: 2801247380308121615}
+  gameObject: {fileID: 2801247381591334746}
 --- !u!1 &2801247381758870035
 GameObject:
   m_ObjectHideFlags: 0

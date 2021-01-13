@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 public class NonPlayerCharacter : MonoBehaviour
 {
     public GameObject ui;
-    public 
 
     void Start()
     {
