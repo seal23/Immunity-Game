@@ -77,6 +77,7 @@ public class PlayerController : MonoBehaviour
     int currentMP;
     int Atk;
     int Def;
+    public int gold{get; set;}
     //public GameObject projectilePrefab;
     //public float projectileForce = 300f;
 
@@ -98,8 +99,12 @@ public class PlayerController : MonoBehaviour
         
         lv = playerInfo.getLV();
         UIController.setLevel(lv);
+        maxMP = playerInfo.getMP();
+        UIController.setMaxMana(maxMP);
         maxHealth = playerInfo.getHP()+ (item.getArmor() + item.getBoot() + item.getNeck() + item.getRing())*10;
         currentHealth = maxHealth;
+        currentMP = 0;
+        gold = 0;
 
         hitTriggerLeft.SetActive(false);
         hitTriggerRight.SetActive(false);
@@ -145,10 +150,10 @@ public class PlayerController : MonoBehaviour
         Atk = playerInfo.getATK()+ item.getSword()*5;
         Def = playerInfo.getDEF()+ item.getArmor() + item.getBoot() + item.getNeck() + item.getRing();
         maxHealth = playerInfo.getHP()+ (item.getArmor() + item.getBoot() + item.getNeck() + item.getRing())*10;
-        maxMP = playerInfo.getMP();
+        UIController.setMana(currentMP);
         UIController.setMaxHealth(maxHealth);
-        UIController.setMaxMana(maxMP);
         UIController.setHealth(currentHealth);
+        UIController.setGold(gold);
 
         updateScene = SceneManager.GetActiveScene().name;
         if (updateScene != currentScene)

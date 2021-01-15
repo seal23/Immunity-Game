@@ -92,7 +92,9 @@ public class SlimeController : MonoBehaviour
                 status = 2;
                 if(flag == 0) 
                 {
-                    GameObject.Find("Player").GetComponent<PlayerController>().getPlayerInfo().addExp(100);
+                    PlayerController player = GameObject.Find("Player").GetComponent<PlayerController>();
+                    player.getPlayerInfo().addExp(100);
+                    player.gold = player.gold+3;
                     flag = 1;
                 }
                 animator.SetTrigger("Dead");
