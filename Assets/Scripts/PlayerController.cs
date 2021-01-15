@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     string currentScene;
     string updateScene;
 
-    public int maxHealth = 5;
+    int maxHealth = 5;
     public float speed = 50f;
     public Vector2 jumpHeight;
     public Vector2 dashDistance;
@@ -69,6 +69,14 @@ public class PlayerController : MonoBehaviour
     //menu
     public GameObject menu;
     GameObject menuObject;
+    //Player
+    PlayerInfo playerInfo;
+    public PlayerInfo getPlayerInfo() {return playerInfo;}
+    int lv;
+    int maxMP;
+    int currentMP;
+    int Atk;
+    int Def;
     //public GameObject projectilePrefab;
     //public float projectileForce = 300f;
 
@@ -76,6 +84,7 @@ public class PlayerController : MonoBehaviour
     //public AudioClip cogShotClip;
     //public AudioClip playerHitClip;
     // Start is called before the first frame update
+
     void Start()
     {
         isDead = false;
@@ -83,12 +92,18 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         mySpriteRenderer = GetComponent<SpriteRenderer>();
         // audioSource = GetComponent<AudioSource>();
+
+        playerInfo = new PlayerInfo();
+        item = new ItemInfo();
+        
+        lv = playerInfo.getLV();
+        UIController.setLevel(lv);
+        maxHealth = playerInfo.getHP()+ (item.getArmor() + item.getBoot() + item.getNeck() + item.getRing())*10;
         currentHealth = maxHealth;
-        UIController.setMaxHealth(maxHealth);
+
         hitTriggerLeft.SetActive(false);
         hitTriggerRight.SetActive(false);
         knockBackTimer = -1;
-        item = new ItemInfo();
         //QualitySettings.vSyncCount = 0;
         //Application.targetFrameRate = 10;
         currentScene = SceneManager.GetActiveScene().name;
@@ -119,6 +134,21 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Player Info
+        if (lv != playerInfo.getLV())
+        {
+            UIController.setLevel(playerInfo.getLV());
+            maxHealth = playerInfo.getHP()+ (item.getArmor() + item.getBoot() + item.getNeck() + item.getRing())*10;
+            currentHealth = maxHealth;
+            lv = playerInfo.getLV();
+        }
+        Atk = playerInfo.getATK()+ item.getSword()*5;
+        Def = playerInfo.getDEF()+ item.getArmor() + item.getBoot() + item.getNeck() + item.getRing();
+        maxHealth = playerInfo.getHP()+ (item.getArmor() + item.getBoot() + item.getNeck() + item.getRing())*10;
+        maxMP = playerInfo.getMP();
+        UIController.setMaxHealth(maxHealth);
+        UIController.setMaxMana(maxMP);
+        UIController.setHealth(currentHealth);
 
         updateScene = SceneManager.GetActiveScene().name;
         if (updateScene != currentScene)
@@ -371,7 +401,6 @@ public class PlayerController : MonoBehaviour
         }
 
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
-        UIController.setHealth(currentHealth);
         Debug.Log("Player Health: " + currentHealth);
         //UiHealthBar.instance.SetValue(currentHealth / (float)maxHealth);
 

@@ -30,7 +30,6 @@ public class NonPlayerCharacter : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Entered");
         if (collision.gameObject.CompareTag("Player"))
         {
             triggerStay = true;
@@ -39,7 +38,6 @@ public class NonPlayerCharacter : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D collision)
     {
-        Debug.Log("Exited");
         if (collision.gameObject.CompareTag("Player"))
         {
             triggerStay = false;
