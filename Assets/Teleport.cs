@@ -95,10 +95,12 @@ public class Teleport : MonoBehaviour
             if (tele != null && tele.PositionName.Equals(TeleportGameObjName))
             {
                 Debug.Log(tele.PositionName);
-                var rigidbody2d = playerGameObj.GetComponent<Rigidbody2D>();
-                rigidbody2d.MovePosition(gameObj.transform.position);
-                Debug.Log("tele: " + gameObj.transform.position);
-                Debug.Log("player: " + rigidbody2d.transform.position);
+                if (playerGameObj!=null) {
+                    var rigidbody2d = playerGameObj.GetComponent<Rigidbody2D>();
+                    rigidbody2d.MovePosition(gameObj.transform.position);
+                    Debug.Log("tele: " + gameObj.transform.position);
+                    Debug.Log("player: " + rigidbody2d.transform.position);
+                }
 
                 break;
             }
