@@ -90,13 +90,16 @@ public class SlimeController : MonoBehaviour
             if (currentHealth <= 0)
             {
                 status = 2;
+
                 if(flag == 0) 
                 {
                     PlayerController player = GameObject.Find("Player").GetComponent<PlayerController>();
                     player.getPlayerInfo().addExp(100);
                     player.gold = player.gold+3;
+                    player.currentMP = player.currentMP+5;
                     flag = 1;
                 }
+
                 animator.SetTrigger("Dead");
                 gameObject.layer = 14; // layer "EnemyGhost"
                 Debug.Log("Slime Dead");
