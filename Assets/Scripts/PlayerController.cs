@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     string currentScene;
     string updateScene;
 
-    public int maxHealth = 5;
+    int maxHealth = 5;
     public float speed = 50f;
     public Vector2 jumpHeight;
     public Vector2 dashDistance;
@@ -63,6 +63,21 @@ public class PlayerController : MonoBehaviour
 
     Animator animator;
 
+    //Item
+    ItemInfo item;
+    public ItemInfo getItem() {return item;}
+    //menu
+    public GameObject menu;
+    GameObject menuObject;
+    //Player
+    PlayerInfo playerInfo;
+    public PlayerInfo getPlayerInfo() {return playerInfo;}
+    int lv;
+    int maxMP;
+    public int currentMP{get; set;}
+    int Atk;
+    int Def;
+    public int gold{get; set;}
     //public GameObject projectilePrefab;
     //public float projectileForce = 300f;
 
@@ -70,6 +85,7 @@ public class PlayerController : MonoBehaviour
     //public AudioClip cogShotClip;
     //public AudioClip playerHitClip;
     // Start is called before the first frame update
+
     void Start()
     {
         isDead = false;
@@ -77,14 +93,24 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         mySpriteRenderer = GetComponent<SpriteRenderer>();
         // audioSource = GetComponent<AudioSource>();
+
+        playerInfo = new PlayerInfo();
+        item = new ItemInfo();
+        
+        lv = playerInfo.getLV();
+        UIController.setLevel(lv);
+        maxMP = playerInfo.getMP();
+        UIController.setMaxMana(maxMP);
+        maxHealth = playerInfo.getHP()+ (item.getArmor() + item.getBoot() + item.getNeck() + item.getRing())*10;
         currentHealth = maxHealth;
-        UIController.setMaxHealth(maxHealth);
+        currentMP = 0;
+        gold = 0;
+
         hitTriggerLeft.SetActive(false);
         hitTriggerRight.SetActive(false);
         knockBackTimer = -1;
         //QualitySettings.vSyncCount = 0;
         //Application.targetFrameRate = 10;
-
         currentScene = SceneManager.GetActiveScene().name;
         FindConfiner();
     }
@@ -113,6 +139,21 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Player Info
+        if (lv != playerInfo.getLV())
+        {
+            UIController.setLevel(playerInfo.getLV());
+            maxHealth = playerInfo.getHP()+ (item.getArmor() + item.getBoot() + item.getNeck() + item.getRing())*10;
+            currentHealth = maxHealth;
+            lv = playerInfo.getLV();
+        }
+        Atk = playerInfo.getATK()+ item.getSword()*5;
+        Def = playerInfo.getDEF()+ item.getArmor() + item.getBoot() + item.getNeck() + item.getRing();
+        maxHealth = playerInfo.getHP()+ (item.getArmor() + item.getBoot() + item.getNeck() + item.getRing())*10;
+        UIController.setMana(currentMP);
+        UIController.setMaxHealth(maxHealth);
+        UIController.setHealth(currentHealth);
+        UIController.setGold(gold);
 
         updateScene = SceneManager.GetActiveScene().name;
         if (updateScene != currentScene)
@@ -267,12 +308,26 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        /*if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Cancel"))
         {
-            Debug.Log("fire1");
-            Launch();
+            if (menuObject == null) 
+            {
+                menuObject = Instantiate(menu);
+                UIController.IsActive(false);
+            }
+            else 
+            {
+                Destroy(menuObject);
+                menuObject = null;
+            }
         }
 
+        if (menuObject == null) 
+        {
+            UIController.IsActive(true);
+        }
+
+        /*
         if (Input.GetKeyDown(KeyCode.X))
         {
             RaycastHit2D hit = Physics2D.Raycast(rigidbody2d.position + Vector2.up * 0.2f, lookDirection, 1.5f, LayerMask.GetMask("NPC"));
@@ -351,7 +406,6 @@ public class PlayerController : MonoBehaviour
         }
 
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
-        UIController.setHealth(currentHealth);
         Debug.Log("Player Health: " + currentHealth);
         //UiHealthBar.instance.SetValue(currentHealth / (float)maxHealth);
 
@@ -411,13 +465,13 @@ public class PlayerController : MonoBehaviour
         Boss01Controller boss01 = collision.gameObject.GetComponent<Boss01Controller>();
         if (boss01 != null)
         {
-            boss01.ChangeHealth(-1);
+            boss01.ChangeHealth(-Atk);
         }
         
         SlimeController slime = collision.gameObject.GetComponent<SlimeController>();
         if (slime != null)
         {
-            slime.ChangeHealth(-1);
+            slime.ChangeHealth(-Atk);
         }
     }
         

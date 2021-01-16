@@ -7,10 +7,11 @@ using UnityEngine.SceneManagement;
 public class StartMenu : MonoBehaviour
 {
     public Button newGameBT, continueBT, optionBT, exitBT;
- 
+
     // Start is called before the first frame update
     void Start()
     {
+        Destroy(GameObject.Find("Player"));
         newGameBT.onClick.AddListener(newGame);
         continueBT.onClick.AddListener(continueGame);
         optionBT.onClick.AddListener(optionGame);
@@ -25,7 +26,7 @@ public class StartMenu : MonoBehaviour
 
     void newGame(){
         var parameters = new LoadSceneParameters(LoadSceneMode.Single);
-        SceneManager.LoadScene("bossdemo");
+        SceneManager.LoadScene("Village v0.1");
     }
 
     void continueGame(){

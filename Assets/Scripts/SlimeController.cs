@@ -37,12 +37,13 @@ public class SlimeController : MonoBehaviour
     float invincibleTimer;
 
     int status;
+    int flag;
 
 
     // Start is called before the first frame update
     void Start()
     {
-
+        flag = 0;
         currentHealth = maxHealth;
         speed = baseSpeed;
         status = 0;
@@ -83,13 +84,22 @@ public class SlimeController : MonoBehaviour
             }
             if (Mathf.Abs(target.transform.position.x - position.x) < 10 && (status != 2))
             {
-
                 status = 1;
                 Debug.Log("Status 1");
             }
             if (currentHealth <= 0)
             {
                 status = 2;
+
+                if(flag == 0) 
+                {
+                    PlayerController player = GameObject.Find("Player").GetComponent<PlayerController>();
+                    player.getPlayerInfo().addExp(100);
+                    player.gold = player.gold+3;
+                    player.currentMP = player.currentMP+5;
+                    flag = 1;
+                }
+
                 animator.SetTrigger("Dead");
                 gameObject.layer = 14; // layer "EnemyGhost"
                 Debug.Log("Slime Dead");
@@ -164,7 +174,6 @@ public class SlimeController : MonoBehaviour
             isKnockBack = true;
             Debug.Log("Knockback " + knockBack.x);
             //PlaySound(playerHitClip);
-       
             animator.SetTrigger("Hurt");
         }
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
