@@ -1,0 +1,2249 @@
+fileFormatVersion: 2
+guid: b3d7f7129e8cb3748899c2fe2d110958
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4520663923707790499
+    second: Player Back Sheet_0
+  - first:
+      213: 7223715940358219972
+    second: Player Back Sheet_1
+  - first:
+      213: 2115485966508734900
+    second: Player Back Sheet_2
+  - first:
+      213: -3010256544746532118
+    second: Player Back Sheet_3
+  - first:
+      213: -5350398436623746032
+    second: Player Back Sheet_4
+  - first:
+      213: 111005466245861094
+    second: Player Back Sheet_5
+  - first:
+      213: -7783826260085154263
+    second: Player Back Sheet_6
+  - first:
+      213: -3774767545674169210
+    second: Player Back Sheet_7
+  - first:
+      213: -5747461228940396705
+    second: Player Back Sheet_8
+  - first:
+      213: 5022521562609101313
+    second: Player Back Sheet_9
+  - first:
+      213: 8134520998454955022
+    second: Player Back Sheet_10
+  - first:
+      213: 6990676611653977556
+    second: Player Back Sheet_11
+  - first:
+      213: -5732540634544567870
+    second: Player Back Sheet_12
+  - first:
+      213: -7562813723222876592
+    second: Player Back Sheet_13
+  - first:
+      213: 8547922231226372213
+    second: Player Back Sheet_14
+  - first:
+      213: -8036415337963344021
+    second: Player Back Sheet_15
+  - first:
+      213: 2751924678095526619
+    second: Player Back Sheet_16
+  - first:
+      213: 7770229212903818830
+    second: Player Back Sheet_17
+  - first:
+      213: -6090536046423300883
+    second: Player Back Sheet_18
+  - first:
+      213: -3371423703180945575
+    second: Player Back Sheet_19
+  - first:
+      213: 1136555101465533044
+    second: Player Back Sheet_20
+  - first:
+      213: -1004434996020065288
+    second: Player Back Sheet_21
+  - first:
+      213: -8310835656533259208
+    second: Player Back Sheet_22
+  - first:
+      213: -3900710547908999802
+    second: Player Back Sheet_23
+  - first:
+      213: 3205440030639676189
+    second: Player Back Sheet_24
+  - first:
+      213: -7135276502435834762
+    second: Player Back Sheet_25
+  - first:
+      213: -2659772514525779227
+    second: Player Back Sheet_26
+  - first:
+      213: -9221305469448308530
+    second: Player Back Sheet_27
+  - first:
+      213: 4073763101368592546
+    second: Player Back Sheet_28
+  - first:
+      213: -1587651333261370983
+    second: Player Back Sheet_29
+  - first:
+      213: 8527419986192882375
+    second: Player Back Sheet_30
+  - first:
+      213: -4254868712039595457
+    second: Player Back Sheet_31
+  - first:
+      213: -6783075828181745546
+    second: Player Back Sheet_32
+  - first:
+      213: 5716995943275557492
+    second: Player Back Sheet_33
+  - first:
+      213: 8620008028794317788
+    second: Player Back Sheet_34
+  - first:
+      213: -5365265680319051092
+    second: Player Back Sheet_35
+  - first:
+      213: 3421858963573153289
+    second: Player Back Sheet_36
+  - first:
+      213: 4148968336515989768
+    second: Player Back Sheet_37
+  - first:
+      213: -6315547965852446351
+    second: Player Back Sheet_38
+  - first:
+      213: -3885558494937918004
+    second: Player Back Sheet_39
+  - first:
+      213: -2163921911573755000
+    second: Player Back Sheet_40
+  - first:
+      213: 7811123832393748901
+    second: Player Back Sheet_41
+  - first:
+      213: -7978696739608987331
+    second: Player Back Sheet_42
+  - first:
+      213: 7117516807019197897
+    second: Player Back Sheet_43
+  - first:
+      213: 1921577890940873415
+    second: Player Back Sheet_44
+  - first:
+      213: 8155199655982463570
+    second: Player Back Sheet_45
+  - first:
+      213: 5770373881266124501
+    second: Player Back Sheet_46
+  - first:
+      213: 6081608498509214369
+    second: Player Back Sheet_47
+  - first:
+      213: -5411008454878018330
+    second: Player Back Sheet_48
+  - first:
+      213: -6819476895407896041
+    second: Player Back Sheet_49
+  - first:
+      213: -7626305038295066844
+    second: Player Back Sheet_50
+  - first:
+      213: 6928355399604990915
+    second: Player Back Sheet_51
+  - first:
+      213: -3434648340707261256
+    second: Player Back Sheet_52
+  - first:
+      213: 4917038094414760124
+    second: Player Back Sheet_53
+  - first:
+      213: -5256259869264312435
+    second: Player Back Sheet_54
+  - first:
+      213: 2633942783917017391
+    second: Player Back Sheet_55
+  - first:
+      213: -8874249011494256618
+    second: Player Back Sheet_56
+  - first:
+      213: 1982024709625317138
+    second: Player Back Sheet_57
+  - first:
+      213: -6945307882817859316
+    second: Player Back Sheet_58
+  - first:
+      213: 1388344482391028878
+    second: Player Back Sheet_59
+  - first:
+      213: 8957904264580437923
+    second: Player Back Sheet_60
+  - first:
+      213: -4845078545919105051
+    second: Player Back Sheet_61
+  - first:
+      213: -1943930789134314344
+    second: Player Back Sheet_62
+  - first:
+      213: -669594273224119963
+    second: Player Back Sheet_63
+  - first:
+      213: 2966082132677757325
+    second: Player Back Sheet_64
+  - first:
+      213: 1299925757190156272
+    second: Player Back Sheet_65
+  - first:
+      213: -6148579936543979544
+    second: Player Back Sheet_66
+  - first:
+      213: -3546652678948866246
+    second: Player Back Sheet_67
+  - first:
+      213: -4110511143708094728
+    second: Player Back Sheet_68
+  - first:
+      213: 494289135780032130
+    second: Player Back Sheet_69
+  - first:
+      213: -3335383417900578563
+    second: Player Back Sheet_70
+  - first:
+      213: -5356027027142438954
+    second: Player Back Sheet_71
+  - first:
+      213: -7826058588500406620
+    second: Player Back Sheet_72
+  - first:
+      213: -8676710815643847645
+    second: Player Back Sheet_73
+  - first:
+      213: -6079980100338732503
+    second: Player Back Sheet_74
+  - first:
+      213: 6488416747202923748
+    second: Player Back Sheet_75
+  - first:
+      213: 2955918128822602535
+    second: Player Back Sheet_76
+  - first:
+      213: -6736420132462955087
+    second: Player Back Sheet_77
+  - first:
+      213: -7515123526658784227
+    second: Player Back Sheet_78
+  - first:
+      213: -7555375765395984047
+    second: Player Back Sheet_79
+  - first:
+      213: 9177149355735458363
+    second: Player Back Sheet_80
+  - first:
+      213: 8613598239797941032
+    second: Player Back Sheet_81
+  - first:
+      213: -3476673975159682093
+    second: Player Back Sheet_82
+  - first:
+      213: 6125315349725222191
+    second: Player Back Sheet_83
+  - first:
+      213: 5215548640579546649
+    second: Player Back Sheet_84
+  - first:
+      213: -6073517183142814597
+    second: Player Back Sheet_85
+  - first:
+      213: 1970790796975330103
+    second: Player Back Sheet_86
+  - first:
+      213: 4593760160852938120
+    second: Player Back Sheet_87
+  - first:
+      213: 5217133015467448406
+    second: Player Back Sheet_88
+  - first:
+      213: -923371943693382624
+    second: Player Back Sheet_89
+  - first:
+      213: -7993631534765936601
+    second: Player Back Sheet_90
+  - first:
+      213: 3492592243211455573
+    second: Player Back Sheet_91
+  - first:
+      213: 6679154172065605713
+    second: Player Back Sheet_92
+  - first:
+      213: 2473668148157888137
+    second: Player Back Sheet_93
+  - first:
+      213: -8526864418081604522
+    second: Player Back Sheet_94
+  - first:
+      213: -8000538129923132280
+    second: Player Back Sheet_95
+  - first:
+      213: -5979077434587502312
+    second: Player Back Sheet_96
+  - first:
+      213: 7731123479987587023
+    second: Player Back Sheet_97
+  - first:
+      213: 7078119626798360437
+    second: Player Back Sheet_98
+  - first:
+      213: 5082820592336021866
+    second: Player Back Sheet_99
+  - first:
+      213: 4973472575557908300
+    second: Player Back Sheet_100
+  - first:
+      213: 3147648776548118123
+    second: Player Back Sheet_101
+  - first:
+      213: -3532815743528924113
+    second: Player Back Sheet_102
+  - first:
+      213: -3049499066197064816
+    second: Player Back Sheet_103
+  - first:
+      213: 4918017502295349074
+    second: Player Back Sheet_104
+  - first:
+      213: -2472491731387172700
+    second: Player Back Sheet_105
+  - first:
+      213: 2286199950718452813
+    second: Player Back Sheet_106
+  - first:
+      213: 5147163119035380400
+    second: Player Back Sheet_107
+  - first:
+      213: -7451312817564690007
+    second: Player Back Sheet_108
+  - first:
+      213: 2141530421415350338
+    second: Player Back Sheet_109
+  - first:
+      213: 3953663651380144818
+    second: Player Back Sheet_110
+  - first:
+      213: 814069170922528327
+    second: Player Back Sheet_111
+  - first:
+      213: -5388525504173806381
+    second: Player Back Sheet_112
+  - first:
+      213: -3708336793911630871
+    second: Player Back Sheet_113
+  - first:
+      213: 8695144207600270131
+    second: Player Back Sheet_114
+  - first:
+      213: 3982135841276454463
+    second: Player Back Sheet_115
+  - first:
+      213: -5982801352534268368
+    second: Player Back Sheet_116
+  - first:
+      213: -3366086310470463081
+    second: Player Back Sheet_117
+  - first:
+      213: -4662984677999072583
+    second: Player Back Sheet_118
+  - first:
+      213: 3887841720106741333
+    second: Player Back Sheet_119
+  - first:
+      213: 7851573024289389307
+    second: Player Back Sheet_120
+  - first:
+      213: 1658466815525748816
+    second: Player Back Sheet_121
+  - first:
+      213: 2318666201446404567
+    second: Player Back Sheet_122
+  - first:
+      213: -9034819140781742225
+    second: Player Back Sheet_123
+  - first:
+      213: -3239747979476194235
+    second: Player Back Sheet_124
+  - first:
+      213: -1845652370229028409
+    second: Player Back Sheet_125
+  - first:
+      213: -4741215227146535193
+    second: Player Back Sheet_126
+  - first:
+      213: 2238545070851163909
+    second: Player Back Sheet_127
+  - first:
+      213: -2762420261039059216
+    second: Player Back Sheet_128
+  - first:
+      213: -5302558360347170985
+    second: Player Back Sheet_129
+  - first:
+      213: 5045226727340571938
+    second: Player Back Sheet_130
+  - first:
+      213: -4919892440461799962
+    second: Player Back Sheet_131
+  - first:
+      213: 8464321353650662691
+    second: Player Back Sheet_132
+  - first:
+      213: -3369538965410888394
+    second: Player Back Sheet_133
+  - first:
+      213: 1369230950249615973
+    second: Player Back Sheet_134
+  - first:
+      213: 2450910197654080985
+    second: Player Back Sheet_135
+  - first:
+      213: 1804601979466411202
+    second: Player Back Sheet_136
+  - first:
+      213: -2050186299259280415
+    second: Player Back Sheet_137
+  - first:
+      213: -6983253975987903905
+    second: Player Back Sheet_138
+  - first:
+      213: -4030284552589095603
+    second: Player Back Sheet_139
+  - first:
+      213: -5714562436719212117
+    second: Player Back Sheet_140
+  - first:
+      213: 2872422489273414275
+    second: Player Back Sheet_141
+  - first:
+      213: 9120003074800348107
+    second: Player Back Sheet_142
+  - first:
+      213: -1404734466306143587
+    second: Player Back Sheet_143
+  - first:
+      213: -360620210387587774
+    second: Player Back Sheet_144
+  - first:
+      213: 2716770947775365032
+    second: Player Back Sheet_145
+  - first:
+      213: -6591775884118406639
+    second: Player Back Sheet_146
+  - first:
+      213: 2533134011951484793
+    second: Player Back Sheet_147
+  - first:
+      213: -4450697929519535675
+    second: Player Back Sheet_148
+  - first:
+      213: -3242870392288701181
+    second: Player Back Sheet_149
+  - first:
+      213: 7310603192148789399
+    second: Player Back Sheet_150
+  - first:
+      213: 5905416982719400168
+    second: Player Back Sheet_151
+  - first:
+      213: 5744384412021966246
+    second: Player Back Sheet_152
+  - first:
+      213: 8098828233292650419
+    second: Player Back Sheet_153
+  - first:
+      213: -1947333075788889350
+    second: Player Back Sheet_154
+  - first:
+      213: -7804027437663544013
+    second: Player Back Sheet_155
+  - first:
+      213: 3636024059229756255
+    second: Player Back Sheet_156
+  - first:
+      213: -5405512046423063105
+    second: Player Back Sheet_157
+  - first:
+      213: -3161707112684791568
+    second: Player Back Sheet_158
+  - first:
+      213: -3944256368968352959
+    second: Player Back Sheet_159
+  - first:
+      213: -3417913798719967064
+    second: Player Back Sheet_160
+  - first:
+      213: 7886225586697152951
+    second: Player Back Sheet_161
+  - first:
+      213: 5923554395759926145
+    second: Player Back Sheet_162
+  - first:
+      213: -6421896557331994598
+    second: Player Back Sheet_163
+  - first:
+      213: -9103535370588446238
+    second: Player Back Sheet_164
+  - first:
+      213: 4957303465430389832
+    second: Player Back Sheet_165
+  - first:
+      213: -5644284923755460620
+    second: Player Back Sheet_166
+  - first:
+      213: -5381920001476429950
+    second: Player Back Sheet_0
+  - first:
+      213: 16301296828707655
+    second: Player Back Sheet_1
+  - first:
+      213: -1230233636983253155
+    second: Player Back Sheet_2
+  - first:
+      213: -7794333100573638484
+    second: Player Back Sheet_3
+  - first:
+      213: -3338801123867710802
+    second: Player Back Sheet_4
+  - first:
+      213: 191288294709352483
+    second: Player Back Sheet_5
+  - first:
+      213: 7356923388956682964
+    second: Player Back Sheet_6
+  - first:
+      213: 3960779099318894607
+    second: Player Back Sheet_7
+  - first:
+      213: -5413663232526326093
+    second: Player Back Sheet_8
+  - first:
+      213: -846628692963214834
+    second: Player Back Sheet_9
+  - first:
+      213: 4244613055726286895
+    second: Player Back Sheet_10
+  - first:
+      213: 355593507160551593
+    second: Player Back Sheet_11
+  - first:
+      213: 8100757398059193296
+    second: Player Back Sheet_12
+  - first:
+      213: 3635185746790134893
+    second: Player Back Sheet_13
+  - first:
+      213: 430312633885328161
+    second: Player Back Sheet_14
+  - first:
+      213: -3250118668009619461
+    second: Player Back Sheet_15
+  - first:
+      213: 972917421176199656
+    second: Player Back Sheet_16
+  - first:
+      213: -4567056389927228640
+    second: Player Back Sheet_17
+  - first:
+      213: 9012576554998831290
+    second: Player Back Sheet_18
+  - first:
+      213: 3751389131572324366
+    second: Player Back Sheet_19
+  - first:
+      213: 5718816803702702588
+    second: Player Back Sheet_20
+  - first:
+      213: -4099693428225637247
+    second: Player Back Sheet_21
+  - first:
+      213: 5242883248709673622
+    second: Player Back Sheet_22
+  - first:
+      213: 6089548646975844294
+    second: Player Back Sheet_23
+  - first:
+      213: -1654934816142368686
+    second: Player Back Sheet_24
+  - first:
+      213: 845154446666584406
+    second: Player Back Sheet_25
+  - first:
+      213: -3210165727125416632
+    second: Player Back Sheet_26
+  - first:
+      213: 4379939729536531521
+    second: Player Back Sheet_27
+  - first:
+      213: 469410596221189418
+    second: Player Back Sheet_28
+  - first:
+      213: -4619726075315769950
+    second: Player Back Sheet_29
+  - first:
+      213: -2489503636155452128
+    second: Player Back Sheet_30
+  - first:
+      213: 4038409584873276888
+    second: Player Back Sheet_31
+  - first:
+      213: -4798396674459506539
+    second: Player Back Sheet_32
+  - first:
+      213: 5727610333199624276
+    second: Player Back Sheet_33
+  - first:
+      213: -6872901155534584141
+    second: Player Back Sheet_34
+  - first:
+      213: -108652167015910789
+    second: Player Back Sheet_167
+  - first:
+      213: -2181204644444812096
+    second: Player Back Sheet_168
+  - first:
+      213: 3739695291749216904
+    second: Player Back Sheet_169
+  - first:
+      213: -4754511917873441542
+    second: Player Back Sheet_170
+  - first:
+      213: 4224781380215694578
+    second: Player Back Sheet_171
+  - first:
+      213: -8290083556263285533
+    second: Player Back Sheet_172
+  - first:
+      213: 4255846194114183838
+    second: Player Back Sheet_173
+  - first:
+      213: 7639283471202920283
+    second: Player Back Sheet_174
+  - first:
+      213: 4261858156799747200
+    second: Player Back Sheet_175
+  - first:
+      213: -7392594315168742692
+    second: Player Back Sheet_176
+  - first:
+      213: 1518563479521737619
+    second: Player Back Sheet_177
+  - first:
+      213: 7544720006322660749
+    second: Player Back Sheet_178
+  - first:
+      213: 1664380390582891139
+    second: Player Back Sheet_179
+  - first:
+      213: -3263325459567203287
+    second: Player Back Sheet_180
+  - first:
+      213: 2476031943787158439
+    second: Player Back Sheet_181
+  - first:
+      213: -3172017433881232331
+    second: Player Back Sheet_182
+  - first:
+      213: 3132181965152017345
+    second: Player Back Sheet_183
+  - first:
+      213: 9115099216324120918
+    second: Player Back Sheet_184
+  - first:
+      213: 1601838453110095829
+    second: Player Back Sheet_185
+  - first:
+      213: 3367468145170763460
+    second: Player Back Sheet_186
+  - first:
+      213: -7078318781575244304
+    second: Player Back Sheet_187
+  - first:
+      213: -3628898652611962568
+    second: Player Back Sheet_188
+  - first:
+      213: -6740849327771851824
+    second: Player Back Sheet_189
+  - first:
+      213: 1701714426968778585
+    second: Player Back Sheet_190
+  - first:
+      213: -2058445036809595423
+    second: Player Back Sheet_191
+  - first:
+      213: 6991682180399957367
+    second: Player Back Sheet_192
+  - first:
+      213: -8241296700632767156
+    second: Player Back Sheet_193
+  - first:
+      213: -9182125555551051160
+    second: Player Back Sheet_194
+  - first:
+      213: 413113557752031579
+    second: Player Back Sheet_195
+  - first:
+      213: -5317094022613321095
+    second: Player Back Sheet_196
+  - first:
+      213: 1496226225473689652
+    second: Player Back Sheet_197
+  - first:
+      213: 8117990549573610691
+    second: Player Back Sheet_198
+  - first:
+      213: -8608292929367064945
+    second: Player Back Sheet_199
+  - first:
+      213: 8074099291632610587
+    second: Player Back Sheet_200
+  - first:
+      213: 4019053181312375319
+    second: Player Back Sheet_201
+  - first:
+      213: 5673519635710346832
+    second: Player Back Sheet_202
+  - first:
+      213: 8766408001794128867
+    second: Player Back Sheet_203
+  - first:
+      213: -5343992262300029504
+    second: Player Back Sheet_204
+  - first:
+      213: 2944647464291356819
+    second: Player Back Sheet_205
+  - first:
+      213: -4903794314723015199
+    second: Player Back Sheet_206
+  - first:
+      213: -3712228912331614244
+    second: Player Back Sheet_207
+  - first:
+      213: -1153057291583018003
+    second: Player Back Sheet_208
+  - first:
+      213: -902948467090196227
+    second: Player Back Sheet_209
+  - first:
+      213: 7021487873608398893
+    second: Player Back Sheet_210
+  - first:
+      213: 2558244665564600678
+    second: Player Back Sheet_211
+  - first:
+      213: 3309793427339435070
+    second: Player Back Sheet_212
+  - first:
+      213: 4204086988181101092
+    second: Player Back Sheet_213
+  - first:
+      213: -3107324472084653597
+    second: Player Back Sheet_214
+  - first:
+      213: 231170300166070664
+    second: Player Back Sheet_215
+  - first:
+      213: -5999876039192100873
+    second: Player Back Sheet_216
+  - first:
+      213: -6112371942001083158
+    second: Player Back Sheet_217
+  - first:
+      213: 8049591554357442170
+    second: Player Back Sheet_218
+  - first:
+      213: -3446808363792961648
+    second: Player Back Sheet_219
+  - first:
+      213: -8254153081073474932
+    second: Player Back Sheet_220
+  - first:
+      213: -8023056487136598368
+    second: Player Back Sheet_221
+  - first:
+      213: 8559525877018612291
+    second: Player Back Sheet_222
+  - first:
+      213: -700874243202421913
+    second: Player Back Sheet_223
+  - first:
+      213: -1071098223011611165
+    second: Player Back Sheet_224
+  - first:
+      213: -8101695358780788474
+    second: Player Back Sheet_225
+  - first:
+      213: -7630472620502197721
+    second: Player Back Sheet_226
+  - first:
+      213: 8053863773061778634
+    second: Player Back Sheet_227
+  - first:
+      213: 5560804353225980102
+    second: Player Back Sheet_228
+  - first:
+      213: 9002089978679005962
+    second: Player Back Sheet_229
+  - first:
+      213: -3560881547828220709
+    second: Player Back Sheet_230
+  - first:
+      213: 4974796899934797941
+    second: Player Back Sheet_231
+  - first:
+      213: 7248532015485692026
+    second: Player Back Sheet_232
+  - first:
+      213: -8467199737269141937
+    second: Player Back Sheet_233
+  - first:
+      213: 5855319420626040928
+    second: Player Back Sheet_234
+  - first:
+      213: 6072388875679087604
+    second: Player Back Sheet_235
+  - first:
+      213: 8484258260166435004
+    second: Player Back Sheet_236
+  - first:
+      213: -1163556496006239946
+    second: Player Back Sheet_237
+  - first:
+      213: 1233618612039250891
+    second: Player Back Sheet_238
+  - first:
+      213: -5445324574164468246
+    second: Player Back Sheet_239
+  - first:
+      213: 2567487480083785497
+    second: Player Back Sheet_240
+  - first:
+      213: 1311583397635222929
+    second: Player Back Sheet_241
+  - first:
+      213: 4453203680776441745
+    second: Player Back Sheet_242
+  - first:
+      213: 4311613128860259978
+    second: Player Back Sheet_243
+  - first:
+      213: -975791354932565833
+    second: Player Back Sheet_244
+  - first:
+      213: 1818248936591893105
+    second: Player Back Sheet_245
+  - first:
+      213: 6948992022017087280
+    second: Player Back Sheet_246
+  - first:
+      213: -4658363469832930359
+    second: Player Back Sheet_247
+  - first:
+      213: -1672864988225935043
+    second: Player Back Sheet_248
+  - first:
+      213: 1225740423245911843
+    second: Player Back Sheet_249
+  - first:
+      213: -2272541640726515623
+    second: Player Back Sheet_250
+  - first:
+      213: -2402602987775643385
+    second: Player Back Sheet_251
+  - first:
+      213: -7125271800385751549
+    second: Player Back Sheet_252
+  - first:
+      213: -5814162280367006364
+    second: Player Back Sheet_253
+  - first:
+      213: 5715142786441216450
+    second: Player Back Sheet_254
+  - first:
+      213: 8473385232394140123
+    second: Player Back Sheet_255
+  - first:
+      213: -6711789384727444470
+    second: Player Back Sheet_256
+  - first:
+      213: 245991806001679696
+    second: Player Back Sheet_257
+  - first:
+      213: -4943362113631149284
+    second: Player Back Sheet_258
+  - first:
+      213: -7251388674997458816
+    second: Player Back Sheet_259
+  - first:
+      213: 1707912363104656233
+    second: Player Back Sheet_260
+  - first:
+      213: 3046761791203062412
+    second: Player Back Sheet_261
+  - first:
+      213: 3510438488066530773
+    second: Player Back Sheet_262
+  - first:
+      213: 7835514825168687140
+    second: Player Back Sheet_263
+  - first:
+      213: -1104028933407934247
+    second: Player Back Sheet_264
+  - first:
+      213: 5901555672680753725
+    second: Player Back Sheet_265
+  - first:
+      213: -7904904711936536553
+    second: Player Back Sheet_266
+  - first:
+      213: 2805836066840630110
+    second: Player Back Sheet_267
+  - first:
+      213: -756319011143219161
+    second: Player Back Sheet_268
+  - first:
+      213: 565961985854549595
+    second: Player Back Sheet_269
+  - first:
+      213: -4237453107676977331
+    second: Player Back Sheet_270
+  - first:
+      213: -9084283852411195884
+    second: Player Back Sheet_271
+  - first:
+      213: 5025133171801403222
+    second: Player Back Sheet_272
+  - first:
+      213: -506249841322670358
+    second: Player Back Sheet_273
+  - first:
+      213: -720151828589002583
+    second: Player Back Sheet_274
+  - first:
+      213: 2932919790789625289
+    second: Player Back Sheet_275
+  - first:
+      213: -4460564683384250564
+    second: Player Back Sheet_276
+  - first:
+      213: -2255377830972674834
+    second: Player Back Sheet_277
+  - first:
+      213: -3338306158552913247
+    second: Player Back Sheet_278
+  - first:
+      213: 8467686808545857375
+    second: Player Back Sheet_279
+  - first:
+      213: -8204674650294228770
+    second: Player Back Sheet_280
+  - first:
+      213: 4319433252218313618
+    second: Player Back Sheet_281
+  - first:
+      213: 4419327174152257443
+    second: Player Back Sheet_282
+  - first:
+      213: 6003187069999867946
+    second: Player Back Sheet_283
+  - first:
+      213: 2177141030826675440
+    second: Player Back Sheet_284
+  - first:
+      213: 1106626489747308754
+    second: Player Back Sheet_285
+  - first:
+      213: -9178364200407403657
+    second: Player Back Sheet_286
+  - first:
+      213: 1085693644777107235
+    second: Player Back Sheet_287
+  - first:
+      213: 5667565247463488982
+    second: Player Back Sheet_288
+  - first:
+      213: -8250528435363795970
+    second: Player Back Sheet_289
+  - first:
+      213: -9030131705345176437
+    second: Player Back Sheet_290
+  - first:
+      213: 4189493926088369645
+    second: Player Back Sheet_291
+  - first:
+      213: 4384565703220198289
+    second: Player Back Sheet_292
+  - first:
+      213: -2633990361988759541
+    second: Player Back Sheet_293
+  - first:
+      213: -8056008826562092518
+    second: Player Back Sheet_294
+  - first:
+      213: 2575511016472598804
+    second: Player Back Sheet_295
+  - first:
+      213: 725971126926895957
+    second: Player Back Sheet_296
+  - first:
+      213: -2959697882585935782
+    second: Player Back Sheet_297
+  - first:
+      213: 5888071205588347484
+    second: Player Back Sheet_298
+  - first:
+      213: 8696616480468354543
+    second: Player Back Sheet_299
+  - first:
+      213: 6880561921241902825
+    second: Player Back Sheet_300
+  - first:
+      213: -5875799951565697246
+    second: Player Back Sheet_301
+  - first:
+      213: 8697672950465150800
+    second: Player Back Sheet_302
+  - first:
+      213: 5450204523978462619
+    second: Player Back Sheet_303
+  - first:
+      213: -6236380305426335745
+    second: Player Back Sheet_304
+  - first:
+      213: 8199629632781340003
+    second: Player Back Sheet_305
+  - first:
+      213: -1099656968015605709
+    second: Player Back Sheet_306
+  - first:
+      213: -8686606271187737922
+    second: Player Back Sheet_307
+  - first:
+      213: 7083065742501125170
+    second: Player Back Sheet_308
+  - first:
+      213: 2283142733432856706
+    second: Player Back Sheet_309
+  - first:
+      213: 4303631011848012103
+    second: Player Back Sheet_310
+  - first:
+      213: 2431671787865357032
+    second: Player Back Sheet_311
+  - first:
+      213: -7053780613234620764
+    second: Player Back Sheet_312
+  - first:
+      213: 6401147068657867682
+    second: Player Back Sheet_313
+  - first:
+      213: 2073771594204347782
+    second: Player Back Sheet_314
+  - first:
+      213: 7400913934315011231
+    second: Player Back Sheet_315
+  - first:
+      213: 4620618300307148260
+    second: Player Back Sheet_316
+  - first:
+      213: 3053459664545587757
+    second: Player Back Sheet_317
+  - first:
+      213: 1583631153865171221
+    second: Player Back Sheet_318
+  - first:
+      213: -142236795126729560
+    second: Player Back Sheet_319
+  - first:
+      213: 1420706606650869008
+    second: Player Back Sheet_320
+  - first:
+      213: -2047749523193779505
+    second: Player Back Sheet_321
+  - first:
+      213: -8377444394214506717
+    second: Player Back Sheet_322
+  - first:
+      213: -6949841553056206677
+    second: Player Back Sheet_323
+  - first:
+      213: -7996754166380942657
+    second: Player Back Sheet_324
+  - first:
+      213: 3495657250218998945
+    second: Player Back Sheet_325
+  - first:
+      213: 4098160081188573591
+    second: Player Back Sheet_326
+  - first:
+      213: -3710078395471947999
+    second: Player Back Sheet_327
+  - first:
+      213: 4885941000860238528
+    second: Player Back Sheet_328
+  - first:
+      213: 2753565479583949447
+    second: Player Back Sheet_329
+  - first:
+      213: -5478914674171444899
+    second: Player Back Sheet_330
+  - first:
+      213: -4143099782669068216
+    second: Player Back Sheet_331
+  - first:
+      213: -3011833334660141022
+    second: Player Back Sheet_332
+  - first:
+      213: 2527554314921195229
+    second: Player Back Sheet_333
+  - first:
+      213: -3002400500042403882
+    second: Player Back Sheet_334
+  - first:
+      213: 7270700479610770788
+    second: Player Back Sheet_335
+  - first:
+      213: 2645340847635912844
+    second: Player Back Sheet_336
+  - first:
+      213: 4174002664471590103
+    second: Player Back Sheet_337
+  - first:
+      213: -4295535850989118546
+    second: Player Back Sheet_338
+  - first:
+      213: -3140804333094274532
+    second: Player Back Sheet_339
+  - first:
+      213: -346535346576613666
+    second: Player Back Sheet_340
+  - first:
+      213: 1745199240820416569
+    second: Player Back Sheet_341
+  - first:
+      213: -9116881702486950200
+    second: Player Back Sheet_342
+  - first:
+      213: -4748036245488453838
+    second: Player Back Sheet_343
+  - first:
+      213: 4818433854613661081
+    second: Player Back Sheet_344
+  - first:
+      213: 2107775925474871048
+    second: Player Back Sheet_345
+  - first:
+      213: -1860100077754101847
+    second: Player Back Sheet_346
+  - first:
+      213: 9025427781635541596
+    second: Player Back Sheet_347
+  - first:
+      213: 7738346961713405293
+    second: Player Back Sheet_348
+  - first:
+      213: 1860792872957775259
+    second: Player Back Sheet_349
+  - first:
+      213: -4822456059206482527
+    second: Player Back Sheet_350
+  - first:
+      213: 7650681135947853713
+    second: Player Back Sheet_351
+  - first:
+      213: -8873939669487953961
+    second: Player Back Sheet_352
+  - first:
+      213: -5423562928913953987
+    second: Player Back Sheet_353
+  - first:
+      213: -834315448374971643
+    second: Player Back Sheet_354
+  - first:
+      213: -2182914270201792366
+    second: Player Back Sheet_355
+  - first:
+      213: -2499505195840748992
+    second: Player Back Sheet_356
+  - first:
+      213: -6770316478395676764
+    second: Player Back Sheet_357
+  - first:
+      213: 5980054608701599415
+    second: Player Back Sheet_358
+  - first:
+      213: -7114890251558031244
+    second: Player Back Sheet_359
+  - first:
+      213: -5606754151346129079
+    second: Player Back Sheet_360
+  - first:
+      213: 2249710024574909170
+    second: Player Back Sheet_361
+  - first:
+      213: -2940700636196423704
+    second: Player Back Sheet_362
+  - first:
+      213: -4690608002079334517
+    second: Player Back Sheet_363
+  - first:
+      213: -6397540154938918363
+    second: Player Back Sheet_364
+  - first:
+      213: -8151968523031098335
+    second: Player Back Sheet_365
+  - first:
+      213: -6471838592054247140
+    second: Player Back Sheet_366
+  - first:
+      213: 7024628449708494887
+    second: Player Back Sheet_367
+  - first:
+      213: 3277497391960756682
+    second: Player Back Sheet_368
+  - first:
+      213: 7262791527251129113
+    second: Player Back Sheet_369
+  - first:
+      213: 7560935631874497629
+    second: Player Back Sheet_370
+  - first:
+      213: 5128249912573101961
+    second: Player Back Sheet_371
+  - first:
+      213: -3348723529447512890
+    second: Player Back Sheet_372
+  - first:
+      213: -1114259367088310717
+    second: Player Back Sheet_373
+  - first:
+      213: -5859810089958057005
+    second: Player Back Sheet_374
+  - first:
+      213: 3485895919492583838
+    second: Player Back Sheet_375
+  - first:
+      213: 901540328247333373
+    second: Player Back Sheet_376
+  - first:
+      213: -3182235212963931539
+    second: Player Back Sheet_377
+  - first:
+      213: 3977847383314677925
+    second: Player Back Sheet_378
+  - first:
+      213: -7801180314408324284
+    second: Player Back Sheet_379
+  - first:
+      213: 110969288581695360
+    second: Player Back Sheet_380
+  - first:
+      213: -4509291153261124518
+    second: Player Back Sheet_381
+  - first:
+      213: -4152616860851840305
+    second: Player Back Sheet_382
+  - first:
+      213: -1641408520530870747
+    second: Player Back Sheet_383
+  - first:
+      213: -3371102571294003221
+    second: Player Back Sheet_384
+  - first:
+      213: -1992573874119492780
+    second: Player Back Sheet_385
+  - first:
+      213: 17036045445506005
+    second: Player Back Sheet_386
+  - first:
+      213: -4399087353348977974
+    second: Player Back Sheet_387
+  - first:
+      213: -7496054557931912482
+    second: Player Back Sheet_388
+  - first:
+      213: 4309755147971661075
+    second: Player Back Sheet_389
+  - first:
+      213: 8347462166809506883
+    second: Player Back Sheet_390
+  - first:
+      213: -4916918842410777143
+    second: Player Back Sheet_391
+  - first:
+      213: -9006188726264418561
+    second: Player Back Sheet_392
+  - first:
+      213: -6534807835236657815
+    second: Player Back Sheet_393
+  - first:
+      213: 3523500134469959236
+    second: Player Back Sheet_394
+  - first:
+      213: -6203093570836174330
+    second: Player Back Sheet_395
+  - first:
+      213: -6264289817024872488
+    second: Player Back Sheet_396
+  - first:
+      213: -5066980250051498425
+    second: Player Back Sheet_397
+  - first:
+      213: 6593530072053435620
+    second: Player Back Sheet_398
+  - first:
+      213: 1237725014675455997
+    second: Player Back Sheet_399
+  - first:
+      213: -5417443941424688433
+    second: Player Back Sheet_400
+  - first:
+      213: 2846966136166112853
+    second: Player Back Sheet_401
+  - first:
+      213: -8893600043573732455
+    second: Player Back Sheet_402
+  - first:
+      213: -7661915973973556252
+    second: Player Back Sheet_403
+  - first:
+      213: -2817437583062636788
+    second: Player Back Sheet_404
+  - first:
+      213: -6604872555945979592
+    second: Player Back Sheet_405
+  - first:
+      213: -4959423830263583317
+    second: Player Back Sheet_406
+  - first:
+      213: -9159884188420637412
+    second: Player Back Sheet_407
+  - first:
+      213: 1994248135209978557
+    second: Player Back Sheet_408
+  - first:
+      213: -4840733489363008585
+    second: Player Back Sheet_409
+  - first:
+      213: 1986935815749357909
+    second: Player Back Sheet_410
+  - first:
+      213: 3568261550385897582
+    second: Player Back Sheet_411
+  - first:
+      213: -5796110511193345380
+    second: Player Back Sheet_412
+  - first:
+      213: -2083295446237751866
+    second: Player Back Sheet_413
+  - first:
+      213: -3965672999413361093
+    second: Player Back Sheet_414
+  - first:
+      213: 4665473352559436100
+    second: Player Back Sheet_415
+  - first:
+      213: -3327129567254420945
+    second: Player Back Sheet_416
+  - first:
+      213: -2302961787568048405
+    second: Player Back Sheet_417
+  - first:
+      213: 3352792276104425921
+    second: Player Back Sheet_418
+  - first:
+      213: 2763613375009636091
+    second: Player Back Sheet_419
+  - first:
+      213: -3964598491026069362
+    second: Player Back Sheet_420
+  - first:
+      213: 6353351747736621883
+    second: Player Back Sheet_421
+  - first:
+      213: 8733012787253697668
+    second: Player Back Sheet_422
+  - first:
+      213: -467288013953032027
+    second: Player Back Sheet_423
+  - first:
+      213: -2937637801281149398
+    second: Player Back Sheet_424
+  - first:
+      213: -2139669579426186171
+    second: Player Back Sheet_425
+  - first:
+      213: 2683785207561043907
+    second: Player Back Sheet_426
+  - first:
+      213: 477863014724432525
+    second: Player Back Sheet_427
+  - first:
+      213: 1156701112595432430
+    second: Player Back Sheet_428
+  - first:
+      213: 8194184637731149480
+    second: Player Back Sheet_429
+  - first:
+      213: 4824080181684956216
+    second: Player Back Sheet_430
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Player Back Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 176
+        width: 48
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a4c68913ef9cbe30800000000000000
+      internalID: 4520663923707790499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Back Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 176
+        width: 48
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c8e067ff5bcf3460800000000000000
+      internalID: 7223715940358219972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Back Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 176
+        width: 48
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b9b3193747bb5d10800000000000000
+      internalID: 2115485966508734900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Back Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 176
+        width: 48
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae2969f1f9b6936d0800000000000000
+      internalID: -3010256544746532118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Back Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 176
+        width: 48
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01c7c3238f09fb5b0800000000000000
+      internalID: -5350398436623746032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Back Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 176
+        width: 48
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ee06b722ee5a8100800000000000000
+      internalID: 111005466245861094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Back Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 132
+        width: 48
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92e5446c14b4af390800000000000000
+      internalID: -7783826260085154263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Back Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 132
+        width: 48
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6840b62bae45d9bc0800000000000000
+      internalID: -3774767545674169210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Back Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 132
+        width: 48
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f577da0b67aec30b0800000000000000
+      internalID: -5747461228940396705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Back Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 132
+        width: 48
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10a2e0030c493b540800000000000000
+      internalID: 5022521562609101313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Back Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 132
+        width: 48
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0c0dd2efbf93e070800000000000000
+      internalID: 8134520998454955022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Back Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 132
+        width: 48
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d54441175fd30160800000000000000
+      internalID: 6990676611653977556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Back Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 132
+        width: 48
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c98a794aace170b0800000000000000
+      internalID: -5732540634544567870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Back Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 132
+        width: 48
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05ed9dcfcfc7b0790800000000000000
+      internalID: -7562813723222876592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Back Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 88
+        width: 48
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57099effaf150a670800000000000000
+      internalID: 8547922231226372213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Back Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 88
+        width: 48
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6fa13134dae87090800000000000000
+      internalID: -8036415337963344021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Back Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 88
+        width: 48
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdad3861aecc03620800000000000000
+      internalID: 2751924678095526619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Back Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 88
+        width: 48
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e46ce7afc4665db60800000000000000
+      internalID: 7770229212903818830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Back Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 88
+        width: 48
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de42a3d1cb11a7ba0800000000000000
+      internalID: -6090536046423300883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Back Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 88
+        width: 48
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9575198210c4631d0800000000000000
+      internalID: -3371423703180945575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Back Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 44
+        width: 48
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47ad282d7dad5cf00800000000000000
+      internalID: 1136555101465533044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Back Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 48
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fbc04e51b78f02f0800000000000000
+      internalID: -1004434996020065288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Back Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 48
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83c4fa9c00bf9ac80800000000000000
+      internalID: -8310835656533259208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Back Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 48
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 685c34c6c64edd9c0800000000000000
+      internalID: -3900710547908999802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Back Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 48
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1b581789b20c7c20800000000000000
+      internalID: 3205440030639676189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Back Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 48
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 674de1a43d76afc90800000000000000
+      internalID: -7135276502435834762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Back Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 48
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5eae7587df6961bd0800000000000000
+      internalID: -2659772514525779227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Back Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 48
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec8ba283887570080800000000000000
+      internalID: -9221305469448308530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Back Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 0
+        width: 48
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a82b2cf4f9e88830800000000000000
+      internalID: 4073763101368592546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Back Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 48
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 999d7cd268787f9e0800000000000000
+      internalID: -1587651333261370983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Back Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 0
+        width: 48
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cad7971c4b775670800000000000000
+      internalID: 8527419986192882375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Back Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 48
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f32c4fc137ba3f4c0800000000000000
+      internalID: -4254868712039595457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Back Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 0
+        width: 48
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67040b8f87cadd1a0800000000000000
+      internalID: -6783075828181745546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Back Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 48
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 472f94d3589d65f40800000000000000
+      internalID: 5716995943275557492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Back Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 0
+        width: 48
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdbec45a1ab60a770800000000000000
+      internalID: 8620008028794317788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
