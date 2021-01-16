@@ -418,7 +418,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 1.9921976, y: 1}
+    m_SensorSize: {x: 2.5294118, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -573,7 +573,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.84375, y: 1}
+    oldSize: {x: 0.7297297, y: 0.8648649}
     newSize: {x: 0.84375, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -616,6 +616,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UIController: {fileID: 5108101338953265187}
+  cmVcam: {fileID: 2000587755}
   maxHealth: 200
   speed: 180
   jumpHeight: {x: 0, y: 6}
