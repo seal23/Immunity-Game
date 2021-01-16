@@ -74,7 +74,7 @@ public class PlayerController : MonoBehaviour
     public PlayerInfo getPlayerInfo() {return playerInfo;}
     int lv;
     int maxMP;
-    int currentMP;
+    public int currentMP{get; set;}
     int Atk;
     int Def;
     public int gold{get; set;}
@@ -465,13 +465,13 @@ public class PlayerController : MonoBehaviour
         Boss01Controller boss01 = collision.gameObject.GetComponent<Boss01Controller>();
         if (boss01 != null)
         {
-            boss01.ChangeHealth(-1);
+            boss01.ChangeHealth(-Atk);
         }
         
         SlimeController slime = collision.gameObject.GetComponent<SlimeController>();
         if (slime != null)
         {
-            slime.ChangeHealth(-1);
+            slime.ChangeHealth(-Atk);
         }
     }
         

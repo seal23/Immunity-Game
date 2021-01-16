@@ -13,11 +13,18 @@ public class UpgradeController : MonoBehaviour
 
     public GameObject itemImage;
 
+    public GameObject costUpg;
+
+    public Text costText;
+
     private static UpgradeController instance = null;
 
     PlayerController player;
 
     int temp = 0;
+
+    int cost;
+
     private void Awake()
     {
         GetInstance();
@@ -47,6 +54,7 @@ public class UpgradeController : MonoBehaviour
         swordBT.onClick.AddListener(() => itemShow(swordBT, 5));
         exitBT.onClick.AddListener(exitDialog);
         itemImage.SetActive(false);
+        costUpg.SetActive(false);
 	}
 
     void Initiate()
@@ -70,62 +78,94 @@ public class UpgradeController : MonoBehaviour
                 lev = player.getItem().getNeck();
                 str = "Level:\t\t"+lev+"\t\t->\t\t"+(lev+1)+"\nHP:\t\t\t"+(10*lev)+"\t\t->\t\t"+(10*lev+10)+"\nDEF:\t\t"+1*lev+"\t\t->\t\t"+(1*lev+1);
                 text.text = str;
+                cost = lev*10 + (lev-1)*7;
+                if (cost > player.gold) costText.color = Color.red;
+                    else costText.color = Color.yellow;
+                costText.text = "" + cost;
+                costUpg.SetActive(true);
                 break;
             case 2: 
                 lev = player.getItem().getBoot();
                 str = "Level:\t\t"+lev+"\t\t->\t\t"+(lev+1)+"\nHP:\t\t\t"+(10*lev)+"\t\t->\t\t"+(10*lev+10)+"\nDEF:\t\t"+1*lev+"\t\t->\t\t"+(1*lev+1);
                 text.text = str;
+                cost = lev*10 + (lev-1)*7;
+                if (cost > player.gold) costText.color = Color.red;
+                    else costText.color = Color.yellow;
+                costText.text = "" + cost;
+                costUpg.SetActive(true);
                 break;
             case 3: 
                 lev = player.getItem().getRing();
                 str = "Level:\t\t"+lev+"\t\t->\t\t"+(lev+1)+"\nHP:\t\t\t"+(10*lev)+"\t\t->\t\t"+(10*lev+10)+"\nDEF:\t\t"+1*lev+"\t\t->\t\t"+(1*lev+1);
                 text.text = str;
+                cost = lev*10 + (lev-1)*7;
+                if (cost > player.gold) costText.color = Color.red;
+                    else costText.color = Color.yellow;
+                costText.text = "" + cost;
+                costUpg.SetActive(true);
                 break;
             case 4:
                 lev = player.getItem().getArmor();
                 str = "Level:\t\t"+lev+"\t\t->\t\t"+(lev+1)+"\nHP:\t\t\t"+(10*lev)+"\t\t->\t\t"+(10*lev+10)+"\nDEF:\t\t"+1*lev+"\t\t->\t\t"+(1*lev+1);
                 text.text = str;
+                cost = lev*10 + (lev-1)*7;
+                if (cost > player.gold) costText.color = Color.red;
+                    else costText.color = Color.yellow;
+                costText.text = "" + cost;
+                costUpg.SetActive(true);
                 break;
             case 5:
                 lev = player.getItem().getSword();
                 str = "Level:\t\t"+lev+"\t\t->\t\t"+(lev+1)+"\nATK:\t\t\t"+(5*lev)+"\t\t->\t\t"+(5*lev+5);
                 text.text = str;
+                cost = lev*10 + (lev-1)*20;
+                if (cost > player.gold) costText.color = Color.red;
+                    else costText.color = Color.yellow;
+                costText.text = "" + cost;
+                costUpg.SetActive(true);
                 break;
-            default: text.text = null; break;
+            default: text.text = null; 
+                itemImage.SetActive(false);
+                costUpg.SetActive(false);
+                break;
         }
     }
 
     void upgradeItem()
     {
         int lev=0;
-        switch (temp)
+        if (cost < player.gold)
         {
-            case 1:
-                lev = player.getItem().getNeck();
-                player.getItem().setNeck(lev+1);
-                player.health = player.health+10;
-                break;
-            case 2: 
-                lev = player.getItem().getBoot();
-                player.getItem().setBoot(lev+1);
-                player.health = player.health+10;
-                break;
+            switch (temp)
+            {
+                case 1:
+                    lev = player.getItem().getNeck();
+                    player.getItem().setNeck(lev+1);
+                    player.health = player.health+10;
+                    break;
+                case 2: 
+                    lev = player.getItem().getBoot();
+                    player.getItem().setBoot(lev+1);
+                    player.health = player.health+10;
+                    break;
 
-            case 3: 
-                lev = player.getItem().getRing();
-                player.getItem().setRing(lev+1);
-                player.health = player.health+10;
-                break;
-            case 4:
-                lev = player.getItem().getArmor();
-                player.getItem().setArmor(lev+1);
-                player.health = player.health+10;
-                break;
-            case 5:
-                lev = player.getItem().getSword();
-                player.getItem().setSword(lev+1);
-                break;
-            default: break;
+                case 3: 
+                    lev = player.getItem().getRing();
+                    player.getItem().setRing(lev+1);
+                    player.health = player.health+10;
+                    break;
+                case 4:
+                    lev = player.getItem().getArmor();
+                    player.getItem().setArmor(lev+1);
+                    player.health = player.health+10;
+                    break;
+                case 5:
+                    lev = player.getItem().getSword();
+                    player.getItem().setSword(lev+1);
+                    break;
+                default: break;
+            }
+            player.gold = player.gold - cost;
         }
     }
 
