@@ -14,10 +14,10 @@ public class PlayerInfo : MonoBehaviour
     public void setLV(int lv, float exp)
     {
         LV = lv;
-        HP = 100 + 50*LV;
-        MP = 100 + 10*LV;
-        ATK = 10 + LV*5;
-        DEF = 1 + LV*1;
+        HP = 100 + 50*(LV-1);
+        MP = 100 + 10*(LV-1);
+        ATK = 10 + (LV-1);
+        DEF = 1 + (LV-1);
         EXP = exp;
     }
 
