@@ -166,13 +166,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   baseSpeed: 80
-  atk: 20
-  maxHealth: 100
+  atk: 5
+  maxHealth: 3
   knockBack: {x: 20, y: 1}
   isLaunch: 0
   timeLaunch: 0.2
   direction: {x: 0, y: 0}
-  drop1: {fileID: 3204691984269407866, guid: bbd8cf0b66ee4ac49bff8d8d6e8c0a44, type: 3}
-  drop2: {fileID: 3204691984269407866, guid: 28907a226e2311440ac8f33f5fc4d162, type: 3}
-  drop3: {fileID: 3204691984269407866, guid: b64a17d4f20f17049acd249f86014e35, type: 3}
   timeInvincible: 0.4

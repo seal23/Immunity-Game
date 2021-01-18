@@ -10,106 +10,41 @@ public class UIController : MonoBehaviour
     public Text textLv;
     public Text textGold;
     public GameObject gameObject;
-    public Text textScroll;
-    public Text textHPP;
-    public Text textMPP;
 
-    public Image scrima;
-    public Image hpp;
-    public Image mpp;
-
-    public Button hpBT;
-
-    PlayerController player;
-    void Start()
+    public void setMaxHealth(int health) 
     {
-        player = GameObject.Find("Player").GetComponent<PlayerController>();
-        hpBT.onClick.AddListener(hpBTClick);
+        sliderHP.maxValue = health;
+        sliderHP.value = health;
     }
 
-    void Update()
+    public void setHealth(int health) 
     {
-        checkColor(player.scroll,scrima);
-        checkColor(player.hpPotion,hpp);
-        checkColor(player.mpPotion,mpp);
-        setMana(player.currentMP);
-        setGold(player.gold);
-        setScroll(player.scroll);
-        setHPP(player.hpPotion);
-        setMPP(player.mpPotion);
+        sliderHP.value = health;
     }
 
-    public void setMaxHealth(int n) 
+    public void setMaxMana(int mana) 
     {
-        sliderHP.maxValue = n;
-        sliderHP.value = n;
+        sliderMP.maxValue = mana;
+        sliderMP.value = mana;
     }
 
-    public void setHealth(int n) 
+    public void setMana(int mana) 
     {
-        sliderHP.value = n;
+        sliderMP.value = mana;
     }
 
-    public void setMaxMana(int n) 
+    public void setLevel(int lv) 
     {
-        sliderMP.maxValue = n;
-        sliderMP.value = n;
+        textLv.text = "LV "+ lv;
     }
 
-    public void setMana(int n) 
+    public void setGold(int g) 
     {
-        sliderMP.value = n;
-    }
-
-    public void setLevel(int n) 
-    {
-        textLv.text = "LV "+ n;
-    }
-
-    public void setGold(int n) 
-    {
-        textGold.text = "" + n;
-    }
-
-    public void setScroll(int n) 
-    {
-        textScroll.text = "" + n;
-    }
-
-    public void setHPP(int n) 
-    {
-        textHPP.text = "" + n;
-    }
-
-    public void setMPP(int n) 
-    {
-        textMPP.text = "" + n;
+        textGold.text = "" + g;
     }
 
     public void IsActive(bool n)
     {
         gameObject.SetActive(n);
-    }
-
-    public void setColor(Image i, byte r, byte g, byte b, byte a)
-    {
-        i.color = new Color32(r,g,b,a);
-    }
-
-    public void checkColor(int n, Image i)
-    {
-        if (n == 0)
-        {
-            setColor(i,55,55,55,255);
-        }
-        else 
-        { 
-            setColor(i,255,255,255,255);
-        }
-    }
-
-    void hpBTClick()
-    {
-        player.useHPP();
     }
 }
