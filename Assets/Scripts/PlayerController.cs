@@ -106,11 +106,12 @@ public class PlayerController : MonoBehaviour
         maxMP = playerInfo.getMP();
         UIController.setMaxMana(maxMP);
         maxHealth = playerInfo.getHP()+ (item.getArmor() + item.getBoot() + item.getNeck() + item.getRing())*10;
+        UIController.setMaxHealth(maxHealth);
         currentHealth = maxHealth;
         currentMP = 0;
         gold = 0;
         scroll = 0;
-        hpPotion = 0;
+        hpPotion = 2;
         mpPotion = 0;
 
         hitTriggerLeft.SetActive(false);
@@ -158,7 +159,7 @@ public class PlayerController : MonoBehaviour
         Def = playerInfo.getDEF()+ item.getArmor() + item.getBoot() + item.getNeck() + item.getRing();
         maxHealth = playerInfo.getHP()+ (item.getArmor() + item.getBoot() + item.getNeck() + item.getRing())*10;
         UIController.setMaxHealth(maxHealth);
-        UIController.setGold(gold);
+        UIController.setHealth(currentHealth);
 
         updateScene = SceneManager.GetActiveScene().name;
         if (updateScene != currentScene)
@@ -332,6 +333,11 @@ public class PlayerController : MonoBehaviour
             UIController.IsActive(true);
         }
 
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            useHPP();
+        }
+
         /*
         if (Input.GetKeyDown(KeyCode.X))
         {
@@ -486,6 +492,15 @@ public class PlayerController : MonoBehaviour
             confiner.InvalidatePathCache();
             confiner.m_BoundingShape2D = GameObject.FindGameObjectWithTag("Bound").GetComponent<Collider2D>();
         
+    }
+
+    public void useHPP()
+    {
+        if (currentHealth < maxHealth && hpPotion > 0)
+        {
+            hpPotion -= 1;
+            ChangeHealth(100);
+        }
     }
 
     /* void Launch()

@@ -18,10 +18,13 @@ public class UIController : MonoBehaviour
     public Image hpp;
     public Image mpp;
 
+    public Button hpBT;
+
     PlayerController player;
     void Start()
     {
         player = GameObject.Find("Player").GetComponent<PlayerController>();
+        hpBT.onClick.AddListener(hpBTClick);
     }
 
     void Update()
@@ -29,7 +32,6 @@ public class UIController : MonoBehaviour
         checkColor(player.scroll,scrima);
         checkColor(player.hpPotion,hpp);
         checkColor(player.mpPotion,mpp);
-        setHealth(player.health);
         setMana(player.currentMP);
         setGold(player.gold);
         setScroll(player.scroll);
@@ -104,5 +106,10 @@ public class UIController : MonoBehaviour
         { 
             setColor(i,255,255,255,255);
         }
+    }
+
+    void hpBTClick()
+    {
+        player.useHPP();
     }
 }
