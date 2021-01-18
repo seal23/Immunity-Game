@@ -80,6 +80,9 @@ public class PlayerController : MonoBehaviour
     int Atk;
     int Def;
     public int gold{get; set;}
+    public int scroll { get; set; }
+    public int hpPotion { get; set; }
+    public int mpPotion { get; set; }
     //public GameObject projectilePrefab;
     //public float projectileForce = 300f;
 
@@ -105,9 +108,13 @@ public class PlayerController : MonoBehaviour
         maxMP = playerInfo.getMP();
         UIController.setMaxMana(maxMP);
         maxHealth = playerInfo.getHP()+ (item.getArmor() + item.getBoot() + item.getNeck() + item.getRing())*10;
+        UIController.setMaxHealth(maxHealth);
         currentHealth = maxHealth;
         currentMP = 0;
         gold = 0;
+        scroll = 0;
+        hpPotion = 2;
+        mpPotion = 0;
 
         hitTriggerLeft.SetActive(false);
         hitTriggerRight.SetActive(false);
@@ -154,10 +161,10 @@ public class PlayerController : MonoBehaviour
         Atk = playerInfo.getATK()+ item.getSword()*5;
         Def = playerInfo.getDEF()+ item.getArmor() + item.getBoot() + item.getNeck() + item.getRing();
         maxHealth = playerInfo.getHP()+ (item.getArmor() + item.getBoot() + item.getNeck() + item.getRing())*10;
-        UIController.setMana(currentMP);
+      
         UIController.setMaxHealth(maxHealth);
         UIController.setHealth(currentHealth);
-        UIController.setGold(gold);
+       
 
         updateScene = SceneManager.GetActiveScene().name;
         if (updateScene != currentScene)
@@ -342,6 +349,11 @@ public class PlayerController : MonoBehaviour
             UIController.IsActive(true);
         }
 
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            useHPP();
+        }
+
         /*
         if (Input.GetKeyDown(KeyCode.X))
         {
@@ -356,7 +368,7 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }*/
-        
+
     }
 
     private void FixedUpdate()
@@ -508,6 +520,15 @@ public class PlayerController : MonoBehaviour
             confiner.InvalidatePathCache();
             confiner.m_BoundingShape2D = GameObject.FindGameObjectWithTag("Bound").GetComponent<Collider2D>();
         
+    }
+
+    public void useHPP()
+    {
+        if (currentHealth < maxHealth && hpPotion > 0)
+        {
+            hpPotion -= 1;
+            ChangeHealth(100);
+        }
     }
 
     public void Stuned(float timeStuned)
