@@ -78,6 +78,10 @@ public class PlayerController : MonoBehaviour
     int Atk;
     int Def;
     public int gold{get; set;}
+    public int scroll{get; set;}
+    public int hpPotion{get; set;}
+    public int mpPotion{get; set;}
+
     //public GameObject projectilePrefab;
     //public float projectileForce = 300f;
 
@@ -105,6 +109,9 @@ public class PlayerController : MonoBehaviour
         currentHealth = maxHealth;
         currentMP = 0;
         gold = 0;
+        scroll = 0;
+        hpPotion = 0;
+        mpPotion = 0;
 
         hitTriggerLeft.SetActive(false);
         hitTriggerRight.SetActive(false);
@@ -150,9 +157,7 @@ public class PlayerController : MonoBehaviour
         Atk = playerInfo.getATK()+ item.getSword()*5;
         Def = playerInfo.getDEF()+ item.getArmor() + item.getBoot() + item.getNeck() + item.getRing();
         maxHealth = playerInfo.getHP()+ (item.getArmor() + item.getBoot() + item.getNeck() + item.getRing())*10;
-        UIController.setMana(currentMP);
         UIController.setMaxHealth(maxHealth);
-        UIController.setHealth(currentHealth);
         UIController.setGold(gold);
 
         updateScene = SceneManager.GetActiveScene().name;
@@ -468,7 +473,7 @@ public class PlayerController : MonoBehaviour
             boss01.ChangeHealth(-Atk);
         }
         
-        SlimeController slime = collision.gameObject.GetComponent<SlimeController>();
+        EnemyController slime = collision.gameObject.GetComponent<EnemyController>();
         if (slime != null)
         {
             slime.ChangeHealth(-Atk);

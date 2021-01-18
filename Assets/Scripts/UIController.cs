@@ -10,41 +10,99 @@ public class UIController : MonoBehaviour
     public Text textLv;
     public Text textGold;
     public GameObject gameObject;
+    public Text textScroll;
+    public Text textHPP;
+    public Text textMPP;
 
-    public void setMaxHealth(int health) 
+    public Image scrima;
+    public Image hpp;
+    public Image mpp;
+
+    PlayerController player;
+    void Start()
     {
-        sliderHP.maxValue = health;
-        sliderHP.value = health;
+        player = GameObject.Find("Player").GetComponent<PlayerController>();
     }
 
-    public void setHealth(int health) 
+    void Update()
     {
-        sliderHP.value = health;
+        checkColor(player.scroll,scrima);
+        checkColor(player.hpPotion,hpp);
+        checkColor(player.mpPotion,mpp);
+        setHealth(player.health);
+        setMana(player.currentMP);
+        setGold(player.gold);
+        setScroll(player.scroll);
+        setHPP(player.hpPotion);
+        setMPP(player.mpPotion);
     }
 
-    public void setMaxMana(int mana) 
+    public void setMaxHealth(int n) 
     {
-        sliderMP.maxValue = mana;
-        sliderMP.value = mana;
+        sliderHP.maxValue = n;
+        sliderHP.value = n;
     }
 
-    public void setMana(int mana) 
+    public void setHealth(int n) 
     {
-        sliderMP.value = mana;
+        sliderHP.value = n;
     }
 
-    public void setLevel(int lv) 
+    public void setMaxMana(int n) 
     {
-        textLv.text = "LV "+ lv;
+        sliderMP.maxValue = n;
+        sliderMP.value = n;
     }
 
-    public void setGold(int g) 
+    public void setMana(int n) 
     {
-        textGold.text = "" + g;
+        sliderMP.value = n;
+    }
+
+    public void setLevel(int n) 
+    {
+        textLv.text = "LV "+ n;
+    }
+
+    public void setGold(int n) 
+    {
+        textGold.text = "" + n;
+    }
+
+    public void setScroll(int n) 
+    {
+        textScroll.text = "" + n;
+    }
+
+    public void setHPP(int n) 
+    {
+        textHPP.text = "" + n;
+    }
+
+    public void setMPP(int n) 
+    {
+        textMPP.text = "" + n;
     }
 
     public void IsActive(bool n)
     {
         gameObject.SetActive(n);
+    }
+
+    public void setColor(Image i, byte r, byte g, byte b, byte a)
+    {
+        i.color = new Color32(r,g,b,a);
+    }
+
+    public void checkColor(int n, Image i)
+    {
+        if (n == 0)
+        {
+            setColor(i,55,55,55,255);
+        }
+        else 
+        { 
+            setColor(i,255,255,255,255);
+        }
     }
 }
