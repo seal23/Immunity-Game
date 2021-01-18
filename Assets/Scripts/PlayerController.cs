@@ -37,7 +37,8 @@ public class PlayerController : MonoBehaviour
     float dashTimer;
     public float timeDash = 1f;
 
-
+    bool isStuned;
+    float stunedTimer;
     bool isGround;
     bool facingRight = true;
     bool isDead;
@@ -50,7 +51,8 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer mySpriteRenderer;
     public Color baseColor;
     public Color changeColor;
-    
+    public Color stunedColor;
+
     //Hit var
     bool beginHit = false;
     bool isHit = false;
@@ -89,6 +91,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         isDead = false;
+        isStuned = false;
         rigidbody2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         mySpriteRenderer = GetComponent<SpriteRenderer>();
@@ -112,6 +115,7 @@ public class PlayerController : MonoBehaviour
         //QualitySettings.vSyncCount = 0;
         //Application.targetFrameRate = 10;
         currentScene = SceneManager.GetActiveScene().name;
+     
         FindConfiner();
     }
 
@@ -197,7 +201,7 @@ public class PlayerController : MonoBehaviour
                     Flip();
             }
         }
-        if (horizontal != 0 && isGround)
+        if (horizontal != 0 && isGround && !isStuned)
             animator.SetBool("Run", true);
         else
             animator.SetBool("Run", false);
@@ -215,6 +219,15 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("Fall", true);
         }
 
+        if (isStuned)
+        {
+            stunedTimer -= Time.deltaTime;
+            if (stunedTimer < 0)
+            {
+                isStuned = false;
+                mySpriteRenderer.color = baseColor;
+            }
+        }
 
         //animator.SetFloat("Look X", lookDirection.x);
         //animator.SetFloat("Look Y", lookDirection.y);
@@ -227,7 +240,7 @@ public class PlayerController : MonoBehaviour
                 
             }
             if (Input.GetButtonDown("Dash"))
-            {   if (!isDash && !isHit)
+            {   if (!isDash && !isHit && !isStuned)
                 {
                     beginDash = true;
                     isDash = true;
@@ -255,7 +268,9 @@ public class PlayerController : MonoBehaviour
             {
                 isInvincible = false;
                 gameObject.layer = 8; // Dua ve layer "Player"
-                mySpriteRenderer.color = baseColor;
+                if (isStuned)
+                    mySpriteRenderer.color = stunedColor;
+                else mySpriteRenderer.color = baseColor;
             }
         }
         
@@ -364,7 +379,7 @@ public class PlayerController : MonoBehaviour
             isKnockBack = false;
         }
         else
-        if (knockBackTimer <0 && horizontal != 0 && isDash == false && (isHit ==false || isGround==false))
+        if (knockBackTimer <0 && horizontal != 0 && isDash == false && (isHit ==false || isGround==false) && !isStuned)
         {
 
          
@@ -378,7 +393,7 @@ public class PlayerController : MonoBehaviour
 
         }
       
-        if (isJumped)
+        if (isJumped && !isStuned)
         {
             isJumped = false;
             Jump();
@@ -473,6 +488,18 @@ public class PlayerController : MonoBehaviour
         {
             slime.ChangeHealth(-Atk);
         }
+
+        Boss02Controller boss02 = collision.gameObject.GetComponent<Boss02Controller>();
+        if (boss02 != null)
+        {
+            boss02.ChangeHealth(-Atk);
+        }
+
+        BossBody bossBody = collision.gameObject.GetComponent<BossBody>();
+        if (bossBody != null)
+        {
+            bossBody.ChangeHealth(-Atk);
+        }
     }
         
     void FindConfiner()
@@ -481,6 +508,15 @@ public class PlayerController : MonoBehaviour
             confiner.InvalidatePathCache();
             confiner.m_BoundingShape2D = GameObject.FindGameObjectWithTag("Bound").GetComponent<Collider2D>();
         
+    }
+
+    public void Stuned(float timeStuned)
+    {
+        isStuned = true;
+        stunedTimer = timeStuned;
+        Debug.Log("Player Stuned");
+        mySpriteRenderer.color = stunedColor;
+
     }
 
     /* void Launch()
