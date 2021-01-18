@@ -37,8 +37,7 @@ public class PlayerController : MonoBehaviour
     float dashTimer;
     public float timeDash = 1f;
 
-    bool isStuned;
-    float stunedTimer;
+
     bool isGround;
     bool facingRight = true;
     bool isDead;
@@ -51,8 +50,7 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer mySpriteRenderer;
     public Color baseColor;
     public Color changeColor;
-    public Color stunedColor;
-
+    
     //Hit var
     bool beginHit = false;
     bool isHit = false;
@@ -81,11 +79,18 @@ public class PlayerController : MonoBehaviour
     int Def;
     public int gold{get; set;}
 <<<<<<< HEAD
+<<<<<<< HEAD
     public int scroll { get; set; }
     public int hpPotion { get; set; }
     public int mpPotion { get; set; }
 =======
 >>>>>>> parent of 045a7f9... Merge branch 'master' of https://github.com/seal23/Immunity-Game
+=======
+    public int scroll{get; set;}
+    public int hpPotion{get; set;}
+    public int mpPotion{get; set;}
+
+>>>>>>> parent of 0548402... Revert "Merge branch 'master' of https://github.com/seal23/Immunity-Game"
     //public GameObject projectilePrefab;
     //public float projectileForce = 300f;
 
@@ -97,7 +102,6 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         isDead = false;
-        isStuned = false;
         rigidbody2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         mySpriteRenderer = GetComponent<SpriteRenderer>();
@@ -111,9 +115,13 @@ public class PlayerController : MonoBehaviour
         maxMP = playerInfo.getMP();
         UIController.setMaxMana(maxMP);
         maxHealth = playerInfo.getHP()+ (item.getArmor() + item.getBoot() + item.getNeck() + item.getRing())*10;
+        UIController.setMaxHealth(maxHealth);
         currentHealth = maxHealth;
         currentMP = 0;
         gold = 0;
+        scroll = 0;
+        hpPotion = 2;
+        mpPotion = 0;
 
         hitTriggerLeft.SetActive(false);
         hitTriggerRight.SetActive(false);
@@ -121,7 +129,6 @@ public class PlayerController : MonoBehaviour
         //QualitySettings.vSyncCount = 0;
         //Application.targetFrameRate = 10;
         currentScene = SceneManager.GetActiveScene().name;
-     
         FindConfiner();
     }
 
@@ -161,6 +168,7 @@ public class PlayerController : MonoBehaviour
         Def = playerInfo.getDEF()+ item.getArmor() + item.getBoot() + item.getNeck() + item.getRing();
         maxHealth = playerInfo.getHP()+ (item.getArmor() + item.getBoot() + item.getNeck() + item.getRing())*10;
 <<<<<<< HEAD
+<<<<<<< HEAD
       
         UIController.setMaxHealth(maxHealth);
         UIController.setHealth(currentHealth);
@@ -171,6 +179,10 @@ public class PlayerController : MonoBehaviour
         UIController.setHealth(currentHealth);
         UIController.setGold(gold);
 >>>>>>> parent of 045a7f9... Merge branch 'master' of https://github.com/seal23/Immunity-Game
+=======
+        UIController.setMaxHealth(maxHealth);
+        UIController.setHealth(currentHealth);
+>>>>>>> parent of 0548402... Revert "Merge branch 'master' of https://github.com/seal23/Immunity-Game"
 
         updateScene = SceneManager.GetActiveScene().name;
         if (updateScene != currentScene)
@@ -214,7 +226,7 @@ public class PlayerController : MonoBehaviour
                     Flip();
             }
         }
-        if (horizontal != 0 && isGround && !isStuned)
+        if (horizontal != 0 && isGround)
             animator.SetBool("Run", true);
         else
             animator.SetBool("Run", false);
@@ -232,15 +244,6 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("Fall", true);
         }
 
-        if (isStuned)
-        {
-            stunedTimer -= Time.deltaTime;
-            if (stunedTimer < 0)
-            {
-                isStuned = false;
-                mySpriteRenderer.color = baseColor;
-            }
-        }
 
         //animator.SetFloat("Look X", lookDirection.x);
         //animator.SetFloat("Look Y", lookDirection.y);
@@ -253,7 +256,7 @@ public class PlayerController : MonoBehaviour
                 
             }
             if (Input.GetButtonDown("Dash"))
-            {   if (!isDash && !isHit && !isStuned)
+            {   if (!isDash && !isHit)
                 {
                     beginDash = true;
                     isDash = true;
@@ -281,9 +284,7 @@ public class PlayerController : MonoBehaviour
             {
                 isInvincible = false;
                 gameObject.layer = 8; // Dua ve layer "Player"
-                if (isStuned)
-                    mySpriteRenderer.color = stunedColor;
-                else mySpriteRenderer.color = baseColor;
+                mySpriteRenderer.color = baseColor;
             }
         }
         
@@ -355,6 +356,11 @@ public class PlayerController : MonoBehaviour
             UIController.IsActive(true);
         }
 
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            useHPP();
+        }
+
         /*
         if (Input.GetKeyDown(KeyCode.X))
         {
@@ -392,7 +398,7 @@ public class PlayerController : MonoBehaviour
             isKnockBack = false;
         }
         else
-        if (knockBackTimer <0 && horizontal != 0 && isDash == false && (isHit ==false || isGround==false) && !isStuned)
+        if (knockBackTimer <0 && horizontal != 0 && isDash == false && (isHit ==false || isGround==false))
         {
 
          
@@ -406,7 +412,7 @@ public class PlayerController : MonoBehaviour
 
         }
       
-        if (isJumped && !isStuned)
+        if (isJumped)
         {
             isJumped = false;
             Jump();
@@ -496,22 +502,10 @@ public class PlayerController : MonoBehaviour
             boss01.ChangeHealth(-Atk);
         }
         
-        SlimeController slime = collision.gameObject.GetComponent<SlimeController>();
+        EnemyController slime = collision.gameObject.GetComponent<EnemyController>();
         if (slime != null)
         {
             slime.ChangeHealth(-Atk);
-        }
-
-        Boss02Controller boss02 = collision.gameObject.GetComponent<Boss02Controller>();
-        if (boss02 != null)
-        {
-            boss02.ChangeHealth(-Atk);
-        }
-
-        BossBody bossBody = collision.gameObject.GetComponent<BossBody>();
-        if (bossBody != null)
-        {
-            bossBody.ChangeHealth(-Atk);
         }
     }
         
@@ -523,13 +517,13 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    public void Stuned(float timeStuned)
+    public void useHPP()
     {
-        isStuned = true;
-        stunedTimer = timeStuned;
-        Debug.Log("Player Stuned");
-        mySpriteRenderer.color = stunedColor;
-
+        if (currentHealth < maxHealth && hpPotion > 0)
+        {
+            hpPotion -= 1;
+            ChangeHealth(100);
+        }
     }
 
     public void Stuned(float timeStuned)

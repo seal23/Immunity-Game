@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SlimeController : MonoBehaviour
+public class EnemyController : MonoBehaviour
 {
     bool facingRight = true;
 
@@ -11,8 +11,8 @@ public class SlimeController : MonoBehaviour
     public float baseSpeed = 60.0f;
     float speed;
     Rigidbody2D rigidbody2d;
-    public int atk = 5;
-    public int maxHealth = 3;
+    public int atk = 20;
+    public int maxHealth = 100;
     Animator animator;
 
     public Vector2 knockBack;
@@ -24,6 +24,10 @@ public class SlimeController : MonoBehaviour
     public Vector2 direction;
 
     SpriteRenderer mySpriteRenderer;
+
+    public GameObject drop1;
+    public GameObject drop2;
+    public GameObject drop3;
 
     int currentHealth;
     public int health
@@ -56,7 +60,6 @@ public class SlimeController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Status: " +status);
         if (isInvincible)
         {
             invincibleTimer -= Time.deltaTime;
@@ -78,14 +81,13 @@ public class SlimeController : MonoBehaviour
 
         else
         {
-            if (Mathf.Abs(target.transform.position.x - position.x) >= 10)
+            if (Mathf.Abs(target.transform.position.x - position.x) >= 5 && Mathf.Abs(target.transform.position.y - position.y) >= 5)
             {
                 status = 0;
             }
-            if (Mathf.Abs(target.transform.position.x - position.x) < 10 && (status != 2))
+            if (Mathf.Abs(target.transform.position.x - position.x) < 5 && Mathf.Abs(target.transform.position.y - position.y) < 5 && (status != 2))
             {
                 status = 1;
-                Debug.Log("Status 1");
             }
             if (currentHealth <= 0)
             {
@@ -93,16 +95,32 @@ public class SlimeController : MonoBehaviour
 
                 if(flag == 0) 
                 {
+                    int rand = Random.Range(0, 101);
+                    Debug.Log(rand);
+                    if (rand < 20)
+                    {
+                        int randitem = Random.Range(1, 4);
+                        Debug.Log(randitem);
+                        switch (randitem)
+                        {
+                            case 1: Instantiate(drop1, rigidbody2d.position, Quaternion.identity);
+                                break;
+                            case 2: Instantiate(drop2, rigidbody2d.position, Quaternion.identity);
+                                break;
+                            case 3: Instantiate(drop3, rigidbody2d.position, Quaternion.identity);
+                                break;
+                            default: break;
+                        }
+                    }
                     PlayerController player = GameObject.Find("Player").GetComponent<PlayerController>();
-                    player.getPlayerInfo().addExp(100);
-                    player.gold = player.gold+3;
+                    player.getPlayerInfo().addExp(maxHealth);
+                    player.gold = player.gold+(atk/5);
                     player.currentMP = player.currentMP+5;
                     flag = 1;
                 }
 
                 animator.SetTrigger("Dead");
                 gameObject.layer = 14; // layer "EnemyGhost"
-                Debug.Log("Slime Dead");
             }
 
 

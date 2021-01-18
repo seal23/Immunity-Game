@@ -221,7 +221,7 @@ public class Boss01Controller : MonoBehaviour
             player.ChangeHealth(-atk);
         }
 
-        SlimeController slime = collision.gameObject.GetComponent<SlimeController>();
+        EnemyController slime = collision.gameObject.GetComponent<EnemyController>();
         if (slime != null)
         {
             ChangeHealth((int)(maxHealth * 0.1));
@@ -246,9 +246,9 @@ public class Boss01Controller : MonoBehaviour
         //GameObject projectileObject2 = Instantiate(projectilePrefab, rigidbody2d.position + Vector2.left * 2f + Vector2.up * 2.5f, Quaternion.identity);
         GameObject projectileObject3 = Instantiate(projectilePrefab, rigidbody2d.position + Vector2.right * 1.5f+ Vector2.up * 2.5f, Quaternion.identity);
 
-        SlimeController projectile1 = projectileObject1.GetComponent<SlimeController>();
+        EnemyController projectile1 = projectileObject1.GetComponent<EnemyController>();
         //SlimeController projectile2 = projectileObject2.GetComponent<SlimeController>();
-        SlimeController projectile3 = projectileObject3.GetComponent<SlimeController>();
+        EnemyController projectile3 = projectileObject3.GetComponent<EnemyController>();
         Vector2 direction1 = new Vector2(-1f, 0.5f);
         //Vector2 direction2 = new Vector2(-0.6f, 0.5f);
         Vector2 direction3 = new Vector2(1f, 0.5f);
