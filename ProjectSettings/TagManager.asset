@@ -27,9 +27,10 @@ TagManager:
   - TIle
   - Teleport
   - NPC
-  - 
-  - 
-  - 
+  - drop
+  - FlyingBoss
+  - DeadGround
+  - BossGhost
   - 
   - 
   - 
