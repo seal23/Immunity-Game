@@ -190,7 +190,7 @@ public class Boss02Controller : MonoBehaviour
             {
                 for (int i = 0; i < 5; i++)
                 {
-                    int rand = Random.Range(0, 101);
+                    int rand = Random.Range(1, 101);
                     if (rand < 60)
                     {
                         int randitem = Random.Range(1, 4);

@@ -251,12 +251,12 @@ public class PlayerController : MonoBehaviour
             }
             if (Input.GetButtonDown("Dash"))
             {
-                if (!isDash && !isHit && !isStuned)
+                if (!isDash && !isHit && !isStuned && currentMP >= 5)
                 {
                     beginDash = true;
                     isDash = true;
                     dashTimer = timeDash;
-                 
+                    ChangeMana(-5);
                     
                     animator.SetBool("Run", false);
                 }
@@ -579,6 +579,11 @@ public class PlayerController : MonoBehaviour
         Debug.Log("Player Stuned");
         mySpriteRenderer.color = stunedColor;
 
+    }
+
+    public void fullHealth()
+    {
+        currentHealth = maxHealth;
     }
 
     /* void Launch()
