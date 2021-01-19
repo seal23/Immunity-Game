@@ -1373,7 +1373,9 @@ MonoBehaviour:
   scrima: {fileID: 6183594438670227642}
   hpp: {fileID: 81057784756886687}
   mpp: {fileID: 6340270943030679975}
+  scrBT: {fileID: 7829084354441630648}
   hpBT: {fileID: 4218127255290338874}
+  mpBT: {fileID: 5166916999108138761}
 --- !u!1 &2801247381758870035
 GameObject:
   m_ObjectHideFlags: 0

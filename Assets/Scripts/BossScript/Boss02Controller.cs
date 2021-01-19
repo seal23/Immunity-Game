@@ -209,7 +209,7 @@ public class Boss02Controller : MonoBehaviour
                 PlayerController player = GameObject.Find("Player").GetComponent<PlayerController>();
                 player.getPlayerInfo().addExp(maxHealth*2);
                 player.gold = player.gold+(atk/2);
-                player.currentMP = player.currentMP+10;
+                player.ChangeMana(10);
                 flag = 1;
             }
 

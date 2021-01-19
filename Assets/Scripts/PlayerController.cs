@@ -117,9 +117,9 @@ public class PlayerController : MonoBehaviour
         currentHealth = maxHealth;
         currentMP = 0;
         gold = 0;
-        scroll = 0;
+        scroll = 2;
         hpPotion = 2;
-        mpPotion = 0;
+        mpPotion = 2;
 
         hitTriggerLeft.SetActive(false);
         hitTriggerRight.SetActive(false);
@@ -354,9 +354,19 @@ public class PlayerController : MonoBehaviour
             UIController.IsActive(true);
         }
 
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            useScroll();
+        }
+
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             useHPP();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            useMPP();
         }
 
         /*
@@ -441,6 +451,11 @@ public class PlayerController : MonoBehaviour
         Debug.Log("Player Health: " + currentHealth);
         //UiHealthBar.instance.SetValue(currentHealth / (float)maxHealth);
 
+    }
+
+    public void ChangeMana(int amount)
+    {
+        currentMP = Mathf.Clamp(currentMP + amount, 0, maxMP);
     }
 
     private bool IsGround()
@@ -536,6 +551,24 @@ public class PlayerController : MonoBehaviour
         {
             hpPotion -= 1;
             ChangeHealth(100);
+        }
+    }
+
+    public void useMPP()
+    {
+        if (currentMP < maxMP && mpPotion > 0)
+        {
+            mpPotion -= 1;
+            ChangeMana(20);
+        }
+    }
+
+    public void useScroll()
+    {
+        if (scroll > 0)
+        {
+            scroll -= 1;
+            // Return villa
         }
     }
 

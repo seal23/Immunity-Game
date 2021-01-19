@@ -18,13 +18,15 @@ public class UIController : MonoBehaviour
     public Image hpp;
     public Image mpp;
 
-    public Button hpBT;
+    public Button scrBT,hpBT,mpBT;
 
     PlayerController player;
     void Start()
     {
         player = GameObject.Find("Player").GetComponent<PlayerController>();
+        scrBT.onClick.AddListener(scrBTClick);
         hpBT.onClick.AddListener(hpBTClick);
+        mpBT.onClick.AddListener(mpBTClick);
     }
 
     void Update()
@@ -108,8 +110,18 @@ public class UIController : MonoBehaviour
         }
     }
 
+    void scrBTClick()
+    {
+        player.useScroll();
+    }
+
     void hpBTClick()
     {
         player.useHPP();
+    }
+
+    void mpBTClick()
+    {
+        player.useMPP();
     }
 }

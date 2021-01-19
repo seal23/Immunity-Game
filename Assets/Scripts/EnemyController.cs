@@ -113,7 +113,7 @@ public class EnemyController : MonoBehaviour
                     PlayerController player = GameObject.Find("Player").GetComponent<PlayerController>();
                     player.getPlayerInfo().addExp(maxHealth);
                     player.gold = player.gold+(atk/5);
-                    player.currentMP = player.currentMP+5;
+                    player.ChangeMana(5);
                     flag = 1;
                 }
 
