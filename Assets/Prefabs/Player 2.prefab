@@ -533,7 +533,7 @@ GameObject:
   - component: {fileID: 8296848385351356710}
   - component: {fileID: 8296848385351356709}
   m_Layer: 8
-  m_Name: Player 1
+  m_Name: Player 2
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -690,8 +690,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UIController: {fileID: 684908486686449887}
-  cmVcam: {fileID: 0}
-  maxHealth: 200
+  cmVcam: {fileID: 5720371666864282391}
   speed: 180
   jumpHeight: {x: 0, y: 4.4}
   dashDistance: {x: 450, y: 0}
@@ -701,6 +700,7 @@ MonoBehaviour:
   timeDash: 0.55
   baseColor: {r: 1, g: 1, b: 1, a: 1}
   changeColor: {r: 0.9056604, g: 0.43147027, b: 0.43147027, a: 1}
+  stunedColor: {r: 0, g: 0, b: 0, a: 0}
   timeHit: 0.4
   hitTriggerLeft: {fileID: 5720371668236041278}
   hitTriggerRight: {fileID: 5720371668018040832}
