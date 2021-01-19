@@ -54,7 +54,7 @@ public class EnemyController : MonoBehaviour
         rigidbody2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         mySpriteRenderer = GetComponent<SpriteRenderer>();
-        target = GameObject.Find("Player");
+        target = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame

@@ -521,8 +521,12 @@ public class PlayerController : MonoBehaviour
     void FindConfiner()
     {
             confiner = cmVcam.GetComponent<CinemachineConfiner>();
+        if(confiner != null)
+        {
             confiner.InvalidatePathCache();
             confiner.m_BoundingShape2D = GameObject.FindGameObjectWithTag("Bound").GetComponent<Collider2D>();
+        }
+           
         
     }
 

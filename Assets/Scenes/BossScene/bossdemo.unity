@@ -140,9 +140,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56c83e93fb7a10b4b86866ba6d204586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PositionName: TeleBoss01
-  DestinationSceneName: Village v0.1
-  TeleportGameObjName: Gate02
+  PositionName: Gate01
+  DestinationSceneName: Village v0.2
+  TeleportGameObjName: Center Village
 --- !u!61 &105809062
 BoxCollider2D:
   m_ObjectHideFlags: 0
