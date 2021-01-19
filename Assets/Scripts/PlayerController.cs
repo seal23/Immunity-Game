@@ -84,8 +84,8 @@ public class PlayerController : MonoBehaviour
     public int scroll { get; set; }
     public int hpPotion { get; set; }
     public int mpPotion { get; set; }
-
-  
+    public int book { get; set; }
+    public int gem { get; set; }
 
 
     //public GameObject projectilePrefab;
@@ -120,6 +120,8 @@ public class PlayerController : MonoBehaviour
         scroll = 2;
         hpPotion = 2;
         mpPotion = 2;
+        book = 2;
+        gem = 2;
 
         hitTriggerLeft.SetActive(false);
         hitTriggerRight.SetActive(false);
@@ -369,6 +371,16 @@ public class PlayerController : MonoBehaviour
             useMPP();
         }
 
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            useBook();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            useGem();
+        }
+
         /*
         if (Input.GetKeyDown(KeyCode.X))
         {
@@ -569,6 +581,24 @@ public class PlayerController : MonoBehaviour
         {
             scroll -= 1;
             // Return villa
+        }
+    }
+
+    public void useBook()
+    {
+        if (book > 0)
+        {
+            book -= 1;
+            playerInfo.setLV(playerInfo.getLV()+1,0);
+        }
+    }
+
+    public void useGem()
+    {
+        if (gem > 0)
+        {
+            gem -= 1;
+            gold = gold * 2;
         }
     }
 

@@ -13,12 +13,16 @@ public class UIController : MonoBehaviour
     public Text textScroll;
     public Text textHPP;
     public Text textMPP;
+    public Text textBook;
+    public Text textGem;
 
     public Image scrima;
     public Image hpp;
     public Image mpp;
+    public Image bookima;
+    public Image gemima;
 
-    public Button scrBT,hpBT,mpBT;
+    public Button scrBT, hpBT, mpBT, bookBT, gemBT;
 
     PlayerController player;
     void Start()
@@ -27,6 +31,8 @@ public class UIController : MonoBehaviour
         scrBT.onClick.AddListener(scrBTClick);
         hpBT.onClick.AddListener(hpBTClick);
         mpBT.onClick.AddListener(mpBTClick);
+        bookBT.onClick.AddListener(bookBTClick);
+        gemBT.onClick.AddListener(gemBTClick);
     }
 
     void Update()
@@ -34,11 +40,17 @@ public class UIController : MonoBehaviour
         checkColor(player.scroll,scrima);
         checkColor(player.hpPotion,hpp);
         checkColor(player.mpPotion,mpp);
+        checkColor(player.book,bookima);
+        checkColor(player.gem,gemima);
+
         setMana(player.currentMP);
-        setGold(player.gold);
-        setScroll(player.scroll);
-        setHPP(player.hpPotion);
-        setMPP(player.mpPotion);
+        
+        SetNum(player.gold, textGold);
+        SetNum(player.scroll, textScroll);
+        SetNum(player.hpPotion, textHPP);
+        SetNum(player.mpPotion, textMPP);
+        SetNum(player.book, textBook);
+        SetNum(player.gem, textGem);
     }
 
     public void setMaxHealth(int n) 
@@ -68,24 +80,9 @@ public class UIController : MonoBehaviour
         textLv.text = "LV "+ n;
     }
 
-    public void setGold(int n) 
+    public void SetNum(int n, Text t) 
     {
-        textGold.text = "" + n;
-    }
-
-    public void setScroll(int n) 
-    {
-        textScroll.text = "" + n;
-    }
-
-    public void setHPP(int n) 
-    {
-        textHPP.text = "" + n;
-    }
-
-    public void setMPP(int n) 
-    {
-        textMPP.text = "" + n;
+        t.text = "" + n;
     }
 
     public void IsActive(bool n)
@@ -123,5 +120,15 @@ public class UIController : MonoBehaviour
     void mpBTClick()
     {
         player.useMPP();
+    }
+
+    void bookBTClick()
+    {
+        player.useBook();
+    }
+
+    void gemBTClick()
+    {
+        player.useGem();
     }
 }

@@ -28,6 +28,8 @@ public class EnemyController : MonoBehaviour
     public GameObject drop1;
     public GameObject drop2;
     public GameObject drop3;
+    public GameObject drop4;
+    public GameObject drop5;
 
     int currentHealth;
     public int health
@@ -106,6 +108,19 @@ public class EnemyController : MonoBehaviour
                             case 2: Instantiate(drop2, rigidbody2d.position, Quaternion.identity);
                                 break;
                             case 3: Instantiate(drop3, rigidbody2d.position, Quaternion.identity);
+                                break;
+                            default: break;
+                        }
+                    }
+                    int randrace = Random.Range(0, 101);
+                    if (randrace < 3)
+                    {
+                        int randitem = Random.Range(1, 3);
+                        switch (randitem)
+                        {
+                            case 1: Instantiate(drop4, rigidbody2d.position, Quaternion.identity);
+                                break;
+                            case 2: Instantiate(drop5, rigidbody2d.position, Quaternion.identity);
                                 break;
                             default: break;
                         }

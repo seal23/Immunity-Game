@@ -174,6 +174,8 @@ MonoBehaviour:
   drop1: {fileID: 3204691984269407866, guid: bbd8cf0b66ee4ac49bff8d8d6e8c0a44, type: 3}
   drop2: {fileID: 3204691984269407866, guid: 28907a226e2311440ac8f33f5fc4d162, type: 3}
   drop3: {fileID: 3204691984269407866, guid: b64a17d4f20f17049acd249f86014e35, type: 3}
+  drop4: {fileID: 3204691984269407866, guid: de6c64ff1dab4604c8146a2e4cf40948, type: 3}
+  drop5: {fileID: 3204691984269407866, guid: 9d73a97850f862f418ab0c164ff6eabe, type: 3}
   timeSkill01: 2
   timeUsedSkill01Min: 3
   timeUsedSkill01Max: 6
