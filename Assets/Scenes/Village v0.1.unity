@@ -4744,6 +4744,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1753d53c838270d479ba970c43ad019b, type: 3}
+--- !u!1 &177442258 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5720371666864282391, guid: b543a72a009c1114b92beedea13f4a70, type: 3}
+  m_PrefabInstance: {fileID: 5720371667788248748}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &186116021 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4274924318472888, guid: efbde38838d036d49ab3d0ab4d323eae, type: 3}
@@ -8809,6 +8814,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8296848385351356709, guid: b543a72a009c1114b92beedea13f4a70, type: 3}
+      propertyPath: jumpHeight.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8296848385351356709, guid: b543a72a009c1114b92beedea13f4a70, type: 3}
+      propertyPath: cmVcam
+      value: 
+      objectReference: {fileID: 177442258}
     - target: {fileID: 8296848385351356710, guid: b543a72a009c1114b92beedea13f4a70, type: 3}
       propertyPath: m_GravityScale
       value: 3
