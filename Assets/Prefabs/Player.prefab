@@ -573,7 +573,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.7297297, y: 0.8648649}
+    oldSize: {x: 0.84375, y: 1}
     newSize: {x: 0.84375, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -617,7 +617,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UIController: {fileID: 5108101338953265187}
   cmVcam: {fileID: 2000587755}
-  maxHealth: 200
   speed: 180
   jumpHeight: {x: 0, y: 6}
   dashDistance: {x: 450, y: 0}
@@ -627,9 +626,11 @@ MonoBehaviour:
   timeDash: 0.55
   baseColor: {r: 1, g: 1, b: 1, a: 1}
   changeColor: {r: 0.9056604, g: 0.43147027, b: 0.43147027, a: 1}
+  stunedColor: {r: 0, g: 0, b: 0, a: 0}
   timeHit: 0.4
   hitTriggerLeft: {fileID: 569633986}
   hitTriggerRight: {fileID: 854950140}
+  menu: {fileID: 2401268936438886433, guid: 69c3a4952e2f89249bc2e76e984f0cb6, type: 3}
 --- !u!1 &4343304150211967194
 GameObject:
   m_ObjectHideFlags: 0

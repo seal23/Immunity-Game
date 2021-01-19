@@ -374,12 +374,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4d7c2aba7a85d44cb937833195b9536, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextLevelDoor: {fileID: 0}
   baseSpeed: 60
-  atk: 10
-  maxHealth: 100
+  atk: 50
+  maxHealth: 10
   timeBorn: 4
   timeDead: 2
   knockBack: {x: 20, y: 20}
+  drop1: {fileID: 3204691984269407866, guid: bbd8cf0b66ee4ac49bff8d8d6e8c0a44, type: 3}
+  drop2: {fileID: 3204691984269407866, guid: 28907a226e2311440ac8f33f5fc4d162, type: 3}
+  drop3: {fileID: 3204691984269407866, guid: b64a17d4f20f17049acd249f86014e35, type: 3}
+  timeSkill01: 2
+  timeUsedSkill01Min: 4
+  timeUsedSkill01Max: 7
+  skill01Speed: 150
+  mulHealthSkill: 0.2
+  mulAtkSkill: 0.2
+  timeUsedSkill02: 1
+  timeStuned: 2
+  baseColor: {r: 0, g: 0, b: 0, a: 0}
+  changeColor: {r: 0, g: 0, b: 0, a: 0}
   timeInvincible: 0.4
 --- !u!1 &219328165366475697
 GameObject:

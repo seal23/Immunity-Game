@@ -165,18 +165,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55590944b3f4ce44ca946a888eeb0157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextLevelDoor: {fileID: 0}
   baseSpeed: 70
-  atk: 20
-  maxHealth: 8
+  atk: 40
+  maxHealth: 300
   timeBorn: 4
-  knockBack: {x: 15, y: 1}
+  knockBack: {x: 20, y: 1}
+  drop1: {fileID: 3204691984269407866, guid: bbd8cf0b66ee4ac49bff8d8d6e8c0a44, type: 3}
+  drop2: {fileID: 3204691984269407866, guid: 28907a226e2311440ac8f33f5fc4d162, type: 3}
+  drop3: {fileID: 3204691984269407866, guid: b64a17d4f20f17049acd249f86014e35, type: 3}
   timeSkill01: 2
   timeUsedSkill01Min: 3
   timeUsedSkill01Max: 6
   skill01Speed: 200
-  timeUsedSkill02: 6
+  timeUsedSkill02: 15
   mulSkill02Speed: 1.7
-  projectilePrefab: {fileID: 0}
+  projectilePrefab: {fileID: 1946263563030280287, guid: 802e9b05ba0cb394eb265a9a161df8c8, type: 3}
   timeInvincible: 0.4
 --- !u!70 &1756759672
 CapsuleCollider2D:

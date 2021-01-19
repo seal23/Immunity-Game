@@ -24,7 +24,10 @@ public class Boss02Controller : MonoBehaviour
     public Vector2 knockBack;
     bool isKnockBack;
 
-
+    int flag;
+    public GameObject drop1;
+    public GameObject drop2;
+    public GameObject drop3;
 
     //Skill01 config
     float skill01Timer;
@@ -66,7 +69,7 @@ public class Boss02Controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
+        flag = 0;
         maxHealthSkill = (int)(maxHealth * mulHealthSkill);
         healthSkill = maxHealthSkill;
         target = GameObject.Find("Player");
@@ -183,6 +186,33 @@ public class Boss02Controller : MonoBehaviour
         //Update Death status
         if (currentHealth <= 0)
         {
+            if(flag == 0) 
+            {
+                for (int i = 0; i < 5; i++)
+                {
+                    int rand = Random.Range(0, 101);
+                    if (rand < 60)
+                    {
+                        int randitem = Random.Range(1, 4);
+                        switch (randitem)
+                        {
+                            case 1: Instantiate(drop1, rigidbody2d.position + new Vector2(randitem*0.2f,randitem*0.3f), Quaternion.identity);
+                                break;
+                            case 2: Instantiate(drop2, rigidbody2d.position + new Vector2(randitem*0.2f,randitem*0.3f), Quaternion.identity);
+                                break;
+                            case 3: Instantiate(drop3, rigidbody2d.position + new Vector2(randitem*0.2f,randitem*0.3f), Quaternion.identity);
+                                break;
+                            default: break;
+                        }
+                    }
+                }
+                PlayerController player = GameObject.Find("Player").GetComponent<PlayerController>();
+                player.getPlayerInfo().addExp(maxHealth*2);
+                player.gold = player.gold+(atk/2);
+                player.currentMP = player.currentMP+10;
+                flag = 1;
+            }
+
             nextLevelDoor.SetActive(false);
             UpdateStatus(3);
         }

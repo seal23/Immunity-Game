@@ -96,11 +96,9 @@ public class EnemyController : MonoBehaviour
                 if(flag == 0) 
                 {
                     int rand = Random.Range(0, 101);
-                    Debug.Log(rand);
                     if (rand < 20)
                     {
                         int randitem = Random.Range(1, 4);
-                        Debug.Log(randitem);
                         switch (randitem)
                         {
                             case 1: Instantiate(drop1, rigidbody2d.position, Quaternion.identity);
