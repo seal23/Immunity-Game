@@ -107,21 +107,19 @@ public class PlayerController : MonoBehaviour
 
         playerInfo = new PlayerInfo();
         item = new ItemInfo();
-        
-        lv = playerInfo.getLV();
-        UIController.setLevel(lv);
-        maxMP = playerInfo.getMP();
-        UIController.setMaxMana(maxMP);
-        maxHealth = playerInfo.getHP()+ (item.getArmor() + item.getBoot() + item.getNeck() + item.getRing())*10;
-        UIController.setMaxHealth(maxHealth);
-        currentHealth = maxHealth;
-        currentMP = 0;
         gold = 0;
         scroll = 2;
         hpPotion = 2;
         mpPotion = 2;
         book = 2;
         gem = 2;
+        lv = playerInfo.getLV();
+        maxHealth = playerInfo.getHP()+ (item.getArmor() + item.getBoot() + item.getNeck() + item.getRing())*10;
+        maxMP = playerInfo.getMP();
+        currentHealth = maxHealth;
+        currentMP = 0;
+        UIController.setMaxMana(maxMP);
+        UIController.setMaxHealth(maxHealth);
 
         hitTriggerLeft.SetActive(false);
         hitTriggerRight.SetActive(false);
@@ -130,6 +128,15 @@ public class PlayerController : MonoBehaviour
         //Application.targetFrameRate = 10;
         currentScene = SceneManager.GetActiveScene().name;
         FindConfiner();
+        if (PlayerPrefs.HasKey("Loadmode"))
+        {
+            if(PlayerPrefs.GetInt("Loadmode")==1)
+            {
+                LoadGame();
+                PlayerPrefs.SetInt("Loadmode", 0);
+	            PlayerPrefs.Save();
+            }
+        }
     }
 
     private void Awake()
@@ -159,15 +166,14 @@ public class PlayerController : MonoBehaviour
         //Player Info
         if (lv != playerInfo.getLV())
         {
-            UIController.setLevel(playerInfo.getLV());
             maxHealth = playerInfo.getHP()+ (item.getArmor() + item.getBoot() + item.getNeck() + item.getRing())*10;
             currentHealth = maxHealth;
-            lv = playerInfo.getLV();
         }
         Atk = playerInfo.getATK()+ item.getSword()*5;
         Def = playerInfo.getDEF()+ item.getArmor() + item.getBoot() + item.getNeck() + item.getRing();
         maxHealth = playerInfo.getHP()+ (item.getArmor() + item.getBoot() + item.getNeck() + item.getRing())*10;
-
+        lv = playerInfo.getLV();
+        UIController.setLevel(playerInfo.getLV());
         UIController.setMaxHealth(maxHealth);
         UIController.setHealth(currentHealth);
        
@@ -615,6 +621,52 @@ public class PlayerController : MonoBehaviour
     {
         currentHealth = maxHealth;
     }
+
+    public void SaveGame()
+    {
+        PlayerPrefs.DeleteAll();
+	    PlayerPrefs.SetInt("playerLV", playerInfo.getLV());
+	    PlayerPrefs.SetFloat("exp", playerInfo.getEXP());
+        PlayerPrefs.SetInt("gold", gold);
+        PlayerPrefs.SetInt("scroll", scroll);
+        PlayerPrefs.SetInt("hpp", hpPotion);
+        PlayerPrefs.SetInt("mpp", mpPotion);
+        PlayerPrefs.SetInt("book", book);
+        PlayerPrefs.SetInt("gem", gem);
+        PlayerPrefs.SetInt("neck", item.getNeck());
+        PlayerPrefs.SetInt("armor", item.getArmor());
+        PlayerPrefs.SetInt("ring", item.getRing());
+        PlayerPrefs.SetInt("boot", item.getBoot());
+        PlayerPrefs.SetInt("sword", item.getSword());
+        PlayerPrefs.SetInt("currentHealth", currentHealth);
+        PlayerPrefs.SetInt("currentMP", currentMP);
+	    PlayerPrefs.Save();
+    }
+
+    public void LoadGame()
+    {
+        if (PlayerPrefs.HasKey("playerLV"))
+        {
+            int playerLV = PlayerPrefs.GetInt("playerLV");
+            float exp = PlayerPrefs.GetFloat("exp");
+            playerInfo.setLV(playerLV, exp);
+            Debug.Log(playerInfo.getLV());
+            gold = PlayerPrefs.GetInt("gold");
+            scroll = PlayerPrefs.GetInt("scroll");
+            hpPotion = PlayerPrefs.GetInt("hpp");
+            mpPotion = PlayerPrefs.GetInt("mpp");
+            book = PlayerPrefs.GetInt("book");
+            gem = PlayerPrefs.GetInt("gem");
+            currentHealth = PlayerPrefs.GetInt("currentHealth");
+            currentMP = PlayerPrefs.GetInt("currentMP");
+            item.setNeck(PlayerPrefs.GetInt("neck"));
+            item.setArmor(PlayerPrefs.GetInt("armor"));
+            item.setRing(PlayerPrefs.GetInt("ring"));
+            item.setBoot(PlayerPrefs.GetInt("boot"));
+            item.setSword(PlayerPrefs.GetInt("sword"));
+        }
+    }
+
 
     /* void Launch()
      {

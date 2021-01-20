@@ -45,7 +45,7 @@ public class UpgradeController : MonoBehaviour
 
     void Start()
 	{
-        player = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
+        player = GameObject.Find("Player").GetComponent<PlayerController>();
 		upgradeBT.onClick.AddListener(upgradeItem);
         neckBT.onClick.AddListener(() => itemShow(neckBT, 1));
         bootBT.onClick.AddListener(() => itemShow(bootBT, 2));
