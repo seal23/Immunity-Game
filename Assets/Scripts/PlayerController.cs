@@ -87,6 +87,8 @@ public class PlayerController : MonoBehaviour
     public int book { get; set; }
     public int gem { get; set; }
 
+    public GameObject lvupeffect;
+    float timeLvup = 0;
 
     //public GameObject projectilePrefab;
     //public float projectileForce = 300f;
@@ -168,6 +170,14 @@ public class PlayerController : MonoBehaviour
         {
             maxHealth = playerInfo.getHP()+ (item.getArmor() + item.getBoot() + item.getNeck() + item.getRing())*10;
             currentHealth = maxHealth;
+            lvupeffect.SetActive(true);
+            timeLvup = 0.6f;
+        }
+        if (timeLvup > 0){
+            timeLvup -= Time.deltaTime;
+        } else 
+        {
+            lvupeffect.SetActive(false);
         }
         Atk = playerInfo.getATK()+ item.getSword()*5;
         Def = playerInfo.getDEF()+ item.getArmor() + item.getBoot() + item.getNeck() + item.getRing();
@@ -449,6 +459,7 @@ public class PlayerController : MonoBehaviour
 
     public void ChangeHealth(int amount)
     {
+        int a = amount;
         if (amount < 0)
         {
             //animator.SetTrigger("Hit");
@@ -463,9 +474,9 @@ public class PlayerController : MonoBehaviour
             isKnockBack = true;
             knockBackTimer = timeKnockBack;
             //PlaySound(playerHitClip);
+            a = Mathf.Clamp(Def + amount, amount, -1);
         }
-
-        currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
+        currentHealth = Mathf.Clamp(currentHealth + a, 0, maxHealth);
         Debug.Log("Player Health: " + currentHealth);
         //UiHealthBar.instance.SetValue(currentHealth / (float)maxHealth);
 
