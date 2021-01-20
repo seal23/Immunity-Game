@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyController : MonoBehaviour
 {
@@ -31,6 +32,9 @@ public class EnemyController : MonoBehaviour
     public GameObject drop4;
     public GameObject drop5;
 
+    public GameObject hpbar;
+    Slider slider;
+
     int currentHealth;
     public int health
     {
@@ -57,11 +61,16 @@ public class EnemyController : MonoBehaviour
         animator = GetComponent<Animator>();
         mySpriteRenderer = GetComponent<SpriteRenderer>();
         target = GameObject.FindGameObjectWithTag("Player");
+        hpbar.SetActive(false);
+        slider = hpbar.GetComponent<Slider>();
+        slider.maxValue = maxHealth;
     }
 
     // Update is called once per frame
     void Update()
     {
+        slider.value = currentHealth;
+
         if (isInvincible)
         {
             invincibleTimer -= Time.deltaTime;
@@ -83,20 +92,23 @@ public class EnemyController : MonoBehaviour
 
         else
         {
-            if (Mathf.Abs(target.transform.position.x - position.x) >= 5 && Mathf.Abs(target.transform.position.y - position.y) >= 5)
+            if (Mathf.Abs(target.transform.position.x - position.x) >= 5 || Mathf.Abs(target.transform.position.y - position.y) >= 5)
             {
                 status = 0;
+                hpbar.SetActive(false);
             }
             if (Mathf.Abs(target.transform.position.x - position.x) < 5 && Mathf.Abs(target.transform.position.y - position.y) < 5 && (status != 2))
             {
                 status = 1;
+                hpbar.SetActive(true);
             }
             if (currentHealth <= 0)
             {
                 status = 2;
-
+                
                 if(flag == 0) 
                 {
+                    hpbar.SetActive(false);
                     int rand = Random.Range(0, 101);
                     if (rand < 20)
                     {
@@ -113,7 +125,7 @@ public class EnemyController : MonoBehaviour
                         }
                     }
                     int randrace = Random.Range(0, 101);
-                    if (randrace < 3)
+                    if (randrace <= 3)
                     {
                         int randitem = Random.Range(1, 3);
                         switch (randitem)
