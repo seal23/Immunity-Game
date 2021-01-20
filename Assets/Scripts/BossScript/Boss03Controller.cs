@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boss02Controller : MonoBehaviour
+public class Boss03Controller : MonoBehaviour
 {
     public GameObject nextLevelDoor;
     float horizontal;
@@ -77,23 +77,23 @@ public class Boss02Controller : MonoBehaviour
         target = GameObject.Find("Player");
         gameObject.layer = 21; // layer "BossGhost"
         speed = baseSpeed;
-        
+
         rigidbody2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         currentHealth = maxHealth;
-        status = 0;
+        status = 1;
         bornTimer = timeBorn;
         deadTimer = timeDead;
 
         mySpriteRenderer = GetComponent<SpriteRenderer>();
-       
+
     }
 
     // Update is called once per frame
     void Update()
     {
-       
-        if (status ==2)
+
+        if (status == 2)
         {
             if (!usedSkill01 && !usedSkill02)
             {
@@ -170,12 +170,12 @@ public class Boss02Controller : MonoBehaviour
                 }
             }
         }
-        
+
 
         //Born Time
         if (status == 1)
         {
-            animator.Play("Born");
+            //animator.Play("Born");
             bornTimer -= Time.deltaTime;
             if (bornTimer < 0)
             {
@@ -188,7 +188,7 @@ public class Boss02Controller : MonoBehaviour
         //Update Death status
         if (currentHealth <= 0)
         {
-            if(flag == 0) 
+            if (flag == 0)
             {
                 for (int i = 0; i < 5; i++)
                 {
@@ -198,11 +198,14 @@ public class Boss02Controller : MonoBehaviour
                         int randitem = Random.Range(1, 4);
                         switch (randitem)
                         {
-                            case 1: Instantiate(drop1, rigidbody2d.position + new Vector2(randitem*0.2f,randitem*0.3f), Quaternion.identity);
+                            case 1:
+                                Instantiate(drop1, rigidbody2d.position + new Vector2(randitem * 0.2f, randitem * 0.3f), Quaternion.identity);
                                 break;
-                            case 2: Instantiate(drop2, rigidbody2d.position + new Vector2(randitem*0.2f,randitem*0.3f), Quaternion.identity);
+                            case 2:
+                                Instantiate(drop2, rigidbody2d.position + new Vector2(randitem * 0.2f, randitem * 0.3f), Quaternion.identity);
                                 break;
-                            case 3: Instantiate(drop3, rigidbody2d.position + new Vector2(randitem*0.2f,randitem*0.3f), Quaternion.identity);
+                            case 3:
+                                Instantiate(drop3, rigidbody2d.position + new Vector2(randitem * 0.2f, randitem * 0.3f), Quaternion.identity);
                                 break;
                             default: break;
                         }
@@ -213,22 +216,24 @@ public class Boss02Controller : MonoBehaviour
                         int randitem = Random.Range(1, 3);
                         switch (randitem)
                         {
-                            case 1: Instantiate(drop4, rigidbody2d.position, Quaternion.identity);
+                            case 1:
+                                Instantiate(drop4, rigidbody2d.position, Quaternion.identity);
                                 break;
-                            case 2: Instantiate(drop5, rigidbody2d.position, Quaternion.identity);
+                            case 2:
+                                Instantiate(drop5, rigidbody2d.position, Quaternion.identity);
                                 break;
                             default: break;
                         }
                     }
                 }
                 PlayerController player = GameObject.Find("Player").GetComponent<PlayerController>();
-                player.getPlayerInfo().addExp(maxHealth*2);
-                player.gold = player.gold+(atk/2);
+                player.getPlayerInfo().addExp(maxHealth * 2);
+                player.gold = player.gold + (atk / 2);
                 player.ChangeMana(10);
                 flag = 1;
             }
 
-            nextLevelDoor.SetActive(false);
+            //nextLevelDoor.SetActive(false);
             UpdateStatus(3);
         }
         if (status == 3)
@@ -236,8 +241,8 @@ public class Boss02Controller : MonoBehaviour
             animator.Play("Dead");
             gameObject.layer = 21; // layer "BossGhost"
             Debug.Log("Slime King Dead");
-           
-           
+
+
             if (deadTimer < 0)
             {
                 rigidbody2d.gravityScale = 1f;
@@ -275,8 +280,8 @@ public class Boss02Controller : MonoBehaviour
     {
         if (status != 2 || usedSkill02)
             return;
-        
-           
+
+
         if (amount < 0)
         {
 
@@ -295,12 +300,12 @@ public class Boss02Controller : MonoBehaviour
             }
             if (!usedSkill01)
             {
-                 isKnockBack = true;
+                isKnockBack = true;
 
-                 Debug.Log("Knockback " + knockBack.x);
+                Debug.Log("Knockback " + knockBack.x);
 
 
-                 //PlaySound(playerHitClip);
+                //PlaySound(playerHitClip);
             }
             isKnockBack = true;
             Debug.Log("Knockback " + knockBack.x);
@@ -344,6 +349,4 @@ public class Boss02Controller : MonoBehaviour
             vertical = -1;
         else vertical = 0;
     }
-
-  
 }

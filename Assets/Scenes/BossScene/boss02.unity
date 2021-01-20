@@ -10337,6 +10337,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 772825611670938469, guid: 5447051da0f481e46a510effd57bed17, type: 3}
+      propertyPath: m_Layer
+      value: 19
+      objectReference: {fileID: 0}
     - target: {fileID: 772825612709105889, guid: 5447051da0f481e46a510effd57bed17, type: 3}
       propertyPath: m_Name
       value: Boss02Sytem
@@ -10384,6 +10388,18 @@ PrefabInstance:
     - target: {fileID: 772825612709105890, guid: 5447051da0f481e46a510effd57bed17, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 772825612752321938, guid: 5447051da0f481e46a510effd57bed17, type: 3}
+      propertyPath: m_Layer
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 772825613094544231, guid: 5447051da0f481e46a510effd57bed17, type: 3}
+      propertyPath: m_Layer
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 772825613167952698, guid: 5447051da0f481e46a510effd57bed17, type: 3}
+      propertyPath: m_Layer
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 772825613167952702, guid: 5447051da0f481e46a510effd57bed17, type: 3}
       propertyPath: nextLevelDoor
@@ -10448,6 +10464,10 @@ PrefabInstance:
     - target: {fileID: 772825613167952702, guid: 5447051da0f481e46a510effd57bed17, type: 3}
       propertyPath: timeUsedSkill02
       value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 772825613295954236, guid: 5447051da0f481e46a510effd57bed17, type: 3}
+      propertyPath: m_Layer
+      value: 19
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5447051da0f481e46a510effd57bed17, type: 3}
