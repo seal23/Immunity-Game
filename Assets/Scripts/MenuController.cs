@@ -26,11 +26,12 @@ public class MenuController : MonoBehaviour
         return instance;
     }
 
-    public Button menuBT, continueBT, optionBT, exitBT;
+    public Button menuBT, continueBT, optionBT, exitBT, saveBT;
     // Start is called before the first frame update
     void Start()
     {
         menuBT.onClick.AddListener(menuGame);
+        saveBT.onClick.AddListener(saveGame);
         continueBT.onClick.AddListener(continueGame);
         optionBT.onClick.AddListener(optionGame);
         exitBT.onClick.AddListener(exitGame);
@@ -45,6 +46,11 @@ public class MenuController : MonoBehaviour
     void menuGame(){
         var parameters = new LoadSceneParameters(LoadSceneMode.Single);
         SceneManager.LoadScene("StartMenu");
+    }
+
+    void saveGame(){
+        GameObject.Find("Player").GetComponent<PlayerController>().SaveGame();
+        Destroy(this.gameObject);
     }
 
     void continueGame(){

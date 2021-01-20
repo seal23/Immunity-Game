@@ -23,9 +23,21 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4012328582068143461, guid: b543a72a009c1114b92beedea13f4a70, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5720371666864282386, guid: b543a72a009c1114b92beedea13f4a70, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 1.9733009
+      value: 2.487805
+      objectReference: {fileID: 0}
+    - target: {fileID: 5720371667807286286, guid: b543a72a009c1114b92beedea13f4a70, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5720371667807286286, guid: b543a72a009c1114b92beedea13f4a70, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8296848385351356706, guid: b543a72a009c1114b92beedea13f4a70, type: 3}
       propertyPath: m_LocalPosition.x
@@ -73,20 +85,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8296848385351356708, guid: b543a72a009c1114b92beedea13f4a70, type: 3}
       propertyPath: m_Name
-      value: Player
+      value: Player Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8296848385351356708, guid: b543a72a009c1114b92beedea13f4a70, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8296848385351356709, guid: b543a72a009c1114b92beedea13f4a70, type: 3}
-      propertyPath: jumpHeight.y
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8296848385351356709, guid: b543a72a009c1114b92beedea13f4a70, type: 3}
-      propertyPath: cmVcam
-      value: 
-      objectReference: {fileID: 1045933364558119349}
     - target: {fileID: 8296848385351356710, guid: b543a72a009c1114b92beedea13f4a70, type: 3}
       propertyPath: m_GravityScale
       value: 3
@@ -97,8 +101,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b543a72a009c1114b92beedea13f4a70, type: 3}
---- !u!1 &1045933364558119349 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5720371666864282391, guid: b543a72a009c1114b92beedea13f4a70, type: 3}
-  m_PrefabInstance: {fileID: 4747129785100065442}
-  m_PrefabAsset: {fileID: 0}

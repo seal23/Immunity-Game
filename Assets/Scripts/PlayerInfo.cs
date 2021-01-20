@@ -14,11 +14,13 @@ public class PlayerInfo : MonoBehaviour
     public void setLV(int lv, float exp)
     {
         LV = lv;
+         Debug.Log(lv);
         HP = 100 + 50*(LV-1);
         MP = 100 + 10*(LV-1);
         ATK = 10 + (LV-1);
         DEF = 1 + (LV-1);
         EXP = exp;
+        Debug.Log(LV);
     }
 
     public PlayerInfo()

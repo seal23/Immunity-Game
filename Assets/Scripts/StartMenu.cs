@@ -30,11 +30,15 @@ public class StartMenu : MonoBehaviour
     }
 
     void continueGame(){
-         Debug.Log("Button continue click");
+        var parameters = new LoadSceneParameters(LoadSceneMode.Single);
+        SceneManager.LoadScene("Village v0.1");
+        PlayerPrefs.SetInt("Loadmode", 1);
+	    PlayerPrefs.Save();
+        
     }
 
     void optionGame(){
-         Debug.Log("Button option click");
+        Debug.Log("Button option click");
     }
 
     void exitGame(){
