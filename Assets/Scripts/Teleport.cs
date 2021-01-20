@@ -3,14 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
-public class Teleport : MonoBehaviour
+using Assets.Scripts;
+public class Teleport : MonoBehaviour,ITeleport
 {
     // Start is called before the first frame update
     public string PositionName = "";
     public string DestinationSceneName = "";
     public string TeleportGameObjName = "";
 
+    public bool IsEnable = true;
 
     void Start()
     {
@@ -31,15 +32,13 @@ public class Teleport : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (triggerStay)
+        if (IsEnable)
         {
-            if (Input.GetKeyDown(KeyCode.X))
-                isEnter = true;
-        }
-        else
-        {
-            
+            if (triggerStay)
+            {
+                if (Input.GetKeyDown(KeyCode.X))
+                    isEnter = true;
+            }
         }
     }
     
@@ -107,5 +106,8 @@ public class Teleport : MonoBehaviour
         }
     }
 
-
+    public string GetPostionName()
+    {
+        return PositionName;
+    }
 }

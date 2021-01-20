@@ -27,6 +27,8 @@ public class PlayerController : MonoBehaviour
     public float timeInvincible = 2.0f;
     int currentHealth;
 
+    //Level boss
+    private int bossLevel = 1;
     public int health
     {
         get { return currentHealth; }
@@ -685,7 +687,15 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public int getLevel()
+    {
+        return bossLevel;
+    }
 
+    public void NextBoss()
+    {
+        bossLevel++;
+    }
     /* void Launch()
      {
          //Tao projectile

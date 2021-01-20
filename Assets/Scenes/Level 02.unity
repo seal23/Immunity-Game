@@ -242,7 +242,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2664462491618348106, guid: d17929e11d75b6d45bc5442721631ca9, type: 3}
       propertyPath: DestinationSceneName
-      value: bossdemo
+      value: boss02
       objectReference: {fileID: 0}
     - target: {fileID: 2664462491618348106, guid: d17929e11d75b6d45bc5442721631ca9, type: 3}
       propertyPath: TeleportGameObjName
@@ -6405,13 +6405,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1045933362546241196, guid: 9951d93c07e28374d83777277cf62646, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.9999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 1045933364558119346, guid: 9951d93c07e28374d83777277cf62646, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.9999999
+      objectReference: {fileID: 0}
     - target: {fileID: 3658438877061106560, guid: 9951d93c07e28374d83777277cf62646, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.1034117
+      value: 10.02
       objectReference: {fileID: 0}
     - target: {fileID: 3658438877061106560, guid: 9951d93c07e28374d83777277cf62646, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.31881094
+      value: 1.87
       objectReference: {fileID: 0}
     - target: {fileID: 3658438877061106560, guid: 9951d93c07e28374d83777277cf62646, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6670,8 +6678,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PositionName: Gate01
-  DestinationSceneName: Level 01
-  TeleportGameObjName: Gate02
+  DestinationSceneName: Village v0.2
+  TeleportGameObjName: Gate01
+  IsEnable: 1
 --- !u!61 &1837381988
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -41216,4 +41225,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49819a59925b40b46a339946647c7814, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 20

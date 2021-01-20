@@ -384,6 +384,10 @@ PrefabInstance:
       propertyPath: stunedColor.b
       value: 0.9716981
       objectReference: {fileID: 0}
+    - target: {fileID: 4343304148750238169, guid: 2ac603e7314983446b396013ceaf3322, type: 3}
+      propertyPath: lvupeffect
+      value: 
+      objectReference: {fileID: 5655941238388610699, guid: 6e48e164c23838b49ad8678b35c7858a, type: 3}
     - target: {fileID: 4343304148750238174, guid: 2ac603e7314983446b396013ceaf3322, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.870419
