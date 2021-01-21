@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 using Assets.Scripts;
 public class VillageTeleport : MonoBehaviour
 {
-    public int level = 1;
+    //public int level = 1;
     public string PositionName = "Gate01";
     // Start is called before the first frame update
     private string levelSceneName = "";
@@ -17,8 +17,8 @@ public class VillageTeleport : MonoBehaviour
         var playerGameObj = GameObject.Find("Player");
         if (playerGameObj != null)
         {
-            levelSceneName = LevelManager.getSceneNameByLevel(level);
-            //levelSceneName = LevelManager.getSceneNameByLevel(playerGameObj.GetComponent<PlayerController>().getLevel());
+            //levelSceneName = LevelManager.getSceneNameByLevel(level);
+            levelSceneName = LevelManager.getSceneNameByLevel(playerGameObj.GetComponent<PlayerController>().getLevel());
         }
     }
 
