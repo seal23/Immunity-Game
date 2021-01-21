@@ -120,8 +120,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   baseSpeed: 80
-  atk: 20
-  maxHealth: 100
+  atk: 30
+  maxHealth: 200
   knockBack: {x: 20, y: 1}
   isLaunch: 0
   timeLaunch: 0.2
@@ -146,18 +146,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.043444633, y: -0.41583252}
+  m_Offset: {x: 0.0366354, y: -0.59970164}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.6, y: 1.6}
+    oldSize: {x: 2.5, y: 2.5}
     newSize: {x: 1.6, y: 1.6}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.4952488, y: 0.76833487}
+  m_Size: {x: 0.56334877, y: 1.1360731}
   m_EdgeRadius: 0
 --- !u!50 &8903526768459542153
 Rigidbody2D:
@@ -249,7 +249,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8172390322688430571, guid: a56dd4f70e611ca4d82132eeb3e8fa26, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.1
+      value: 0.0459
       objectReference: {fileID: 0}
     - target: {fileID: 8172390322688430571, guid: a56dd4f70e611ca4d82132eeb3e8fa26, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -257,7 +257,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8172390322688430571, guid: a56dd4f70e611ca4d82132eeb3e8fa26, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1.1704187
+      value: 1.0621195
       objectReference: {fileID: 0}
     - target: {fileID: 8172390322688430571, guid: a56dd4f70e611ca4d82132eeb3e8fa26, type: 3}
       propertyPath: m_SizeDelta.y

@@ -119,18 +119,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.050063744, y: -0.5468463}
+  m_Offset: {x: 0.028276116, y: -0.8876583}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.6, y: 1.6}
+    oldSize: {x: 2.6666667, y: 2.6666667}
     newSize: {x: 1.6, y: 1.6}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.35786882, y: 0.5063075}
+  m_Size: {x: 0.5176454, y: 0.81027853}
   m_EdgeRadius: 0
 --- !u!114 &3675869126187115233
 MonoBehaviour:
@@ -146,8 +146,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   baseSpeed: 80
-  atk: 20
-  maxHealth: 100
+  atk: 25
+  maxHealth: 150
   knockBack: {x: 20, y: 1}
   isLaunch: 0
   timeLaunch: 0.2
@@ -199,6 +199,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 3792337987112141799, guid: a56dd4f70e611ca4d82132eeb3e8fa26, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3792337987112141799, guid: a56dd4f70e611ca4d82132eeb3e8fa26, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6662745935806444326, guid: a56dd4f70e611ca4d82132eeb3e8fa26, type: 3}
       propertyPath: m_Value
       value: 1
@@ -249,7 +257,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8172390322688430571, guid: a56dd4f70e611ca4d82132eeb3e8fa26, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.1
+      value: 0.038
       objectReference: {fileID: 0}
     - target: {fileID: 8172390322688430571, guid: a56dd4f70e611ca4d82132eeb3e8fa26, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -257,7 +265,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8172390322688430571, guid: a56dd4f70e611ca4d82132eeb3e8fa26, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1.1704187
+      value: 1.0464098
       objectReference: {fileID: 0}
     - target: {fileID: 8172390322688430571, guid: a56dd4f70e611ca4d82132eeb3e8fa26, type: 3}
       propertyPath: m_SizeDelta.y
