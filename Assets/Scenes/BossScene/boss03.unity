@@ -7448,5 +7448,13 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5778102683407337878, guid: 9bfbb78e842e1954caadb5f66647d853, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5778102683407337878, guid: 9bfbb78e842e1954caadb5f66647d853, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9bfbb78e842e1954caadb5f66647d853, type: 3}

@@ -44673,7 +44673,7 @@ PrefabInstance:
       objectReference: {fileID: 1946263563030280287, guid: 802e9b05ba0cb394eb265a9a161df8c8, type: 3}
     - target: {fileID: 3985931762238886739, guid: 224bb08b5dd88b749b36db490df57088, type: 3}
       propertyPath: maxHealth
-      value: 5
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 3985931762238886739, guid: 224bb08b5dd88b749b36db490df57088, type: 3}
       propertyPath: timeUsedSkill02

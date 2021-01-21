@@ -157,8 +157,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextLevelDoor: {fileID: 0}
   baseSpeed: 20
-  atk: 10
-  maxHealth: 200
+  atk: 70
+  maxHealth: 1000
   timeBorn: 4
   timeDead: 1
   knockBack: {x: 10, y: 10}
