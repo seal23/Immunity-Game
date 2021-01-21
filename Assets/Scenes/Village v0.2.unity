@@ -844,6 +844,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3658438877061106567, guid: 9951d93c07e28374d83777277cf62646, type: 3}
+      propertyPath: stunedColor.r
+      value: 0.023584902
+      objectReference: {fileID: 0}
+    - target: {fileID: 3658438877061106567, guid: 9951d93c07e28374d83777277cf62646, type: 3}
+      propertyPath: stunedColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3658438877061106567, guid: 9951d93c07e28374d83777277cf62646, type: 3}
+      propertyPath: stunedColor.b
+      value: 0.76270384
+      objectReference: {fileID: 0}
+    - target: {fileID: 3658438877061106567, guid: 9951d93c07e28374d83777277cf62646, type: 3}
+      propertyPath: stunedColor.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4925092114317830003, guid: 9951d93c07e28374d83777277cf62646, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
