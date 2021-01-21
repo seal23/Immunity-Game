@@ -7448,21 +7448,5 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 1450702657000177275, guid: 9bfbb78e842e1954caadb5f66647d853, type: 3}
-      propertyPath: timeDead
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1450702657000177275, guid: 9bfbb78e842e1954caadb5f66647d853, type: 3}
-      propertyPath: maxHealth
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 1450702657000177275, guid: 9bfbb78e842e1954caadb5f66647d853, type: 3}
-      propertyPath: projectilePrefab
-      value: 
-      objectReference: {fileID: 3805077731861728527, guid: 24c08152a92ee494dac9e8d5a2c50a51, type: 3}
-    - target: {fileID: 1450702657000177275, guid: 9bfbb78e842e1954caadb5f66647d853, type: 3}
-      propertyPath: projectilePrefab2
-      value: 
-      objectReference: {fileID: 36087400773432428, guid: 9ef0bebf1f1bc684c919f66b5d5e854e, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9bfbb78e842e1954caadb5f66647d853, type: 3}
