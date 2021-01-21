@@ -5,6 +5,7 @@ using UnityEngine;
 public class Boss03Controller : MonoBehaviour
 {
     public GameObject nextLevelDoor;
+    bool isChild;
     float horizontal;
     float vertical;
     GameObject target;
@@ -31,9 +32,14 @@ public class Boss03Controller : MonoBehaviour
     public GameObject drop4;
     public GameObject drop5;
 
+    public GameObject projectilePrefab;
+    public GameObject projectilePrefab2;
+    //GameObject projectileObject3;
+
     //Skill01 config
     float skill01Timer;
     bool usedSkill01 = false;
+    int typeSkill01;
     public float timeSkill01 = 2.0f;
     public float timeUsedSkill01Min = 4.0f;
     public float timeUsedSkill01Max = 7.0f;
@@ -71,6 +77,8 @@ public class Boss03Controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        typeSkill01 = 0;
+        isChild = false;
         flag = 0;
         maxHealthSkill = (int)(maxHealth * mulHealthSkill);
         healthSkill = maxHealthSkill;
@@ -84,7 +92,7 @@ public class Boss03Controller : MonoBehaviour
         status = 1;
         bornTimer = timeBorn;
         deadTimer = timeDead;
-
+        targetPosition = target.transform.position;
         mySpriteRenderer = GetComponent<SpriteRenderer>();
 
     }
@@ -106,6 +114,10 @@ public class Boss03Controller : MonoBehaviour
 
                     targetPosition = target.transform.position;
                     UpdateTargetPosition(targetPosition);
+                    typeSkill01 = Random.Range(0, 2);
+                    Debug.Log("TypeSkill: " + typeSkill01);
+                    if (typeSkill01 == 1)
+                        Launch2();
 
                 }
             }
@@ -114,13 +126,17 @@ public class Boss03Controller : MonoBehaviour
             {
                 UpdateTargetPosition(targetPosition);
                 skill01Timer -= Time.deltaTime;
+              
+            
                 if (skill01Timer < 0)
                 {
                     usedSkill01 = false;
                     usedSkillTimer01 = Random.Range(timeUsedSkill01Min, timeUsedSkill01Max);
                     speed = baseSpeed;
+                    typeSkill01 = 0;
                 }
             }
+
 
             if (isInvincible)
             {
@@ -157,16 +173,23 @@ public class Boss03Controller : MonoBehaviour
                 usedSkill02 = true;
                 usedSkill02Timer = timeUsedSkill02;
                 mySpriteRenderer.color = changeColor;
+                targetPosition = target.transform.position;
+                speed = skill01Speed;
+                gameObject.layer = 21; // layer BossGhost
             }
 
             if (usedSkill02)
             {
+                
+                UpdateTargetPosition(targetPosition);
                 usedSkill02Timer -= Time.deltaTime;
                 if (usedSkill02Timer < 0)
                 {
                     usedSkill02 = false;
                     mySpriteRenderer.color = baseColor;
-                    target.GetComponent<PlayerController>().Stuned(timeStuned);
+                    speed = baseSpeed;
+                    gameObject.layer = 19; // set layer FlyingBoss
+                    //target.GetComponent<PlayerController>().Stuned(timeStuned);
                 }
             }
         }
@@ -247,6 +270,12 @@ public class Boss03Controller : MonoBehaviour
             {
                 rigidbody2d.gravityScale = 1f;
                 rigidbody2d.constraints = RigidbodyConstraints2D.None;
+                if (!isChild)
+                {
+                    Launch();
+                    isChild = true;
+                }
+                   
             }
             else
             {
@@ -260,17 +289,18 @@ public class Boss03Controller : MonoBehaviour
     private void FixedUpdate()
     {
 
-        if (status == 2 && !usedSkill02)
+        if (status == 2)
         {
 
             float moveX = horizontal * speed * Time.deltaTime;
             float moveY = vertical * speed * Time.deltaTime;
-            if (!isKnockBack)
+            if (!isKnockBack && typeSkill01 != 1)
                 rigidbody2d.velocity = new Vector2(moveX, moveY);
             //rigidbody2d.velocity = new Vector2(moveX, rigidbody2d.velocity.y);
-            else
+            else if (isKnockBack)
             {
-                rigidbody2d.AddForce(knockBack, ForceMode2D.Impulse);
+                if (typeSkill01 != 1)
+                    rigidbody2d.AddForce(knockBack, ForceMode2D.Impulse);
                 isKnockBack = false;
             }
         }
@@ -319,7 +349,7 @@ public class Boss03Controller : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         PlayerController player = collision.gameObject.GetComponent<PlayerController>();
-        if (player != null)
+        if (player != null && !usedSkill02)
         {
             if ((player.knockBack.x > 0 && horizontal <= 0) || (player.knockBack.x < 0 && horizontal > 0))
             {
@@ -349,5 +379,73 @@ public class Boss03Controller : MonoBehaviour
             vertical = -1;
         else vertical = 0;
     }
-   
+
+    void SetChild(int health)
+    {
+        isChild = true;
+        maxHealth = health;
+        currentHealth = maxHealth;
+    }
+    void Launch()
+    {
+        //Tao projectile
+        GameObject projectileObject1 = Instantiate(projectilePrefab, rigidbody2d.position + Vector2.left * 1.5f + Vector2.up * 1f, Quaternion.identity);
+        GameObject projectileObject2 = Instantiate(projectilePrefab, rigidbody2d.position + Vector2.left * 0f + Vector2.up * 0f, Quaternion.identity);
+        GameObject projectileObject3 = Instantiate(projectilePrefab, rigidbody2d.position + Vector2.right * 1.5f + Vector2.up * 1f, Quaternion.identity);
+
+        Boss03Controller projectile1 = projectileObject1.GetComponent<Boss03Controller>();
+        Boss03Controller projectile2 = projectileObject2.GetComponent<Boss03Controller>();
+        Boss03Controller projectile3 = projectileObject3.GetComponent<Boss03Controller>();
+        //Vector2 direction1 = new Vector2(-1f, 0.5f);
+        //Vector2 direction2 = new Vector2(-0.6f, 0.5f);
+        //Vector2 direction3 = new Vector2(1f, 0.5f);
+        projectile1.SetChild((int)(maxHealth * 0.7f));
+        projectile2.SetChild((int)(maxHealth * 0.7f));
+        projectile3.SetChild((int)(maxHealth * 0.7f));
+
+        //animator.SetTrigger("Launch");
+    }
+
+    void Launch2()
+    {
+        //Tao projectile
+
+        float xSpread = Random.Range(-1, 2);
+        
+        float ySpread = Random.Range(-1, 1);
+        Vector2 direction1;
+        List <GameObject> projectileObject = new List<GameObject>();
+        for (int i =0; i<10; i++)
+        {
+            GameObject newProjectileObject = Instantiate(projectilePrefab2, rigidbody2d.position + Vector2.left * 0f + Vector2.up * 0f, Quaternion.identity);
+
+            projectileObject.Add(newProjectileObject);
+            xSpread = Random.Range(-1, 2);
+            ySpread = Random.Range(-1, 2);
+            if (xSpread<=0)
+            {
+                xSpread = Random.Range(-1.5f, -0.5f);
+            }
+            else if (xSpread > 0)
+            {
+                xSpread = Random.Range(0.5f, 1.5f);
+            }
+            if (ySpread <=0)
+            {
+                ySpread = Random.Range(-1.5f, -0.5f);
+            }
+            else if (ySpread > 0 || (ySpread == 0 && xSpread == 0))
+            {
+                ySpread = Random.Range(0.5f, 1.5f);
+            }
+
+            Debug.Log("xSpread: " + xSpread + " ySpread: " + ySpread);
+
+            direction1 = new Vector2(xSpread, ySpread);
+            BossBullet projectile1 = newProjectileObject.GetComponent<BossBullet>();
+            projectile1.SetDirection(direction1);
+        }
+        //animator.SetTrigger("Launch");
+    }
+
 }

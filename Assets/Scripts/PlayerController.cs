@@ -4,6 +4,8 @@ using UnityEngine;
 using Cinemachine;
 using UnityEngine.SceneManagement;
 using Assets.Scripts;
+using System.Threading.Tasks;
+
 public class PlayerController : MonoBehaviour
 {
     public UIController UIController;
@@ -163,12 +165,11 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
         return instance;
     }
 
     // Update is called once per frame
-    void Update()
+     void Update()
     {
         //Player Info
         if (lv != playerInfo.getLV())
@@ -201,7 +202,6 @@ public class PlayerController : MonoBehaviour
 
         if (isDead)
         {
-            animator.SetTrigger("Dead");
             animator.SetBool("Run", false);
             animator.SetBool("Jumped", false);
             animator.SetBool("Dash", false);
@@ -215,6 +215,7 @@ public class PlayerController : MonoBehaviour
         if (currentHealth <= 0)
         {
             isDead = true;
+            ReturnToVillage();
         }
         
         isGround = IsGround();
@@ -461,7 +462,20 @@ public class PlayerController : MonoBehaviour
         
         
     }
+    private bool isReborning = false;
+    private async void ReturnToVillage()
+    {
+        animator.SetTrigger("Dead");
+        await Task.Delay(2000);
+        currentHealth = maxHealth;
+        isDead = false;
+        animator.SetTrigger("Reborn");
+        SceneManager.LoadScene(LevelManager.VillageSceneName, LoadSceneMode.Single);
+        gameObject.GetComponent<Rigidbody2D>().position = new Vector2((float)4, (float)-8.08);
+        hitTriggerLeft.SetActive(true);
+        hitTriggerRight.SetActive(true);
 
+    }
     public void ChangeHealth(int amount)
     {
         int a = amount;
