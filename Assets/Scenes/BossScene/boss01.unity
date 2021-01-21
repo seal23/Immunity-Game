@@ -189,7 +189,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PositionName: 
   DestinationSceneName: Village v0.2
-  TeleportGameObjName: Center Village
+  TeleportGameObjName: Gate01
   IsEnable: 1
 --- !u!61 &105809062
 BoxCollider2D:
@@ -43936,11 +43936,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4343304148750238174, guid: 2ac603e7314983446b396013ceaf3322, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -38.96
+      value: 3.41
       objectReference: {fileID: 0}
     - target: {fileID: 4343304148750238174, guid: 2ac603e7314983446b396013ceaf3322, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.9
+      value: -2.1
       objectReference: {fileID: 0}
     - target: {fileID: 4343304148750238174, guid: 2ac603e7314983446b396013ceaf3322, type: 3}
       propertyPath: m_LocalPosition.z
@@ -44544,5 +44544,17 @@ PrefabInstance:
       propertyPath: nextLevelDoor
       value: 
       objectReference: {fileID: 2113349776}
+    - target: {fileID: 8069069996504899905, guid: 224bb08b5dd88b749b36db490df57088, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8069069996504899905, guid: 224bb08b5dd88b749b36db490df57088, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8069069996504899905, guid: 224bb08b5dd88b749b36db490df57088, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.049999237
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 224bb08b5dd88b749b36db490df57088, type: 3}

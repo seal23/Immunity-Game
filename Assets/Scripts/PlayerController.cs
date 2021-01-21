@@ -692,9 +692,9 @@ public class PlayerController : MonoBehaviour
         return bossLevel;
     }
 
-    public void NextBoss()
+    public void NextBoss(int level)
     {
-        bossLevel++;
+        bossLevel = level;
     }
     /* void Launch()
      {

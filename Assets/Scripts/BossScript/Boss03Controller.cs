@@ -74,7 +74,7 @@ public class Boss03Controller : MonoBehaviour
         flag = 0;
         maxHealthSkill = (int)(maxHealth * mulHealthSkill);
         healthSkill = maxHealthSkill;
-        target = GameObject.Find("Player");
+        target = GameObject.FindGameObjectWithTag("Player");
         gameObject.layer = 21; // layer "BossGhost"
         speed = baseSpeed;
 
@@ -241,7 +241,7 @@ public class Boss03Controller : MonoBehaviour
             animator.Play("Dead");
             gameObject.layer = 21; // layer "BossGhost"
             Debug.Log("Slime King Dead");
-
+            target.GetComponent<PlayerController>().NextBoss(3);
 
             if (deadTimer < 0)
             {
@@ -349,4 +349,5 @@ public class Boss03Controller : MonoBehaviour
             vertical = -1;
         else vertical = 0;
     }
+   
 }

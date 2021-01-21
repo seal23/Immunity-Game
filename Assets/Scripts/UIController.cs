@@ -27,7 +27,7 @@ public class UIController : MonoBehaviour
     PlayerController player;
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        player = GameObject.Find("Player").GetComponent<PlayerController>();
         scrBT.onClick.AddListener(scrBTClick);
         hpBT.onClick.AddListener(hpBTClick);
         mpBT.onClick.AddListener(mpBTClick);

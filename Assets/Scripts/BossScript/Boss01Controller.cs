@@ -213,6 +213,7 @@ public class Boss01Controller : MonoBehaviour
             animator.SetTrigger("Dead");
             gameObject.layer = 14; // layer "EnemyGhost"
             Debug.Log("Slime King Dead");
+            target.GetComponent<PlayerController>().NextBoss(2);
         }
       
     }
@@ -315,4 +316,5 @@ public class Boss01Controller : MonoBehaviour
         //animator.SetTrigger("Launch");
         
     }
+    
 }

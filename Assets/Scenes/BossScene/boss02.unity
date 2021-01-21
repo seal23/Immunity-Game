@@ -394,7 +394,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PositionName: TeleBoss02
   DestinationSceneName: Village v0.2
-  TeleportGameObjName: Center Village
+  TeleportGameObjName: Gate01
   IsEnable: 1
 --- !u!61 &716620414
 BoxCollider2D:

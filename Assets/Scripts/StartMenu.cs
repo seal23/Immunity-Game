@@ -26,12 +26,12 @@ public class StartMenu : MonoBehaviour
 
     void newGame(){
         var parameters = new LoadSceneParameters(LoadSceneMode.Single);
-        SceneManager.LoadScene(LevelManager.getSceneNameByLevel(1));
+        SceneManager.LoadScene(LevelManager.VillageSceneName);
     }
 
     void continueGame(){
         var parameters = new LoadSceneParameters(LoadSceneMode.Single);
-        SceneManager.LoadScene(LevelManager.getSceneNameByLevel(1));
+        SceneManager.LoadScene(LevelManager.VillageSceneName);
         PlayerPrefs.SetInt("Loadmode", 1);
 	    PlayerPrefs.Save();
         

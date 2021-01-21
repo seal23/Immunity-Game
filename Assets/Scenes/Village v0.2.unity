@@ -701,11 +701,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3658438877061106560, guid: 9951d93c07e28374d83777277cf62646, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 26.65995
+      value: 6.34
       objectReference: {fileID: 0}
     - target: {fileID: 3658438877061106560, guid: 9951d93c07e28374d83777277cf62646, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.081673
+      value: -8.12
       objectReference: {fileID: 0}
     - target: {fileID: 3658438877061106560, guid: 9951d93c07e28374d83777277cf62646, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7348,7 +7348,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c90edb90c36a4a046b6929a7a01f314b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 1
   PositionName: Gate01
 --- !u!114 &1795460420
 MonoBehaviour:
