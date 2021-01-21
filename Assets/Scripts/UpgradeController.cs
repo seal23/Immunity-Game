@@ -45,7 +45,7 @@ public class UpgradeController : MonoBehaviour
 
     void Start()
 	{
-        player = GameObject.Find("Player").GetComponent<PlayerController>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
 		upgradeBT.onClick.AddListener(upgradeItem);
         neckBT.onClick.AddListener(() => itemShow(neckBT, 1));
         bootBT.onClick.AddListener(() => itemShow(bootBT, 2));
@@ -134,7 +134,7 @@ public class UpgradeController : MonoBehaviour
     void upgradeItem()
     {
         int lev=0;
-        if (cost < player.gold)
+        if (cost <= player.gold)
         {
             switch (temp)
             {

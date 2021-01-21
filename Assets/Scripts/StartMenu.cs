@@ -11,7 +11,7 @@ public class StartMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Destroy(GameObject.Find("Player"));
+        Destroy(GameObject.FindGameObjectWithTag("Player"));
         newGameBT.onClick.AddListener(newGame);
         continueBT.onClick.AddListener(continueGame);
         optionBT.onClick.AddListener(optionGame);
