@@ -64,6 +64,7 @@ public class EnemyController : MonoBehaviour
         hpbar.SetActive(false);
         slider = hpbar.GetComponent<Slider>();
         slider.maxValue = maxHealth;
+        animator.Play("Stand");
     }
 
     // Update is called once per frame
@@ -94,12 +95,18 @@ public class EnemyController : MonoBehaviour
         {
             if (Mathf.Abs(target.transform.position.x - position.x) >= 5 || Mathf.Abs(target.transform.position.y - position.y) >= 5)
             {
-                status = 0;
-                hpbar.SetActive(false);
+                if (status!=2)
+                {
+                    status = 0;
+                    animator.Play("Stand");
+                    hpbar.SetActive(false);
+                }
+               
             }
             if (Mathf.Abs(target.transform.position.x - position.x) < 5 && Mathf.Abs(target.transform.position.y - position.y) < 5 && (status != 2))
             {
                 status = 1;
+                animator.SetTrigger("Idle");
                 hpbar.SetActive(true);
             }
             if (currentHealth <= 0)
