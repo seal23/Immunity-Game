@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Boss02Controller : MonoBehaviour
 {
@@ -67,6 +68,9 @@ public class Boss02Controller : MonoBehaviour
     bool isInvincible;
     float invincibleTimer;
 
+    public GameObject hpbar;
+    Slider slider;
+
     int status;
     // Start is called before the first frame update
     void Start()
@@ -86,13 +90,16 @@ public class Boss02Controller : MonoBehaviour
         deadTimer = timeDead;
 
         mySpriteRenderer = GetComponent<SpriteRenderer>();
-       
+
+        hpbar.SetActive(false);
+        slider = hpbar.GetComponent<Slider>();
+        slider.maxValue = maxHealth;
     }
 
     // Update is called once per frame
     void Update()
     {
-       
+        slider.value = currentHealth;
         if (status ==2)
         {
             if (!usedSkill01 && !usedSkill02)
@@ -175,6 +182,7 @@ public class Boss02Controller : MonoBehaviour
         //Born Time
         if (status == 1)
         {
+            hpbar.SetActive(true);
             animator.Play("Born");
             bornTimer -= Time.deltaTime;
             if (bornTimer < 0)
@@ -188,6 +196,7 @@ public class Boss02Controller : MonoBehaviour
         //Update Death status
         if (currentHealth <= 0)
         {
+            hpbar.SetActive(false);
             if(flag == 0) 
             {
                 for (int i = 0; i < 5; i++)

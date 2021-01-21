@@ -31,6 +31,10 @@ public class DropItemCollection : MonoBehaviour
                     break;
                 case 3: player.mpPotion = player.mpPotion + 1;
                     break;
+                case 4: player.book = player.book + 1;
+                    break;
+                case 5: player.gem = player.gem + 1;
+                    break;
                 default: break;
             }
             

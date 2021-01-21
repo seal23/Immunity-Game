@@ -1074,6 +1074,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LightBandit
       objectReference: {fileID: 0}
+    - target: {fileID: 1979022714638415794, guid: e41d47b9e2489214095f73965905f4c4, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 1993297616947386834, guid: e41d47b9e2489214095f73965905f4c4, type: 3}
       propertyPath: m_IsTrigger
       value: 1
@@ -7517,6 +7521,14 @@ PrefabInstance:
     - target: {fileID: 8423075640792873197, guid: 6d1b0d7f407975341a3ee3c971fece86, type: 3}
       propertyPath: m_IsTrigger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8423075640792873197, guid: 6d1b0d7f407975341a3ee3c971fece86, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.10474518
+      objectReference: {fileID: 0}
+    - target: {fileID: 8423075640792873197, guid: 6d1b0d7f407975341a3ee3c971fece86, type: 3}
+      propertyPath: m_Size.y
+      value: 0.965591
       objectReference: {fileID: 0}
     - target: {fileID: 8423075640792873198, guid: 6d1b0d7f407975341a3ee3c971fece86, type: 3}
       propertyPath: m_Constraints
