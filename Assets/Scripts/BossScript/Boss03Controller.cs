@@ -266,7 +266,7 @@ public class Boss03Controller : MonoBehaviour
                 flag = 1;
             }
 
-            //nextLevelDoor.SetActive(false);
+         
             UpdateStatus(3);
         }
         if (status == 3)
@@ -282,6 +282,8 @@ public class Boss03Controller : MonoBehaviour
                 rigidbody2d.constraints = RigidbodyConstraints2D.None;
                 if (!isChild)
                 {
+                    nextLevelDoor.SetActive(false);
+
                     Launch();
                     isChild = true;
                 }

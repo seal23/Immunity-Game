@@ -245,7 +245,7 @@ public class Boss02Controller : MonoBehaviour
             animator.Play("Dead");
             gameObject.layer = 21; // layer "BossGhost"
             Debug.Log("Slime King Dead");
-            target.GetComponent<PlayerController>().NextBoss(2);
+            target.GetComponent<PlayerController>().NextBoss(3);
 
             if (deadTimer < 0)
             {

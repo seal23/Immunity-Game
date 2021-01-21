@@ -144,7 +144,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4343304148750238169, guid: 2ac603e7314983446b396013ceaf3322, type: 3}
       propertyPath: jumpHeight.y
-      value: 6.5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4343304148750238169, guid: 2ac603e7314983446b396013ceaf3322, type: 3}
       propertyPath: stunedColor.r
@@ -166,6 +166,10 @@ PrefabInstance:
       propertyPath: lvupeffect
       value: 
       objectReference: {fileID: 2099991500}
+    - target: {fileID: 4343304148750238170, guid: 2ac603e7314983446b396013ceaf3322, type: 3}
+      propertyPath: m_GravityScale
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4343304148750238171, guid: 2ac603e7314983446b396013ceaf3322, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 0.84375

@@ -433,6 +433,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Skeleton
       objectReference: {fileID: 0}
+    - target: {fileID: 8903526768459542147, guid: 045833d6633c78f4697773281d8e2edd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8903526768459542150, guid: 045833d6633c78f4697773281d8e2edd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 14.45
@@ -6805,9 +6809,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3658438877061106564, guid: 9951d93c07e28374d83777277cf62646, type: 3}
+      propertyPath: m_GravityScale
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3658438877061106564, guid: 9951d93c07e28374d83777277cf62646, type: 3}
+      propertyPath: m_LinearDrag
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3658438877061106566, guid: 9951d93c07e28374d83777277cf62646, type: 3}
       propertyPath: m_Name
       value: Player Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 3658438877061106567, guid: 9951d93c07e28374d83777277cf62646, type: 3}
+      propertyPath: jumpHeight.y
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4925092114317830003, guid: 9951d93c07e28374d83777277cf62646, type: 3}
       propertyPath: m_AnchorMax.x

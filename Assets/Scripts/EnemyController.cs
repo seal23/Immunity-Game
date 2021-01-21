@@ -90,7 +90,6 @@ public class EnemyController : MonoBehaviour
                 isLaunch = false;
             }
         }
-
         else
         {
             if (Mathf.Abs(target.transform.position.x - position.x) >= 5 || Mathf.Abs(target.transform.position.y - position.y) >= 5)
@@ -195,8 +194,10 @@ public class EnemyController : MonoBehaviour
                 rigidbody2d.AddForce(direction, ForceMode2D.Impulse);
             }
             else if (!isKnockBack)
+            {
                 rigidbody2d.velocity = new Vector2(moveBy, rigidbody2d.velocity.y);
-            else
+            }
+            else if (status!=2)
             {
                 rigidbody2d.AddForce(knockBack, ForceMode2D.Impulse);
                 isKnockBack = false;

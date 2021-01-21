@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
 public class NonPlayerCharacter : MonoBehaviour
 {
     public GameObject ui;
+    GameObject player;
 
     void Start()
     {
