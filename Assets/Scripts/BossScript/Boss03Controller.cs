@@ -84,7 +84,7 @@ public class Boss03Controller : MonoBehaviour
         status = 1;
         bornTimer = timeBorn;
         deadTimer = timeDead;
-
+        targetPosition = target.transform.position;
         mySpriteRenderer = GetComponent<SpriteRenderer>();
 
     }
@@ -157,16 +157,23 @@ public class Boss03Controller : MonoBehaviour
                 usedSkill02 = true;
                 usedSkill02Timer = timeUsedSkill02;
                 mySpriteRenderer.color = changeColor;
+                targetPosition = target.transform.position;
+                speed = skill01Speed;
+                gameObject.layer = 21; // layer BossGhost
             }
 
             if (usedSkill02)
             {
+                
+                UpdateTargetPosition(targetPosition);
                 usedSkill02Timer -= Time.deltaTime;
                 if (usedSkill02Timer < 0)
                 {
                     usedSkill02 = false;
                     mySpriteRenderer.color = baseColor;
-                    target.GetComponent<PlayerController>().Stuned(timeStuned);
+                    speed = baseSpeed;
+                    gameObject.layer = 19; // set layer FlyingBoss
+                    //target.GetComponent<PlayerController>().Stuned(timeStuned);
                 }
             }
         }
@@ -260,7 +267,7 @@ public class Boss03Controller : MonoBehaviour
     private void FixedUpdate()
     {
 
-        if (status == 2 && !usedSkill02)
+        if (status == 2)
         {
 
             float moveX = horizontal * speed * Time.deltaTime;
@@ -319,7 +326,7 @@ public class Boss03Controller : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         PlayerController player = collision.gameObject.GetComponent<PlayerController>();
-        if (player != null)
+        if (player != null && !usedSkill02)
         {
             if ((player.knockBack.x > 0 && horizontal <= 0) || (player.knockBack.x < 0 && horizontal > 0))
             {
