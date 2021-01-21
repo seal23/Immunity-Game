@@ -618,7 +618,8 @@ public class PlayerController : MonoBehaviour
 
     public void useScroll()
     {
-        if (scroll > 0)
+        string namesence = SceneManager.GetActiveScene().name;
+        if (scroll > 0 && namesence != LevelManager.VillageSceneName)
         {
             scroll -= 1;
             SceneManager.LoadScene(LevelManager.VillageSceneName);
