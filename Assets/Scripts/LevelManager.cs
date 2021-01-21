@@ -14,7 +14,7 @@ namespace Assets.Scripts
         {
             LevelScenesName.Add(1, "Level 01");
             LevelScenesName.Add(2, "Level 02");
-            LevelScenesName.Add(3, "Level 02");
+            LevelScenesName.Add(3, "boss03");
         }
 
         public static string getSceneNameByLevel(int level)
