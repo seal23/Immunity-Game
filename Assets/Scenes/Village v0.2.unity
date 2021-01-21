@@ -860,6 +860,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4925092115517670250, guid: 9951d93c07e28374d83777277cf62646, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.000061035156
+      objectReference: {fileID: 0}
     - target: {fileID: 5071850566861398496, guid: 9951d93c07e28374d83777277cf62646, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -7457,6 +7461,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c90edb90c36a4a046b6929a7a01f314b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 3
   PositionName: Gate01
 --- !u!114 &1795460420
 MonoBehaviour:
