@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Assets.Scripts;
-public class VillageTeleport : MonoBehaviour,ITeleport
+public class VillageTeleport : MonoBehaviour
 {
     //public int level = 1;
     public string PositionName = "Gate01";
@@ -101,8 +101,5 @@ public class VillageTeleport : MonoBehaviour,ITeleport
         }
     }
 
-    public string GetPostionName()
-    {
-        return PositionName;
-    }
+    
 }

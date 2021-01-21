@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Assets.Scripts;
-public class Teleport : MonoBehaviour,ITeleport
+public class Teleport : MonoBehaviour
 {
     // Start is called before the first frame update
     public string PositionName = "";
@@ -106,8 +106,5 @@ public class Teleport : MonoBehaviour,ITeleport
         }
     }
 
-    public string GetPostionName()
-    {
-        return PositionName;
-    }
+  
 }
