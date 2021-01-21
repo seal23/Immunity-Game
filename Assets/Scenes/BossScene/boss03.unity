@@ -7448,6 +7448,14 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1450702657000177275, guid: 9bfbb78e842e1954caadb5f66647d853, type: 3}
+      propertyPath: atk
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1450702657000177275, guid: 9bfbb78e842e1954caadb5f66647d853, type: 3}
+      propertyPath: maxHealth
+      value: 1500
+      objectReference: {fileID: 0}
     - target: {fileID: 5778102683407337878, guid: 9bfbb78e842e1954caadb5f66647d853, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

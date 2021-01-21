@@ -10580,7 +10580,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 772825613167952702, guid: 5447051da0f481e46a510effd57bed17, type: 3}
       propertyPath: maxHealth
-      value: 500
+      value: 700
       objectReference: {fileID: 0}
     - target: {fileID: 772825613167952702, guid: 5447051da0f481e46a510effd57bed17, type: 3}
       propertyPath: baseColor.r
@@ -10617,6 +10617,10 @@ PrefabInstance:
     - target: {fileID: 772825613167952702, guid: 5447051da0f481e46a510effd57bed17, type: 3}
       propertyPath: timeUsedSkill02
       value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 772825613167952702, guid: 5447051da0f481e46a510effd57bed17, type: 3}
+      propertyPath: atk
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 772825613295954236, guid: 5447051da0f481e46a510effd57bed17, type: 3}
       propertyPath: m_Layer
