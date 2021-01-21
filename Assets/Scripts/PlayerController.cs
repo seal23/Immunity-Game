@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 using UnityEngine.SceneManagement;
+using Assets.Scripts;
 public class PlayerController : MonoBehaviour
 {
     public UIController UIController;
@@ -27,6 +28,8 @@ public class PlayerController : MonoBehaviour
     public float timeInvincible = 2.0f;
     int currentHealth;
 
+    //Level boss
+    private int bossLevel = 1;
     public int health
     {
         get { return currentHealth; }
@@ -604,7 +607,7 @@ public class PlayerController : MonoBehaviour
         if (scroll > 0)
         {
             scroll -= 1;
-            // Return villa
+            SceneManager.LoadScene(LevelManager.VillageSceneName);
         }
     }
 
@@ -658,6 +661,7 @@ public class PlayerController : MonoBehaviour
         PlayerPrefs.SetInt("sword", item.getSword());
         PlayerPrefs.SetInt("currentHealth", currentHealth);
         PlayerPrefs.SetInt("currentMP", currentMP);
+        PlayerPrefs.SetInt("bossLevel", bossLevel);
 	    PlayerPrefs.Save();
     }
 
@@ -682,10 +686,19 @@ public class PlayerController : MonoBehaviour
             item.setRing(PlayerPrefs.GetInt("ring"));
             item.setBoot(PlayerPrefs.GetInt("boot"));
             item.setSword(PlayerPrefs.GetInt("sword"));
+            bossLevel = PlayerPrefs.GetInt("bossLevel");
         }
     }
 
+    public int getLevel()
+    {
+        return bossLevel;
+    }
 
+    public void NextBoss(int level)
+    {
+        bossLevel = level;
+    }
     /* void Launch()
      {
          //Tao projectile

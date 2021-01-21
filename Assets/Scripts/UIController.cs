@@ -24,10 +24,12 @@ public class UIController : MonoBehaviour
 
     public Button scrBT, hpBT, mpBT, bookBT, gemBT;
 
+    public Slider sliderExp;
+
     PlayerController player;
     void Start()
     {
-        player = GameObject.Find("Player").GetComponent<PlayerController>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         scrBT.onClick.AddListener(scrBTClick);
         hpBT.onClick.AddListener(hpBTClick);
         mpBT.onClick.AddListener(mpBTClick);
@@ -51,6 +53,8 @@ public class UIController : MonoBehaviour
         SetNum(player.mpPotion, textMPP);
         SetNum(player.book, textBook);
         SetNum(player.gem, textGem);
+        sliderExp.maxValue = 100 * Mathf.Pow(2, player.getPlayerInfo().getLV());
+        sliderExp.value = player.getPlayerInfo().getEXP();
     }
 
     public void setMaxHealth(int n) 
